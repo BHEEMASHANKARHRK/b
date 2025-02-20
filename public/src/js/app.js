@@ -76,11 +76,11 @@ try {
     animateOut: "fadeOut",
     controlsText: ['&#8592;', '&#8594;'],
     autoplayButtonOutput: false,
-    gutter: 30,
+    gutter: 40,
     responsive: {
 
       992: {
-        gutter: 30,
+        gutter: 40,
         items: 1
       },
 
