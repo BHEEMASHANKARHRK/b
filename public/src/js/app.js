@@ -76,11 +76,11 @@ try {
     animateOut: "fadeOut",
     controlsText: ['&#8592;', '&#8594;'],
     autoplayButtonOutput: false,
-    gutter: 40,
+    gutter: 50,
     responsive: {
 
       992: {
-        gutter: 40,
+        gutter: 50,
         items: 1
       },
 
@@ -212,11 +212,11 @@ try {
     animateOut: "fadeOut",
     controlsText: ['&#8592;', '&#8594;'],
     autoplayButtonOutput: false,
-    gutter: 30,
+    gutter: 50,
     responsive: {
 
       992: {
-        gutter: 30,
+        gutter: 50,
         items: 3
       },
 
@@ -259,11 +259,11 @@ try {
     controlsText: ['&#8592;', '&#8594;'],
     autoplayButtonOutput: false,
     items:2,
-    gutter: 30,
+    gutter: 50,
     responsive: {
 
       992: {
-        gutter: 30,
+        gutter: 50,
         items: 3
       },
 
