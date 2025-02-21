@@ -384,3 +384,39 @@ function fadeIn() {
   }, 200);
 }
 
+
+window.addEventListener('load', function() {
+  console.log("Page loaded");
+
+  const logoLink = document.getElementById('logo-link');
+  console.log("Logo link element:", logoLink);
+
+  if (logoLink) {
+    // Add event listener to the logo link
+    logoLink.addEventListener('click', function(event) {
+      console.log('Logo clicked');
+      event.preventDefault(); // Prevent default navigation
+
+      if (deferredPrompt) {
+        console.log('deferredPrompt exists at logo click', deferredPrompt);
+        deferredPrompt.prompt();
+        deferredPrompt.userChoice.then(function(choiceResult) {
+          console.log(choiceResult.outcome);
+
+          if (choiceResult.outcome === 'dismissed') {
+            console.log("User cancelled installation");
+          } else {
+            console.log("User added to Home screen");
+          }
+
+          deferredPrompt = null;
+        });
+      } else {
+        console.log("deferredPrompt does not exist at logo click");
+      }
+    });
+  } else {
+    console.log("Logo link element not found");
+  }
+});
+
