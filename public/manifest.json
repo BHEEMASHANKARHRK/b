@@ -38,7 +38,7 @@
       "sizes": "512x512"
     }
   ],
-  "start_url": "https://raw.githubusercontent.com/BHEEMASHANKARHRK/b/main/public/index.html",
+  "start_url": "/public/index.html",
   "scope": ".",
   "scope": ".",
   "display": "standalone",
