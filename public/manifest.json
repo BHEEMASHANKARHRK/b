@@ -38,7 +38,7 @@
       "sizes": "512x512"
     }
   ],
-  "start_url": "/b/index.html",
+  "start_url": "/b/public/index.html",
   "scope": ".",
   "scope": ".",
   "display": "standalone",
