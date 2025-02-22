@@ -130,7 +130,7 @@
     color-scheme: dark;
     --bs-body-color: #dee2e6;
     --bs-body-color-rgb: 222, 226, 230;
-    --bs-body-bg: linear-gradient(45deg, #000000, #3533cd);;
+    --bs-body-bg: red;
     --bs-body-bg-rgb: 33, 37, 41;
     --bs-emphasis-color: #fff;
     --bs-emphasis-color-rgb: 255, 255, 255;
