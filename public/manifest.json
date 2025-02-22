@@ -38,19 +38,6 @@
       "sizes": "512x512"
     }
   ],
-  "screenshots": [
-    {
-      "src": "/b/public/screenshots/screenshot1.png",
-      "sizes": "1280x720",
-      "type": "image/png",
-      "form_factor": "wide"
-    },
-    {
-      "src": "/b/public/screenshots/screenshot2.png",
-      "sizes": "800x600",
-      "type": "image/png"
-    }
-  ],
   "start_url": "/b/public/index.html",
   "scope": "/b/public/",
   "display": "standalone",
