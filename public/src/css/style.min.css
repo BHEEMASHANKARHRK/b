@@ -1603,8 +1603,7 @@ hr {
     width: 45px;
     height: 45px;
     line-height: 45px;
-    /* background-color: #00d2d2; */
-    border: 1px solid #2fb4ae;
+    /* border: 1px solid #2fb4ae; */
     font-size: 21px;
     text-align: center;
     background-size: 100%;
@@ -1624,7 +1623,7 @@ hr {
 
 /* Styling for dark mode */
 body[data-layout-mode=dark] .mode-btn {
-    background-color: #293049;
+    background-color: #242c34;
     background-image: url('../images/moon.png'); /* Path to dark mode background image */
 }
 
