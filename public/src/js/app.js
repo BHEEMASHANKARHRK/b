@@ -45,15 +45,22 @@ window.addEventListener('scroll', (ev) => {
 //
 
 const btn = document.getElementById("mode");
-btn.addEventListener("click", (e) => {
-  let theme = localStorage.getItem("theme");
-  if (theme == "light" || theme == "") {
+btn.addEventListener("click", () => {
+  let theme = localStorage.getItem("theme") || "light";
+  
+  if (theme === "light") {
     document.body.setAttribute("data-layout-mode", "dark");
     localStorage.setItem("theme", "dark");
   } else {
-    document.body.removeAttribute("data-layout-mode");
+    document.body.setAttribute("data-layout-mode", "light");
     localStorage.setItem("theme", "light");
   }
+});
+
+// Set the initial theme based on localStorage value
+document.addEventListener("DOMContentLoaded", () => {
+  const theme = localStorage.getItem("theme") || "light";
+  document.body.setAttribute("data-layout-mode", theme);
 });
 
 
