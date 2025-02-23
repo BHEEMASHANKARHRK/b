@@ -78,6 +78,65 @@
     }
 }
 
+/* Burger Icon Style */
+.burger-icon {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.burger-icon span {
+    display: block;
+    width: 100%;
+    height: 4px;
+    background-color: rgb(0, 0, 0);
+    transition: all 0.3s ease-in-out;
+}
+
+/* Dark Mode Style */
+body[data-layout-mode=dark] .burger-icon span {
+    background-color: rgb(255, 251, 251);
+}
+
+/* body[data-layout-mode=dark] .navbar-toggler {
+    background-color: white;
+} */
+
+/* Light Mode Style */
+body[data-layout-mode=light] .navbar-toggler {
+    background-color: black;
+}
+
+/* Collapsed State for Burger Icon */
+.navbar-toggler.collapsed .burger-icon-top {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.navbar-toggler.collapsed .burger-icon-mid {
+    opacity: 0;
+}
+
+.navbar-toggler.collapsed .burger-icon-bottom {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
+.navbar-toggler .burger-icon-top {
+    transform: none;
+}
+
+.navbar-toggler .burger-icon-mid {
+    opacity: 1;
+}
+
+.navbar-toggler .burger-icon-bottom {
+    transform: none;
+}
+
+
+
 .navbar {
     transition: all .5s ease;
     padding: 0;
@@ -222,7 +281,7 @@ textarea.form-control {
 }
 
 body[data-layout-mode=dark] .navbar {
-    background-color: rgba(0, 0, 0, 0) !important
+    background-color: #293049 !important
 }
 
 body[data-layout-mode=dark] .navbar .navbar-nav .nav-link {
@@ -263,7 +322,7 @@ body[data-layout-mode=dark] .navbar .navbar-dark .navbar-nav .nav-link:focus {
 
 body[data-layout-mode=dark] .nav-sticky,
 body[data-layout-mode=dark].navbar {
-    background-color: #303841 !important
+    background-color: #293049 !important
 }
 
 body[data-layout-mode=dark] .nav-sticky .navbar-toggler i,
@@ -301,11 +360,11 @@ body[data-layout-mode=dark].navbar .navbar-brand span {
 
 @media(max-width: 992px) {
     body[data-layout-mode=dark] .navbar {
-        background-color: #343f4b !important
+        ground-colorback: #293049 !important
     }
 
     body[data-layout-mode=dark] .navbar-collapse {
-        background-color: #343f4b !important
+        background-color: #293049  !important
     }
 
     body[data-layout-mode=dark] .nav-sticky .navbar-collapse {
@@ -374,7 +433,7 @@ body[data-layout-mode=dark].navbar .navbar-brand span {
 }
 
 .bg-dark {
-    background-color: #1c2f50 !important
+    background-color:#293049 !important
 }
 
 .text-muted {
@@ -587,7 +646,7 @@ body[data-layout-mode=dark].navbar .navbar-brand span {
 body {
     font-family: "Roboto", sans-serif;
     overflow-x: hidden !important;
-    color: #1c2f50
+    color: linear-gradient(45deg, #000000, #3533cd);
 }
 
 body.modal-open {
@@ -1534,8 +1593,9 @@ hr {
     border-radius: 20px
 }
 
+/* General button styling */
 .mode-btn {
-    position: fixed;
+    position:fixed;
     top: 28%;
     left: 0px;
     z-index: 1021;
@@ -1543,36 +1603,57 @@ hr {
     width: 45px;
     height: 45px;
     line-height: 45px;
-    background-color: #2fb4ae;
+    /* background-color: #00d2d2; */
     border: 1px solid #2fb4ae;
     font-size: 21px;
-    text-align: center
+    text-align: center;
+    background-size: 100%;
 }
 
+/* Dark Mode Button */
 .mode-btn .mode-dark {
     display: block;
-    transition: all .5s ease
+    transition: all .5s ease;
 }
 
+/* Light Mode Button */
 .mode-btn .mode-light {
     display: none;
-    transition: all .5s ease
+    transition: all .5s ease;
 }
 
-body[data-layout-mode=dark] #style-switcher {
-    background-color: #242c34
+/* Styling for dark mode */
+body[data-layout-mode=dark] .mode-btn {
+    background-color: #293049;
+    background-image: url('../images/moon.png'); /* Path to dark mode background image */
 }
 
 body[data-layout-mode=dark] .mode-dark {
-    display: none
+    display: none;
 }
 
 body[data-layout-mode=dark] .mode-light {
-    display: block
+    display: block;
 }
 
+/* Styling for light mode */
+body[data-layout-mode=light] .mode-btn {
+    background-color: #f8f9fa;
+    background-image: url('../images/sun.png'); /* Path to light mode background image */
+}
+
+body[data-layout-mode=light] .mode-dark {
+    display: block;
+}
+
+body[data-layout-mode=light] .mode-light {
+    display: none;
+}
+
+
+
 body[data-layout-mode=dark] .card {
-    background-color: #283039 !important;
+    background-color: #293049 !important;
     border-color: #3d454e !important
 }
 
@@ -2173,7 +2254,7 @@ body[data-layout-mode=dark] .breadcrumb {
 }
 
 body[data-layout-mode=dark] .home {
-    background-color: #343f4b !important
+    background-color: #293049 !important
 }
 
 body[data-layout-mode=dark] .home .home-title {
@@ -2185,7 +2266,7 @@ body[data-layout-mode=dark] .home .read-link {
 }
 
 body[data-layout-mode=dark] .home .tns-outer .tns-controls button {
-    background-color: #303841;
+    background-color: #293049;
     color: #fff
 }
 
@@ -2427,16 +2508,16 @@ body[data-layout-mode=dark] .home-6 .bottom-item .video-button i {
 }
 
 body[data-layout-mode=dark] .about-me {
-    background-color: #303841 !important;
+    background-color: #293049 !important;
     color: #fff !important
 }
 
 body[data-layout-mode=dark] .about-me .about-box {
-    background-color: rgba(52, 63, 75, .3)
+    background-color: orange
 }
 
 .service {
-    background-color: rgba(37, 88, 171, .05)
+    background-color: orange
 }
 
 .service .info-item {
@@ -2454,12 +2535,12 @@ body[data-layout-mode=dark] .about-me .about-box {
 }
 
 body[data-layout-mode=dark] .service {
-    background-color: #343f4b !important;
+    background-color: #293049 !important;
     color: #fff !important
 }
 
 body[data-layout-mode=dark] .service .info-item {
-    background-color: #303841 !important
+    background-color: orange !important
 }
 
 .testimonial {
@@ -2590,7 +2671,7 @@ body[data-layout-mode=dark] .service .info-item {
 }
 
 body[data-layout-mode=dark] .testimonial {
-    background-color: #343f4b !important;
+    background-color: #293049 !important;
     color: #fff !important
 }
 
@@ -2609,12 +2690,12 @@ body[data-layout-mode=dark] .testimonial .swiper-pagination-bullet-active {
 }
 
 body[data-layout-mode=dark] .counter {
-    background-color: #303841 !important;
+    background-color: #293049 !important;
     color: #fff !important
 }
 
 body[data-layout-mode=dark] .counter .counter-item {
-    background-color: #343f4b !important
+    background-color: orange !important
 }
 
 .pricing .nav-pills .nav-item {
@@ -2697,12 +2778,12 @@ body[data-layout-mode=dark] .counter .counter-item {
 }
 
 body[data-layout-mode=dark] .pricing {
-    background-color: #303841 !important;
+    background-color: #293049 !important;
     color: #fff !important
 }
 
 body[data-layout-mode=dark] .pricing .nav-item button {
-    background-color: #343f4b !important;
+    background-color: orange !important;
     color: #fff !important
 }
 
@@ -2715,7 +2796,7 @@ body[data-layout-mode=dark] .pricing .pricing-item:hover .top-bar {
 }
 
 .my-work {
-    background-color: rgba(37, 88, 171, .05)
+    background-color:#293049
 }
 
 .my-work .work-slider .work-image img {
@@ -2747,7 +2828,7 @@ body[data-layout-mode=dark] .pricing .pricing-item:hover .top-bar {
 }
 
 body[data-layout-mode=dark] .my-work {
-    background-color: #343f4b !important;
+    background-color: #293049 !important;
     color: #fff !important
 }
 
@@ -2786,12 +2867,12 @@ body[data-layout-mode=dark] .my-work {
 }
 
 body[data-layout-mode=dark] .blog {
-    background-color: #303841 !important;
+    background-color: #293049 !important;
     color: #fff
 }
 
 body[data-layout-mode=dark] .blog .blog-item {
-    background-color: #343f4b
+    background-color: orange
 }
 
 body[data-layout-mode=dark] .blog .blog-image-icon {
@@ -2809,7 +2890,7 @@ body[data-layout-mode=dark] .blog .blog-content a {
 .contact .contact-item .custom-form {
     position: relative;
     bottom: -80px;
-    box-shadow: 0px 3px 10px 0px rgba(28, 47, 80, .08);
+    box-shadow: 0px 3px 10px 0px orange;
     padding: 40px;
     border-radius: 20px;
     background-color: #fff;
@@ -2861,20 +2942,20 @@ body[data-layout-mode=dark] .blog .blog-content a {
 }
 
 body[data-layout-mode=dark] .contact {
-    background-color: #343f4b !important;
+    background-color: #293049 !important;
     color: #fff !important
 }
 
 body[data-layout-mode=dark] .contact .custom-form {
-    background-color: #303841 !important
+    background-color: yellow !important
 }
 
 body[data-layout-mode=dark] .contact .custom-form .form-control {
-    background-color: #303841 !important
+    background-color: blue !important
 }
 
 body[data-layout-mode=dark] .contact .custom-form .form-group .form-control {
-    background-color: #303841 !important
+    background-color: green !important
 }
 
 .footer {
@@ -2897,7 +2978,7 @@ body[data-layout-mode=dark] .contact .custom-form .form-group .form-control {
 }
 
 .footer .linkedin-box {
-    background-color: rgba(47, 180, 174, .1);
+    background-color: yellow;
     padding: 20px;
     border-radius: 14px
 }
@@ -2959,11 +3040,11 @@ body[data-layout-mode=dark] .contact .custom-form .form-group .form-control {
 }
 
 body[data-layout-mode=dark] .footer {
-    background-color: #303841 !important
+    background-color: #293049 !important
 }
 
 body[data-layout-mode=dark] .footer .linkedin-box {
-    background-color: #343f4b !important
+    background-color: orange !important
 }
 
 body[data-layout-mode=dark] .footer .linkedin-box::before {
@@ -2971,7 +3052,7 @@ body[data-layout-mode=dark] .footer .linkedin-box::before {
 }
 
 body[data-layout-mode=dark] .bottom-footer {
-    background-color: #343f4b !important
+    background-color: #15233b !important
 }
 
 /*# sourceMappingURL=style.min.css.map */
