@@ -101,13 +101,9 @@ body[data-layout-mode=dark] .burger-icon span {
     background-color: rgb(255, 251, 251);
 }
 
-/* body[data-layout-mode=dark] .navbar-toggler {
-    background-color: white;
-} */
-
 /* Light Mode Style */
-body[data-layout-mode=light] .navbar-toggler {
-    background-color: black;
+body[data-layout-mode=light] .burger-icon span {
+    background-color: rgb(0, 0, 0);
 }
 
 /* Collapsed State for Burger Icon */
@@ -123,6 +119,7 @@ body[data-layout-mode=light] .navbar-toggler {
     transform: rotate(-45deg) translate(5px, -5px);
 }
 
+/* Default State for Burger Icon */
 .navbar-toggler .burger-icon-top {
     transform: none;
 }
@@ -134,7 +131,6 @@ body[data-layout-mode=light] .navbar-toggler {
 .navbar-toggler .burger-icon-bottom {
     transform: none;
 }
-
 
 
 .navbar {
