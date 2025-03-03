@@ -43,25 +43,34 @@ window.addEventListener('scroll', (ev) => {
 //
 /********************* light-dark js ************************/
 //
+document.addEventListener("DOMContentLoaded", function() {
+  const navbarToggler = document.querySelector(".navbar-toggler");
+  const navbarCollapse = document.getElementById("navbarCollapse");
 
-const btn = document.getElementById("mode");
-btn.addEventListener("click", () => {
-  let theme = localStorage.getItem("theme") || "light";
+  navbarToggler.addEventListener("click", function() {
+      navbarToggler.classList.toggle("collapsed");
   
-  if (theme === "light") {
-    document.body.setAttribute("data-layout-mode", "dark");
-    localStorage.setItem("theme", "dark");
-  } else {
-    document.body.setAttribute("data-layout-mode", "light");
-    localStorage.setItem("theme", "light");
-  }
-});
+  });
 
-// Set the initial theme based on localStorage value
-document.addEventListener("DOMContentLoaded", () => {
+  const btn = document.getElementById("mode");
+  btn.addEventListener("click", () => {
+      let theme = localStorage.getItem("theme") || "light";
+
+      if (theme === "light") {
+          document.body.setAttribute("data-layout-mode", "dark");
+          localStorage.setItem("theme", "dark");
+      } else {
+          document.body.setAttribute("data-layout-mode", "light");
+          localStorage.setItem("theme", "light");
+      }
+  });
+
+  // Set the initial theme based on localStorage value
   const theme = localStorage.getItem("theme") || "light";
   document.body.setAttribute("data-layout-mode", theme);
 });
+
+
 
 
 
