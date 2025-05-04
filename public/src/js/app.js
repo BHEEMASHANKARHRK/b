@@ -39,90 +39,35 @@ window.addEventListener('scroll', (ev) => {
 
 // STEP 3: Add this JavaScript to your main JS file
 // Light/Dark Mode Toggle Functionality
-/**
- * Light/Dark Mode Toggle Script
- * - Toggles between light and dark mode
- * - Uses Font Awesome icons: fa-sun-bright and fa-moon
- * - Saves user preference in localStorage
- * - Respects system preference on first visit
- */
 document.addEventListener('DOMContentLoaded', function() {
-    // Get the theme toggle button
     const modeToggle = document.getElementById('mode');
     
-    // Check for saved theme preference or use preferred color scheme
+    // Check for saved theme preference or use default
     const savedTheme = localStorage.getItem('theme');
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    
-    // Set initial theme based on saved preference or system preference
-    if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
-        setDarkMode();
+    if (savedTheme) {
+        document.body.setAttribute('data-layout-mode', savedTheme);
     } else {
-        setLightMode();
+        // Default to light mode if no preference saved
+        document.body.setAttribute('data-layout-mode', 'light');
     }
     
-    // Toggle theme when button is clicked
+    // Handle theme toggle click
     modeToggle.addEventListener('click', function() {
-        if (document.body.classList.contains('dark-mode')) {
-            setLightMode();
-        } else {
-            setDarkMode();
-        }
+        const currentTheme = document.body.getAttribute('data-layout-mode');
+        const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+        
+        // Update theme
+        document.body.setAttribute('data-layout-mode', newTheme);
+        
+        // Save preference
+        localStorage.setItem('theme', newTheme);
+        
+        console.log('Theme switched to:', newTheme);
     });
     
-    // Function to set dark mode
-    function setDarkMode() {
-        document.body.classList.add('dark-mode');
-        document.body.classList.remove('light-mode');
-        localStorage.setItem('theme', 'dark');
-        
-        // Update logo
-        updateLogo();
-        
-        // Hide sun icon, show moon icon
-        const sunIcon = document.querySelector('.fa-sun-bright');
-        const moonIcon = document.querySelector('.fa-moon');
-        
-        if (sunIcon) sunIcon.style.display = 'none';
-        if (moonIcon) moonIcon.style.display = 'block';
-    }
-    
-    // Function to set light mode
-    function setLightMode() {
-        document.body.classList.add('light-mode');
-        document.body.classList.remove('dark-mode');
-        localStorage.setItem('theme', 'light');
-        
-        // Update logo
-        updateLogo();
-        
-        // Show sun icon, hide moon icon
-        const sunIcon = document.querySelector('.fa-sun-bright');
-        const moonIcon = document.querySelector('.fa-moon');
-        
-        if (sunIcon) sunIcon.style.display = 'block';
-        if (moonIcon) moonIcon.style.display = 'none';
-    }
-    
-    // Function to update logo based on theme
-    function updateLogo() {
-        const logoLink = document.getElementById('logo-link');
-        if (!logoLink) return;
-        
-        const logoLight = logoLink.querySelector('.logo-light');
-        const logoDark = logoLink.querySelector('.logo-dark');
-        
-        if (!logoLight || !logoDark) return;
-        
-        if (document.body.classList.contains('dark-mode')) {
-            logoLight.style.display = 'block';
-            logoDark.style.display = 'none';
-        } else {
-            logoLight.style.display = 'none';
-            logoDark.style.display = 'block';
-        }
-    }
+    // Rest of your PWA code...
 });
+
 
 // tiny slide **** home
 
