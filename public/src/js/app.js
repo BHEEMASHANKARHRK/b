@@ -189,7 +189,6 @@ window.addEventListener('scroll', (ev) => {
 //     });
 // });
 
-<script>
 document.addEventListener('DOMContentLoaded', function () {
     // Hide splash screen after a delay
     setTimeout(function () {
@@ -240,7 +239,6 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 });
-</script>
 
 
 // tiny slide **** home
