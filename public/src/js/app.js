@@ -189,18 +189,54 @@ window.addEventListener('scroll', (ev) => {
 //     });
 // });
 
+// document.addEventListener('DOMContentLoaded', function() {
+//     const navbarToggler = document.querySelector('.navbar-toggler');
+//     const navbarCollapse = document.querySelector('.navbar-collapse');
+//     const burgerIcon = document.querySelector('.burger-icon');
+
+//     navbarToggler.addEventListener('click', function() {
+//         const isExpanded = navbarToggler.getAttribute('aria-expanded') === 'true';
+
+//         // Toggle classes for hamburger/X animation
+//         burgerIcon.classList.toggle('open');
+
+//         // Toggle aria-expanded attribute for accessibility
+//         navbarToggler.setAttribute('aria-expanded', !isExpanded);
+//     });
+
+//     // Ensure icon resets when menu closes
+//     navbarCollapse.addEventListener('hidden.bs.collapse', function() {
+//         burgerIcon.classList.remove('open'); // Reset to hamburger icon
+//     });
+
+//     navbarCollapse.addEventListener('shown.bs.collapse', function() {
+//         burgerIcon.classList.add('open'); // Change to "X" icon
+//     });
+
+//     // Close menu when clicking a nav link & restore icon
+//     const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+//     navLinks.forEach(function(link) {
+//         link.addEventListener('click', function() {
+//             if (navbarCollapse.classList.contains('show')) {
+//                 navbarToggler.click(); // Toggle menu & icon
+//             }
+//         });
+//     });
+// });
+
 document.addEventListener('DOMContentLoaded', function() {
     const navbarToggler = document.querySelector('.navbar-toggler');
     const navbarCollapse = document.querySelector('.navbar-collapse');
     const burgerIcon = document.querySelector('.burger-icon');
 
+    // Toggle menu state
     navbarToggler.addEventListener('click', function() {
         const isExpanded = navbarToggler.getAttribute('aria-expanded') === 'true';
 
-        // Toggle classes for hamburger/X animation
+        // Toggle the icon's class (hamburger ↔ X)
         burgerIcon.classList.toggle('open');
 
-        // Toggle aria-expanded attribute for accessibility
+        // Toggle aria-expanded for accessibility
         navbarToggler.setAttribute('aria-expanded', !isExpanded);
     });
 
@@ -213,12 +249,12 @@ document.addEventListener('DOMContentLoaded', function() {
         burgerIcon.classList.add('open'); // Change to "X" icon
     });
 
-    // Close menu when clicking a nav link & restore icon
+    // Close menu when clicking a nav link & update icon
     const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
     navLinks.forEach(function(link) {
         link.addEventListener('click', function() {
             if (navbarCollapse.classList.contains('show')) {
-                navbarToggler.click(); // Toggle menu & icon
+                navbarToggler.click(); // Close menu & toggle icon
             }
         });
     });
