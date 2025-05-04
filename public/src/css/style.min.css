@@ -1597,6 +1597,7 @@ hr {
 }
 
 /* Theme Toggle Button Styling */
+/* Theme Toggle Button Styling */
 .mode-btn {
     width: 40px;
     height: 40px;
@@ -1613,7 +1614,8 @@ hr {
     transform: rotate(15deg);
 }
 
-/* Icon Display Logic - FIXED */
+/* FIXED: Icon Display Logic - Using data-layout-mode attribute */
+/* Light Mode (Default) */
 .mode-btn .fa-sun {
     display: none; /* Hide sun icon in light mode */
 }
@@ -1622,29 +1624,12 @@ hr {
     display: block; /* Show moon icon in light mode */
 }
 
-/* Dark Mode Styles */
-body.dark-mode {
-    --body-bg: #121212;
-    --text-color: #f8f9fa;
-    --navbar-bg: rgba(33, 37, 41, 0.95);
-    --navbar-text: #e9ecef;
-    --navbar-active: #0dcaf0;
-    --card-bg: #1e1e1e;
-    --card-border: rgba(255, 255, 255, 0.125);
-    --btn-primary-bg: #0dcaf0;
-    --btn-primary-text: #212529;
-}
-
-body.dark-mode .mode-btn {
-    background-color: rgba(255, 255, 255, 0.1);
-    color: #f8f9fa;
-}
-
-body.dark-mode .mode-btn .fa-moon {
+/* Dark Mode */
+body[data-layout-mode="dark"] .mode-btn .fa-moon {
     display: none; /* Hide moon icon in dark mode */
 }
 
-body.dark-mode .mode-btn .fa-sun {
+body[data-layout-mode="dark"] .mode-btn .fa-sun {
     display: block; /* Show sun icon in dark mode */
 }
 
@@ -1657,65 +1642,15 @@ body.dark-mode .mode-btn .fa-sun {
     display: none;
 }
 
-body.dark-mode .logo-light {
+body[data-layout-mode="dark"] .logo-light {
     display: none;
 }
 
-body.dark-mode .logo-dark {
+body[data-layout-mode="dark"] .logo-dark {
     display: block;
 }
 
-/* Apply Variables */
-body {
-    background-color: var(--body-bg);
-    color: var(--text-color);
-    transition: all 0.3s ease;
-}
-
-/* Navbar Styling */
-.navbar {
-    background-color: var(--navbar-bg) !important;
-    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
-    transition: all 0.3s ease;
-}
-
-.navbar .nav-link {
-    color: var(--navbar-text) !important;
-}
-
-.navbar .nav-link.active {
-    color: var(--navbar-active) !important;
-}
-
-/* Card Styling */
-.card {
-    background-color: var(--card-bg);
-    border-color: var(--card-border);
-    transition: all 0.3s ease;
-    border-radius: 20px;
-}
-
-/* Button Styling */
-.btn-dark {
-    background-color: var(--btn-primary-bg);
-    color: var(--btn-primary-text);
-    border: none;
-    transition: all 0.3s ease;
-}
-
-body.dark-mode .btn-dark:hover {
-    background-color: #13daf9;
-}
-
-body:not(.dark-mode) .btn-dark:hover {
-    background-color: #0b5ed7;
-}
-
-/* Hamburger Menu Styling */
-.burger-icon span {
-    background-color: var(--text-color);
-    transition: all 0.3s ease;
-}.home {
+.home {
     min-height: 100vh;
     align-items: center;
     display: flex;
