@@ -215,26 +215,32 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
-  // Assign IDs dynamically to the burger icon spans
+  // Assign ID to burger icon
   const burgerIcon = document.querySelector('.burger-icon');
   if (burgerIcon) {
     burgerIcon.setAttribute('id', 'hamburgerIcon');
   }
 
-  // Create a close (X) icon dynamically
+  // Create close icon
   const closeIcon = document.createElement('div');
   closeIcon.innerHTML = '&times;';
   closeIcon.style.display = 'none';
   closeIcon.style.fontSize = '28px';
   closeIcon.style.cursor = 'pointer';
+  closeIcon.style.marginLeft = '10px';
+  closeIcon.style.lineHeight = '1';
+  closeIcon.style.position = 'absolute';
+  closeIcon.style.top = '10px';
+  closeIcon.style.right = '15px';
+  closeIcon.style.zIndex = '1051'; // Above navbar
   closeIcon.setAttribute('id', 'closeIcon');
 
-  // Insert close icon next to the hamburger icon
-  const toggleButton = document.querySelector('.navbar-toggler');
-  toggleButton?.parentNode.insertBefore(closeIcon, toggleButton.nextSibling);
+  // Add close icon to the DOM
+  document.body.appendChild(closeIcon);
 
-  // Collapse events
   const navbarCollapseEl = document.getElementById('navbarCollapse');
+
+  // Toggle icons
   navbarCollapseEl.addEventListener('show.bs.collapse', function () {
     document.getElementById('hamburgerIcon').style.display = 'none';
     document.getElementById('closeIcon').style.display = 'block';
@@ -245,7 +251,7 @@ document.addEventListener('DOMContentLoaded', function () {
     document.getElementById('closeIcon').style.display = 'none';
   });
 
-  // Close menu when close icon is clicked
+  // Clicking close icon hides the menu
   closeIcon.addEventListener('click', function () {
     const bsCollapse = bootstrap.Collapse.getInstance(navbarCollapseEl);
     if (bsCollapse) {
@@ -253,7 +259,6 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 });
-
 
 
 
