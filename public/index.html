@@ -64,7 +64,122 @@
         }
         #splash-screen img, #splash-screen video {
             width: 200px;
-        }</style><style></style></head>
+        }
+
+    /* Core styles for the page */
+        body {
+            padding-top: 80px;
+            --text-color: #343a40;
+        }
+        
+        .navbar {
+            background-color: #f8f9fa;
+            box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+        }
+        
+        /* Hamburger Menu Styling */
+        .burger-icon {
+            width: 24px;
+            height: 20px;
+            position: relative;
+            display: block;
+            cursor: pointer;
+        }
+        
+        .burger-icon span {
+            display: block;
+            position: absolute;
+            height: 2px;
+            width: 100%;
+            background: var(--text-color);
+            border-radius: 2px;
+            opacity: 1;
+            left: 0;
+            transform: rotate(0deg);
+            transition: all 0.25s ease-in-out;
+        }
+        
+        /* Position the lines */
+        .burger-icon-top {
+            top: 0;
+        }
+        
+        .burger-icon-mid {
+            top: 9px;
+        }
+        
+        .burger-icon-bottom {
+            top: 18px;
+        }
+        
+        /* When navbar is expanded/open */
+        .navbar-toggler[aria-expanded="true"] .burger-icon-top {
+            top: 9px;
+            transform: rotate(45deg);
+        }
+        
+        .navbar-toggler[aria-expanded="true"] .burger-icon-mid {
+            opacity: 0;
+            width: 0;
+        }
+        
+        .navbar-toggler[aria-expanded="true"] .burger-icon-bottom {
+            top: 9px;
+            transform: rotate(-45deg);
+        }
+        
+        /* Dark mode styling */
+        body[data-layout-mode="dark"] {
+            background-color: #1a1d2b;
+            color: #f8f9fa;
+            --text-color: #f8f9fa;
+        }
+        
+        body[data-layout-mode="dark"] .navbar {
+            background-color: #242c34;
+        }
+        
+        body[data-layout-mode="dark"] .card {
+            background-color: #293049;
+            border-color: #3d454e;
+        }
+        
+        /* Toggle button */
+        .mode-btn {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background-color: rgba(0, 0, 0, 0.05);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-right: 15px;
+        }
+        
+        .mode-btn:hover {
+            transform: rotate(15deg);
+        }
+        
+        /* Icon Display Logic */
+        .mode-btn .fa-sun {
+            display: none;
+        }
+        
+        .mode-btn .fa-moon {
+            display: block;
+        }
+        
+        body[data-layout-mode="dark"] .mode-btn .fa-moon {
+            display: none;
+        }
+        
+        body[data-layout-mode="dark"] .mode-btn .fa-sun {
+            display: block;
+        }
+
+</style></head>
 
 <body data-bs-spy="scroll" data-bs-target="#navbar" data-bs-offset="71" data-layout-mode="light">
 
@@ -99,10 +214,10 @@
                     <a href="#" class="btn btn-dark rounded-pill" data-bs-toggle="modal" data-bs-target="#exampleModal">Login</a>
                 </div>
                 
-                <!-- Hamburger Menu Button - Mobile only -->
-                <button class="navbar-toggler ms-3 d-lg-none" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-label="Toggle navigation"
-                    aria-expanded="false">
+                <!-- Hamburger Menu Button -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+                    aria-label="Toggle navigation">
                     <div class="burger-icon">
                         <span class="burger-icon-top"></span>
                         <span class="burger-icon-mid"></span>
