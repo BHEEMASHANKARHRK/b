@@ -189,6 +189,7 @@ window.addEventListener('scroll', (ev) => {
 //     });
 // });
 
+<script>
 document.addEventListener('DOMContentLoaded', function () {
   // Theme toggle
   const modeToggle = document.getElementById('mode');
@@ -215,19 +216,27 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
-  // Show/hide X icon
-  const toggler = document.querySelector('.navbar-toggler');
-  const burgerIcon = document.getElementById('burgerIcon');
+  // Show/hide hamburger and close icon
+  const hamburgerIcon = document.getElementById('hamburgerIcon');
+  const closeIcon = document.getElementById('closeIcon');
   const navbarCollapseEl = document.getElementById('navbarCollapse');
 
   navbarCollapseEl.addEventListener('show.bs.collapse', function () {
-    burgerIcon.style.display = 'block';
+    hamburgerIcon.style.display = 'none';
+    closeIcon.style.display = 'block';
   });
 
   navbarCollapseEl.addEventListener('hide.bs.collapse', function () {
-    burgerIcon.style.display = 'none';
+    hamburgerIcon.style.display = 'block';
+    closeIcon.style.display = 'none';
   });
 });
+</script>
+
+
+
+
+
 
 // tiny slide **** home
 
