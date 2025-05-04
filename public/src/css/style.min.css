@@ -1591,7 +1591,7 @@ hr {
 
 /* General button styling */
 .mode-btn {
-    position:fixed;
+    position: fixed;
     top: 28%;
     left: 0px;
     z-index: 1021;
@@ -1599,10 +1599,11 @@ hr {
     width: 45px;
     height: 45px;
     line-height: 45px;
-    /* border: 1px solid #2fb4ae; */
     font-size: 21px;
     text-align: center;
     background-size: 100%;
+    cursor: pointer;
+    transition: all 0.3s ease;
 }
 
 /* Dark Mode Button */
@@ -1645,17 +1646,51 @@ body[data-layout-mode=light] .mode-light {
     display: none;
 }
 
-
-
+/* Additional dark mode styling */
 body[data-layout-mode=dark] .card {
     background-color: #293049 !important;
-    border-color: #3d454e !important
+    border-color: #3d454e !important;
 }
 
 body[data-layout-mode=dark] .breadcrumb {
     background-color: #242c34 !important;
     padding: 16px 20px;
-    border-radius: 60px
+    border-radius: 60px;
+}
+
+/* Additional dark mode styles for better visibility */
+body[data-layout-mode=dark] {
+    background-color: #1a1d2b;
+    color: #f8f9fa;
+}
+
+body[data-layout-mode=dark] .navbar {
+    background-color: #242c34 !important;
+}
+
+body[data-layout-mode=dark] .navbar-nav .nav-link {
+    color: #f8f9fa;
+}
+
+body[data-layout-mode=dark] .navbar-nav .nav-link.active {
+    color: #2fb4ae;
+}
+
+body[data-layout-mode=dark] .modal-content {
+    background-color: #242c34;
+    color: #f8f9fa;
+}
+
+body[data-layout-mode=dark] .form-control {
+    background-color: #293049;
+    border-color: #3d454e;
+    color: #f8f9fa;
+}
+
+/* Make the button more visible on hover */
+.mode-btn:hover {
+    opacity: 0.9;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
 .home {
