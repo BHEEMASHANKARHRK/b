@@ -126,63 +126,34 @@ window.addEventListener('scroll', (ev) => {
         // });
 
 
-document.addEventListener('DOMContentLoaded', function () {
-    // Theme toggle setup
-    const modeToggle = document.getElementById('mode');
-    const savedTheme = localStorage.getItem('theme');
-    if (savedTheme) {
-        document.body.setAttribute('data-layout-mode', savedTheme);
-    }
-    modeToggle?.addEventListener('click', function () {
-        const current = document.body.getAttribute('data-layout-mode');
-        const newMode = current === 'light' ? 'dark' : 'light';
-        document.body.setAttribute('data-layout-mode', newMode);
-        localStorage.setItem('theme', newMode);
-    });
-
-    // Navbar elements
-    const navbarToggler = document.querySelector('.navbar-toggler');
-    const navbarCollapse = document.getElementById('navbarCollapse');
-    const burgerIcon = document.getElementById('hamburgerIcon');
-    const closeIcon = document.getElementById('closeIcon');
-
-    // Set default display states
-    burgerIcon.style.display = 'block';
-    closeIcon.style.display = 'none';
-
-    // Toggle menu list & icon change
-    navbarToggler?.addEventListener('click', function () {
-        const isShown = navbarCollapse.classList.contains('show');
-
-        if (!isShown) {
-            burgerIcon.style.display = 'none';
-            closeIcon.style.display = 'block';
-        } else {
-            burgerIcon.style.display = 'block';
-            closeIcon.style.display = 'none';
-        }
-    });
-
-    // Close menu when X is clicked
-    closeIcon?.addEventListener('click', function () {
-        const bsCollapse = bootstrap.Collapse.getInstance(navbarCollapse);
-        if (bsCollapse) {
-            bsCollapse.hide();
-        }
-    });
-
-    // Ensure icons update when menu collapses
-    navbarCollapse.addEventListener('hide.bs.collapse', function () {
-        burgerIcon.style.display = 'block';
-        closeIcon.style.display = 'none';
-    });
-
-    navbarCollapse.addEventListener('shown.bs.collapse', function () {
-        burgerIcon.style.display = 'none';
-        closeIcon.style.display = 'block';
-    });
-});
-
+//
+ /********************* light-dark js ************************/
+ //
+ document.addEventListener("DOMContentLoaded", function() {
+   const navbarToggler = document.querySelector(".navbar-toggler");
+   const navbarCollapse = document.getElementById("navbarCollapse");
+ 
+   navbarToggler.addEventListener("click", function() {
+       navbarToggler.classList.toggle("collapsed");
+   
+   });
+ 
+   const btn = document.getElementById("mode");
+   btn.addEventListener("click", () => {
+       let theme = localStorage.getItem("theme") || "light";
+ 
+       if (theme === "light") {
+           document.body.setAttribute("data-layout-mode", "dark");
+           localStorage.setItem("theme", "dark");
+       } else {
+           document.body.setAttribute("data-layout-mode", "light");
+           localStorage.setItem("theme", "light");
+       }
+   });
+ 
+   // Set the initial theme based on localStorage value
+   const theme = localStorage.getItem("theme") || "light";
+   document.body.setAttribute("data-layout-mode", theme);
 // tiny slide **** home
 
 try {
