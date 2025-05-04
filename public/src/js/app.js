@@ -189,7 +189,6 @@ window.addEventListener('scroll', (ev) => {
 //     });
 // });
 
-<script>
 document.addEventListener('DOMContentLoaded', function () {
   // Theme toggle
   const modeToggle = document.getElementById('mode');
@@ -197,7 +196,7 @@ document.addEventListener('DOMContentLoaded', function () {
   if (savedTheme) {
     document.body.setAttribute('data-layout-mode', savedTheme);
   }
-  modeToggle.addEventListener('click', function () {
+  modeToggle?.addEventListener('click', function () {
     const current = document.body.getAttribute('data-layout-mode');
     const newMode = current === 'light' ? 'dark' : 'light';
     document.body.setAttribute('data-layout-mode', newMode);
@@ -216,24 +215,44 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
-  // Show/hide hamburger and close icon
-  const hamburgerIcon = document.getElementById('hamburgerIcon');
-  const closeIcon = document.getElementById('closeIcon');
-  const navbarCollapseEl = document.getElementById('navbarCollapse');
+  // Assign IDs dynamically to the burger icon spans
+  const burgerIcon = document.querySelector('.burger-icon');
+  if (burgerIcon) {
+    burgerIcon.setAttribute('id', 'hamburgerIcon');
+  }
 
+  // Create a close (X) icon dynamically
+  const closeIcon = document.createElement('div');
+  closeIcon.innerHTML = '&times;';
+  closeIcon.style.display = 'none';
+  closeIcon.style.fontSize = '28px';
+  closeIcon.style.cursor = 'pointer';
+  closeIcon.setAttribute('id', 'closeIcon');
+
+  // Insert close icon next to the hamburger icon
+  const toggleButton = document.querySelector('.navbar-toggler');
+  toggleButton?.parentNode.insertBefore(closeIcon, toggleButton.nextSibling);
+
+  // Collapse events
+  const navbarCollapseEl = document.getElementById('navbarCollapse');
   navbarCollapseEl.addEventListener('show.bs.collapse', function () {
-    hamburgerIcon.style.display = 'none';
-    closeIcon.style.display = 'block';
+    document.getElementById('hamburgerIcon').style.display = 'none';
+    document.getElementById('closeIcon').style.display = 'block';
   });
 
   navbarCollapseEl.addEventListener('hide.bs.collapse', function () {
-    hamburgerIcon.style.display = 'block';
-    closeIcon.style.display = 'none';
+    document.getElementById('hamburgerIcon').style.display = 'block';
+    document.getElementById('closeIcon').style.display = 'none';
+  });
+
+  // Close menu when close icon is clicked
+  closeIcon.addEventListener('click', function () {
+    const bsCollapse = bootstrap.Collapse.getInstance(navbarCollapseEl);
+    if (bsCollapse) {
+      bsCollapse.hide();
+    }
   });
 });
-</script>
-
-
 
 
 
