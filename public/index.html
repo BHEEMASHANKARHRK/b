@@ -2228,28 +2228,5 @@
     <script src="src/js/app.js"></script><style type="text/css">.typewrite > .wrap { border-right: 0.08em solid #ffffff}</style>
     <script src="src/js/feed.js"></script>
 
-    <script>
-        // Light/Dark Mode Toggle
-        document.addEventListener('DOMContentLoaded', function() {
-            const modeToggle = document.getElementById('mode');
-            
-            // Check for saved theme preference
-            const savedTheme = localStorage.getItem('theme');
-            if (savedTheme) {
-                document.body.setAttribute('data-layout-mode', savedTheme);
-            }
-            
-            // Toggle theme on click
-            modeToggle.addEventListener('click', function() {
-                const currentTheme = document.body.getAttribute('data-layout-mode');
-                const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-                
-                document.body.setAttribute('data-layout-mode', newTheme);
-                localStorage.setItem('theme', newTheme);
-            });
-        });
-    </script>
-
-
 
 </body><!-- Mirrored from themesdesign.in/harold/layout/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 17 Dec 2024 15:56:25 GMT --></html>
