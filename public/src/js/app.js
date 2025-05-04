@@ -203,7 +203,7 @@ document.addEventListener('DOMContentLoaded', function () {
     localStorage.setItem('theme', newMode);
   });
 
-  // Close navbar on link click (for mobile)
+  // Collapse navbar on link click
   const navLinks = document.querySelectorAll('.nav-link');
   const navbarCollapse = document.getElementById('navbarCollapse');
   navLinks.forEach(link => {
@@ -214,8 +214,20 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     });
   });
-});
 
+  // Show/hide X icon
+  const toggler = document.querySelector('.navbar-toggler');
+  const burgerIcon = document.getElementById('burgerIcon');
+  const navbarCollapseEl = document.getElementById('navbarCollapse');
+
+  navbarCollapseEl.addEventListener('show.bs.collapse', function () {
+    burgerIcon.style.display = 'block';
+  });
+
+  navbarCollapseEl.addEventListener('hide.bs.collapse', function () {
+    burgerIcon.style.display = 'none';
+  });
+});
 
 // tiny slide **** home
 
