@@ -387,18 +387,6 @@ body[data-layout-mode=dark].navbar .navbar-brand span {
     transition: all 0.3s ease-in-out;
 }
 
-.burger-icon-top {
-    top: 0;
-}
-
-.burger-icon-mid {
-    top: 9px;
-}
-
-.burger-icon-bottom {
-    top: 18px;
-}
-
 .text-primary {
     color: #2fb4ae !important
 }
