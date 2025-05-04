@@ -1686,6 +1686,8 @@ body[data-layout-mode=dark] .form-control {
     color: #f8f9fa;
 }
 
+
+
 /* Keep the toggle button aligned properly across different screen sizes */
 @media (max-width: 991px) {
     .navbar .container-fluid {
@@ -1741,6 +1743,123 @@ body[data-layout-mode=dark] .form-control {
 /* Adjust for dark mode */
 body[data-layout-mode=dark] .burger-icon span {
     background: #f8f9fa;
+}
+
+/* Core Theme Variables */
+:root {
+  --body-bg: #ffffff;
+  --text-color: #343a40;
+  --navbar-bg: rgba(255, 255, 255, 0.95);
+  --navbar-text: #343a40;
+  --navbar-active: #0d6efd;
+  --card-bg: #ffffff;
+  --card-border: rgba(0, 0, 0, 0.125);
+  --btn-primary-bg: #0d6efd;
+  --btn-primary-text: #ffffff;
+}
+
+/* Dark Theme Variables */
+.dark-mode {
+  --body-bg: #121212;
+  --text-color: #f8f9fa;
+  --navbar-bg: rgba(33, 37, 41, 0.95);
+  --navbar-text: #e9ecef;
+  --navbar-active: #0dcaf0;
+  --card-bg: #1e1e1e;
+  --card-border: rgba(255, 255, 255, 0.125);
+  --btn-primary-bg: #0dcaf0;
+  --btn-primary-text: #212529;
+}
+
+/* Apply Variables */
+body {
+  background-color: var(--body-bg);
+  color: var(--text-color);
+  transition: all 0.3s ease;
+}
+
+/* Navbar Styling */
+.navbar {
+  background-color: var(--navbar-bg) !important;
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+  transition: all 0.3s ease;
+}
+
+.navbar .nav-link {
+  color: var(--navbar-text) !important;
+}
+
+.navbar .nav-link.active {
+  color: var(--navbar-active) !important;
+}
+
+/* Theme Toggle Button Styling */
+.mode-btn {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.dark-mode .mode-btn {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #f8f9fa;
+}
+
+.light-mode .mode-btn {
+  background-color: rgba(0, 0, 0, 0.05);
+  color: #212529;
+}
+
+.mode-btn:hover {
+  transform: rotate(15deg);
+}
+
+/* Icon Display Logic */
+.mode-light {
+  display: none; /* Hide moon icon by default */
+  color: #f8f9fa;
+}
+
+.mode-dark {
+  display: block; /* Show sun icon by default */
+  color: #212529;
+}
+
+/* Logo Display Logic - Handled by JavaScript */
+
+/* Hamburger Menu Styling */
+.burger-icon span {
+  background-color: var(--text-color);
+  transition: all 0.3s ease;
+}
+
+/* Additional Card Styling */
+.card {
+  background-color: var(--card-bg);
+  border-color: var(--card-border);
+  transition: all 0.3s ease;
+}
+
+/* Button Styling */
+.btn-dark {
+  background-color: var(--btn-primary-bg);
+  color: var(--btn-primary-text);
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.dark-mode .btn-dark:hover {
+  background-color: #13daf9;
+}
+
+.light-mode .btn-dark:hover {
+  background-color: #0b5ed7;
 }
 .home {
     min-height: 100vh;
