@@ -198,9 +198,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
     navbarToggler.addEventListener('click', function() {
         if (navbarCollapse.classList.contains('show')) {
-            navbarToggler.innerHTML = '&#9776;'; // Revert to hamburger when closing
-        } else {
             navbarToggler.innerHTML = '&#10006;'; // Change to "X" when opening
+        } else {
+            navbarToggler.innerHTML = '&#9776;'; // Revert to hamburger when closing
         }
     });
 
