@@ -40,67 +40,72 @@ window.addEventListener('scroll', (ev) => {
 // STEP 3: Add this JavaScript to your main JS file
 // Light/Dark Mode Toggle Functionality
 document.addEventListener('DOMContentLoaded', function() {
+    // Get the theme toggle button
     const modeToggle = document.getElementById('mode');
     
-    // Check for saved theme preference or use default
+    // Check for saved theme preference or use preferred color scheme
     const savedTheme = localStorage.getItem('theme');
-    if (savedTheme) {
-        document.body.setAttribute('data-layout-mode', savedTheme);
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    
+    // Set initial theme based on saved preference or system preference
+    if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
+        setDarkMode();
     } else {
-        // Default to light mode if no preference saved
-        document.body.setAttribute('data-layout-mode', 'light');
+        setLightMode();
     }
     
-    // Handle theme toggle click
+    // Toggle theme when button is clicked
     modeToggle.addEventListener('click', function() {
-        const currentTheme = document.body.getAttribute('data-layout-mode');
-        const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-        
-        // Update theme
-        document.body.setAttribute('data-layout-mode', newTheme);
-        
-        // Save preference
-        localStorage.setItem('theme', newTheme);
-        
-        console.log('Theme switched to:', newTheme);
+        if (document.body.classList.contains('dark-mode')) {
+            setLightMode();
+        } else {
+            setDarkMode();
+        }
     });
     
-    // PWA installation prompt handling
-    let deferredPrompt;
+    // Function to set dark mode
+    function setDarkMode() {
+        document.body.classList.add('dark-mode');
+        document.body.classList.remove('light-mode');
+        localStorage.setItem('theme', 'dark');
+        
+        // Update logo
+        updateLogo();
+        
+        // Hide sun icon, show moon icon
+        document.querySelector('.fa-sun-bright').style.display = 'none';
+        document.querySelector('.fa-moon').style.display = 'block';
+    }
     
-    window.addEventListener('beforeinstallprompt', function(event) {
-        event.preventDefault();
-        deferredPrompt = event;
-        console.log('beforeinstallprompt fired and saved');
-        return false;
-    });
+    // Function to set light mode
+    function setLightMode() {
+        document.body.classList.add('light-mode');
+        document.body.classList.remove('dark-mode');
+        localStorage.setItem('theme', 'light');
+        
+        // Update logo
+        updateLogo();
+        
+        // Show sun icon, hide moon icon
+        document.querySelector('.fa-sun-bright').style.display = 'block';
+        document.querySelector('.fa-moon').style.display = 'none';
+    }
     
-    const logoLink = document.getElementById('logo-link');
-    if (logoLink) {
-        logoLink.addEventListener('click', function(event) {
-            console.log('Logo clicked');
-            event.preventDefault(); // Prevent default navigation
-            if (deferredPrompt) {
-                console.log('deferredPrompt exists at logo click', deferredPrompt);
-                deferredPrompt.prompt();
-                deferredPrompt.userChoice.then(function(choiceResult) {
-                    console.log(choiceResult.outcome);
-                    if (choiceResult.outcome === 'dismissed') {
-                        console.log("User cancelled installation");
-                    } else {
-                        console.log("User added to Home screen");
-                    }
-                    deferredPrompt = null;
-                });
-            } else {
-                console.log("deferredPrompt does not exist at logo click");
-            }
-        });
-    } else {
-        console.log("Logo link element not found");
+    // Function to update logo based on theme
+    function updateLogo() {
+        const logoLink = document.getElementById('logo-link');
+        const logoLight = logoLink.querySelector('.logo-light');
+        const logoDark = logoLink.querySelector('.logo-dark');
+        
+        if (document.body.classList.contains('dark-mode')) {
+            logoLight.style.display = 'block';
+            logoDark.style.display = 'none';
+        } else {
+            logoLight.style.display = 'none';
+            logoDark.style.display = 'block';
+        }
     }
 });
-
 
 
 // tiny slide **** home
