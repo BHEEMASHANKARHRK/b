@@ -1771,17 +1771,17 @@ body[data-layout-mode="dark"] .logo-dark {
 }
 
 .home .icon-item .email {
-    border: 1px solid #333; /* Neutral for Email */
+    border: 1px solid #ea4335; /* Gmail Red */
     transition: all .3s ease-in-out;
 }
 
 .home .icon-item .email i {
-    color: #333;
+    color: #ea4335; /* Gmail's primary red */
     transition: all .3s ease-in-out;
 }
 
 .home .icon-item .email:hover {
-    background-color: #333;
+    background-color: #ea4335;
     transition: all .3s ease-in-out;
 }
 
