@@ -88,14 +88,7 @@
             <img src="src/images/logo-dark.png" class="logo-dark" alt="" height="34">
         </a>
 
-        <!-- Light-Dark Mode Button for Mobile -->
         <div class="d-flex align-items-center ms-auto order-lg-last">
-            <!-- Light-Dark Mode Toggle that's always visible -->
-            <a href="javascript:void(0);" id="mode" class="mode-btn text-white rounded-end me-3">
-                <i class="fa-duotone fa-light fa-sun-bright mode-dark mx-auto"></i>
-                <i class="fa-duotone fa-regular fa-moon-stars mode-light"></i>
-            </a>
-            
             <!-- Login Button -->
             <div class="d-none d-lg-block">
                 <a href="#" class="btn btn-dark rounded-pill" data-bs-toggle="modal" data-bs-target="#exampleModal">Login</a>
@@ -152,6 +145,11 @@
 </nav>
 <!-- Navbar End -->
 
+<!-- Light-Dark Mode Button (Fixed Position) -->
+<a href="javascript:void(0);" id="mode" class="mode-btn">
+    <i class="fa-duotone fa-light fa-sun-bright mode-dark mx-auto"></i>
+    <i class="fa-duotone fa-regular fa-moon-stars mode-light"></i>
+</a>
 
     <!-- Modal -->
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
