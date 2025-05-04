@@ -127,140 +127,39 @@ window.addEventListener('scroll', (ev) => {
 
 
 
-// document.addEventListener('DOMContentLoaded', function() {
-//     // Hide splash screen after a delay (if it exists)
-//     setTimeout(function() {
-//         const splashScreen = document.getElementById('splash-screen');
-//         if (splashScreen) {
-//             splashScreen.style.opacity = '0';
-//             splashScreen.style.transition = 'opacity 0.5s ease';
-//             setTimeout(() => {
-//                 splashScreen.style.display = 'none';
-//             }, 500);
-//         }
-//     }, 1500);
-    
-//     // Light/Dark Mode Toggle
-//     const modeToggle = document.getElementById('mode');
-    
-//     // Check for saved theme preference or use default
-//     const savedTheme = localStorage.getItem('theme');
-//     if (savedTheme) {
-//         document.body.setAttribute('data-layout-mode', savedTheme);
-//     } else {
-//         // Default to light mode if no preference saved
-//         document.body.setAttribute('data-layout-mode', 'light');
-//     }
-    
-//     // Handle theme toggle click
-//     modeToggle.addEventListener('click', function() {
-//         const currentTheme = document.body.getAttribute('data-layout-mode');
-//         const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-        
-//         // Update theme
-//         document.body.setAttribute('data-layout-mode', newTheme);
-        
-//         // Save preference
-//         localStorage.setItem('theme', newTheme);
-        
-//         console.log('Theme switched to:', newTheme);
-//     });
+document.addEventListener('DOMContentLoaded', function() {
+    const navbarToggler = document.querySelector('.navbar-toggler');
+    const navbarCollapse = document.querySelector('.navbar-collapse');
+    const burgerIcon = document.querySelector('.burger-icon');
 
-//     // ======== HAMBURGER MENU TRANSFORM CODE ========
-//     // This is important to ensure the menu icon transforms properly
-//     const navbarToggler = document.querySelector('.navbar-toggler');
-    
-//     // Toggle aria-expanded attribute which controls the icon transformation
-//     navbarToggler.addEventListener('click', function() {
-//         const expanded = this.getAttribute('aria-expanded') === 'true' || false;
-//         this.setAttribute('aria-expanded', !expanded);
-//     });
-    
-//     // Close mobile menu when clicking a nav link
-//     const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
-//     const navbarCollapse = document.querySelector('.navbar-collapse');
-    
-//     navLinks.forEach(function(link) {
-//         link.addEventListener('click', function() {
-//             if (navbarCollapse.classList.contains('show')) {
-//                 navbarToggler.click();
-//             }
-//         });
-//     });
-// });
+    navbarToggler.addEventListener('click', function() {
+        // Toggle the icon class (hamburger ↔ X)
+        burgerIcon.classList.toggle('open');
 
-document.addEventListener('DOMContentLoaded', function () {
-  // Theme toggle
-  const modeToggle = document.getElementById('mode');
-  const savedTheme = localStorage.getItem('theme');
-  if (savedTheme) {
-    document.body.setAttribute('data-layout-mode', savedTheme);
-  }
-  modeToggle?.addEventListener('click', function () {
-    const current = document.body.getAttribute('data-layout-mode');
-    const newMode = current === 'light' ? 'dark' : 'light';
-    document.body.setAttribute('data-layout-mode', newMode);
-    localStorage.setItem('theme', newMode);
-  });
-
-  // Collapse navbar on link click
-  const navLinks = document.querySelectorAll('.nav-link');
-  const navbarCollapse = document.getElementById('navbarCollapse');
-  navLinks.forEach(link => {
-    link.addEventListener('click', () => {
-      const bsCollapse = bootstrap.Collapse.getInstance(navbarCollapse);
-      if (bsCollapse) {
-        bsCollapse.hide();
-      }
+        // Toggle aria-expanded for accessibility
+        const isExpanded = navbarToggler.getAttribute('aria-expanded') === 'true';
+        navbarToggler.setAttribute('aria-expanded', !isExpanded);
     });
-  });
 
-  // Assign ID to burger icon
-  const burgerIcon = document.querySelector('.burger-icon');
-  if (burgerIcon) {
-    burgerIcon.setAttribute('id', 'hamburgerIcon');
-  }
+    // Ensure icon resets when menu closes
+    navbarCollapse.addEventListener('hidden.bs.collapse', function() {
+        burgerIcon.classList.remove('open'); // Reset to hamburger icon
+    });
 
-  // Create close icon
-  const closeIcon = document.createElement('div');
-  closeIcon.innerHTML = '&times;';
-  closeIcon.style.display = 'none';
-  closeIcon.style.fontSize = '28px';
-  closeIcon.style.cursor = 'pointer';
-  closeIcon.style.marginLeft = '10px';
-  closeIcon.style.lineHeight = '1';
-  closeIcon.style.position = 'absolute';
-  closeIcon.style.top = '10px';
-  closeIcon.style.right = '15px';
-  closeIcon.style.zIndex = '1051'; // Above navbar
-  closeIcon.setAttribute('id', 'closeIcon');
+    navbarCollapse.addEventListener('shown.bs.collapse', function() {
+        burgerIcon.classList.add('open'); // Change to "X" icon
+    });
 
-  // Add close icon to the DOM
-  document.body.appendChild(closeIcon);
-
-  const navbarCollapseEl = document.getElementById('navbarCollapse');
-
-  // Toggle icons
-  navbarCollapseEl.addEventListener('show.bs.collapse', function () {
-    document.getElementById('hamburgerIcon').style.display = 'none';
-    document.getElementById('closeIcon').style.display = 'block';
-  });
-
-  navbarCollapseEl.addEventListener('hide.bs.collapse', function () {
-    document.getElementById('hamburgerIcon').style.display = 'block';
-    document.getElementById('closeIcon').style.display = 'none';
-  });
-
-  // Clicking close icon hides the menu
-  closeIcon.addEventListener('click', function () {
-    const bsCollapse = bootstrap.Collapse.getInstance(navbarCollapseEl);
-    if (bsCollapse) {
-      bsCollapse.hide();
-    }
-  });
+    // Close menu when clicking a nav link & update icon
+    const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+    navLinks.forEach(function(link) {
+        link.addEventListener('click', function() {
+            if (navbarCollapse.classList.contains('show')) {
+                navbarToggler.click(); // Close menu & toggle icon
+            }
+        });
+    });
 });
-
-
 
 // tiny slide **** home
 
