@@ -39,6 +39,13 @@ window.addEventListener('scroll', (ev) => {
 
 // STEP 3: Add this JavaScript to your main JS file
 // Light/Dark Mode Toggle Functionality
+/**
+ * Light/Dark Mode Toggle Script
+ * - Toggles between light and dark mode
+ * - Uses Font Awesome icons: fa-sun-bright and fa-moon
+ * - Saves user preference in localStorage
+ * - Respects system preference on first visit
+ */
 document.addEventListener('DOMContentLoaded', function() {
     // Get the theme toggle button
     const modeToggle = document.getElementById('mode');
@@ -73,8 +80,11 @@ document.addEventListener('DOMContentLoaded', function() {
         updateLogo();
         
         // Hide sun icon, show moon icon
-        document.querySelector('.fa-sun-bright').style.display = 'none';
-        document.querySelector('.fa-moon').style.display = 'block';
+        const sunIcon = document.querySelector('.fa-sun-bright');
+        const moonIcon = document.querySelector('.fa-moon');
+        
+        if (sunIcon) sunIcon.style.display = 'none';
+        if (moonIcon) moonIcon.style.display = 'block';
     }
     
     // Function to set light mode
@@ -87,15 +97,22 @@ document.addEventListener('DOMContentLoaded', function() {
         updateLogo();
         
         // Show sun icon, hide moon icon
-        document.querySelector('.fa-sun-bright').style.display = 'block';
-        document.querySelector('.fa-moon').style.display = 'none';
+        const sunIcon = document.querySelector('.fa-sun-bright');
+        const moonIcon = document.querySelector('.fa-moon');
+        
+        if (sunIcon) sunIcon.style.display = 'block';
+        if (moonIcon) moonIcon.style.display = 'none';
     }
     
     // Function to update logo based on theme
     function updateLogo() {
         const logoLink = document.getElementById('logo-link');
+        if (!logoLink) return;
+        
         const logoLight = logoLink.querySelector('.logo-light');
         const logoDark = logoLink.querySelector('.logo-dark');
+        
+        if (!logoLight || !logoDark) return;
         
         if (document.body.classList.contains('dark-mode')) {
             logoLight.style.display = 'block';
@@ -106,7 +123,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 });
-
 
 // tiny slide **** home
 
