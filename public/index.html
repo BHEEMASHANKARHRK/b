@@ -50,8 +50,11 @@
   <meta name="msapplication-TileColor" content="#fff">
   <meta name="theme-color" content="#3f51b5">
 
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+    <!-- Bootstrap CSS (CDN for this demo) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/css/bootstrap.min.css">
 
-<style>
+    <style>
         /* Splash screen styling */
         #splash-screen {
             position: fixed;
@@ -180,33 +183,23 @@
             display: block;
         }
     </style>
-
 </head>
 
 <body data-bs-spy="scroll" data-bs-target="#navbar" data-bs-offset="71" data-layout-mode="light">
-
-    <!-- Splash Screen (GIF or MP4) -->
+    <!-- Splash Screen -->
     <div id="splash-screen">
-        <!-- Use GIF -->
-        <img src="/b/public/src/images/bheema.gif" alt="Loading..." id="splash-gif">
-        
-        <!-- Or Use MP4 -->
-        <video id="splash-video" autoplay muted playsinline>
-            <source src="animation.mp4" type="video/mp4">
-        </video>
+        <img src="/api/placeholder/200/200" alt="Loading..." id="splash-gif">
     </div>
 
-
-
-<!-- Navbar with Light/Dark Mode Toggle -->
+    <!-- Navbar with Light/Dark Mode Toggle -->
     <nav class="navbar navbar-expand-lg fixed-top sticky" id="navbar">
         <div class="container-fluid custom-container">
             <a class="navbar-brand logo text-uppercase" href="index.html" id="logo-link">
-                <img src="src/images/logo-light.png" class="logo-light" alt="" height="34">
-                <img src="src/images/logo-dark.png" class="logo-dark" alt="" height="34">
+                <img src="/api/placeholder/34/34" class="logo-light" alt="" height="34">
+                <img src="/api/placeholder/34/34" class="logo-dark" alt="" height="34">
             </a>
             <div class="d-flex align-items-center ms-auto">
-                <!-- Light/Dark Mode Toggle with Your Specified Icons -->
+                <!-- Light/Dark Mode Toggle -->
                 <a href="javascript:void(0);" id="mode" class="mode-btn me-3">
                     <i class="fa-solid fa-sun"></i>
                     <i class="fa-solid fa-moon"></i>
@@ -216,9 +209,9 @@
                     <a href="#" class="btn btn-dark rounded-pill" data-bs-toggle="modal" data-bs-target="#exampleModal">Login</a>
                 </div>
                 
-                <!-- Hamburger Menu Button -->
+                <!-- Hamburger Menu Button - FIXED: targeting the correct ID -->
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+                    data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false"
                     aria-label="Toggle navigation">
                     <div class="burger-icon">
                         <span class="burger-icon-top"></span>
@@ -263,6 +256,7 @@
         </div>
         <!-- End container -->
     </nav>
+
 
 
     <!-- Modal -->
