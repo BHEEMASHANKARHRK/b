@@ -127,63 +127,98 @@ window.addEventListener('scroll', (ev) => {
 
 
 
+// document.addEventListener('DOMContentLoaded', function() {
+//     // Hide splash screen after a delay (if it exists)
+//     setTimeout(function() {
+//         const splashScreen = document.getElementById('splash-screen');
+//         if (splashScreen) {
+//             splashScreen.style.opacity = '0';
+//             splashScreen.style.transition = 'opacity 0.5s ease';
+//             setTimeout(() => {
+//                 splashScreen.style.display = 'none';
+//             }, 500);
+//         }
+//     }, 1500);
+    
+//     // Light/Dark Mode Toggle
+//     const modeToggle = document.getElementById('mode');
+    
+//     // Check for saved theme preference or use default
+//     const savedTheme = localStorage.getItem('theme');
+//     if (savedTheme) {
+//         document.body.setAttribute('data-layout-mode', savedTheme);
+//     } else {
+//         // Default to light mode if no preference saved
+//         document.body.setAttribute('data-layout-mode', 'light');
+//     }
+    
+//     // Handle theme toggle click
+//     modeToggle.addEventListener('click', function() {
+//         const currentTheme = document.body.getAttribute('data-layout-mode');
+//         const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+        
+//         // Update theme
+//         document.body.setAttribute('data-layout-mode', newTheme);
+        
+//         // Save preference
+//         localStorage.setItem('theme', newTheme);
+        
+//         console.log('Theme switched to:', newTheme);
+//     });
+
+//     // ======== HAMBURGER MENU TRANSFORM CODE ========
+//     // This is important to ensure the menu icon transforms properly
+//     const navbarToggler = document.querySelector('.navbar-toggler');
+    
+//     // Toggle aria-expanded attribute which controls the icon transformation
+//     navbarToggler.addEventListener('click', function() {
+//         const expanded = this.getAttribute('aria-expanded') === 'true' || false;
+//         this.setAttribute('aria-expanded', !expanded);
+//     });
+    
+//     // Close mobile menu when clicking a nav link
+//     const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+//     const navbarCollapse = document.querySelector('.navbar-collapse');
+    
+//     navLinks.forEach(function(link) {
+//         link.addEventListener('click', function() {
+//             if (navbarCollapse.classList.contains('show')) {
+//                 navbarToggler.click();
+//             }
+//         });
+//     });
+// });
+
 document.addEventListener('DOMContentLoaded', function() {
-    // Hide splash screen after a delay (if it exists)
-    setTimeout(function() {
-        const splashScreen = document.getElementById('splash-screen');
-        if (splashScreen) {
-            splashScreen.style.opacity = '0';
-            splashScreen.style.transition = 'opacity 0.5s ease';
-            setTimeout(() => {
-                splashScreen.style.display = 'none';
-            }, 500);
+    const navbarToggler = document.querySelector('.navbar-toggler');
+    const navbarCollapse = document.querySelector('.navbar-collapse');
+
+    // Default hamburger icon
+    navbarToggler.innerHTML = '&#9776;'; // Hamburger (☰)
+
+    navbarToggler.addEventListener('click', function() {
+        if (navbarCollapse.classList.contains('show')) {
+            navbarToggler.innerHTML = '&#9776;'; // Revert to hamburger when closing
+        } else {
+            navbarToggler.innerHTML = '&#10006;'; // Change to "X" when opening
         }
-    }, 1500);
-    
-    // Light/Dark Mode Toggle
-    const modeToggle = document.getElementById('mode');
-    
-    // Check for saved theme preference or use default
-    const savedTheme = localStorage.getItem('theme');
-    if (savedTheme) {
-        document.body.setAttribute('data-layout-mode', savedTheme);
-    } else {
-        // Default to light mode if no preference saved
-        document.body.setAttribute('data-layout-mode', 'light');
-    }
-    
-    // Handle theme toggle click
-    modeToggle.addEventListener('click', function() {
-        const currentTheme = document.body.getAttribute('data-layout-mode');
-        const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-        
-        // Update theme
-        document.body.setAttribute('data-layout-mode', newTheme);
-        
-        // Save preference
-        localStorage.setItem('theme', newTheme);
-        
-        console.log('Theme switched to:', newTheme);
     });
 
-    // ======== HAMBURGER MENU TRANSFORM CODE ========
-    // This is important to ensure the menu icon transforms properly
-    const navbarToggler = document.querySelector('.navbar-toggler');
-    
-    // Toggle aria-expanded attribute which controls the icon transformation
-    navbarToggler.addEventListener('click', function() {
-        const expanded = this.getAttribute('aria-expanded') === 'true' || false;
-        this.setAttribute('aria-expanded', !expanded);
+    // Ensures icon resets when menu closes
+    navbarCollapse.addEventListener('hidden.bs.collapse', function() {
+        navbarToggler.innerHTML = '&#9776;'; // Back to hamburger (☰)
     });
-    
-    // Close mobile menu when clicking a nav link
+
+    navbarCollapse.addEventListener('shown.bs.collapse', function() {
+        navbarToggler.innerHTML = '&#10006;'; // "X" icon (✖)
+    });
+
+    // Close menu when clicking a nav link & restore icon
     const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
-    const navbarCollapse = document.querySelector('.navbar-collapse');
-    
     navLinks.forEach(function(link) {
         link.addEventListener('click', function() {
             if (navbarCollapse.classList.contains('show')) {
-                navbarToggler.click();
+                navbarToggler.click(); // Toggle menu & icon
             }
         });
     });
