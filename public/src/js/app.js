@@ -69,34 +69,59 @@ window.addEventListener('scroll', (ev) => {
 // });
 // STEP 3: Add this JavaScript to your main JS file
 // Light/Dark Mode Toggle Functionality
-document.addEventListener('DOMContentLoaded', function() {
-    const modeToggle = document.getElementById('mode');
-    
-    // Check for saved theme preference or use default
-    const savedTheme = localStorage.getItem('theme');
-    if (savedTheme) {
-        document.body.setAttribute('data-layout-mode', savedTheme);
-    } else {
-        // Default to light mode if no preference saved
-        document.body.setAttribute('data-layout-mode', 'light');
-    }
-    
-    // Handle theme toggle click
-    modeToggle.addEventListener('click', function() {
-        const currentTheme = document.body.getAttribute('data-layout-mode');
-        const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-        
-        // Update theme
-        document.body.setAttribute('data-layout-mode', newTheme);
-        
-        // Save preference
-        localStorage.setItem('theme', newTheme);
-        
-        console.log('Theme switched to:', newTheme);
-    });
-    
-    // Rest of your PWA code...
-});
+// Splash screen
+        document.addEventListener('DOMContentLoaded', function() {
+            // Hide splash screen after a delay
+            setTimeout(function() {
+                const splashScreen = document.getElementById('splash-screen');
+                if (splashScreen) {
+                    splashScreen.style.opacity = '0';
+                    splashScreen.style.transition = 'opacity 0.5s ease';
+                    setTimeout(() => {
+                        splashScreen.style.display = 'none';
+                    }, 500);
+                }
+            }, 1500);
+            
+            // Light/Dark Mode Toggle
+            const modeToggle = document.getElementById('mode');
+            
+            // Check for saved theme preference or use default
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme) {
+                document.body.setAttribute('data-layout-mode', savedTheme);
+            } else {
+                // Default to light mode if no preference saved
+                document.body.setAttribute('data-layout-mode', 'light');
+            }
+            
+            // Handle theme toggle click
+            modeToggle.addEventListener('click', function() {
+                const currentTheme = document.body.getAttribute('data-layout-mode');
+                const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+                
+                // Update theme
+                document.body.setAttribute('data-layout-mode', newTheme);
+                
+                // Save preference
+                localStorage.setItem('theme', newTheme);
+                
+                console.log('Theme switched to:', newTheme);
+            });
+
+            // Close mobile menu when clicking a nav link
+            const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+            const navbarToggler = document.querySelector('.navbar-toggler');
+            const navbarCollapse = document.querySelector('.navbar-collapse');
+            
+            navLinks.forEach(function(link) {
+                link.addEventListener('click', function() {
+                    if (navbarCollapse.classList.contains('show')) {
+                        navbarToggler.click();
+                    }
+                });
+            });
+        });
 
 
 // tiny slide **** home
