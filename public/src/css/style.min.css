@@ -1751,6 +1751,63 @@ body[data-layout-mode="dark"] .logo-dark {
     color: #fff
 }
 
+.home .icon-item .youtube {
+    border: 1px solid #ff0000; /* YouTube Red */
+    transition: all .3s ease-in-out;
+}
+
+.home .icon-item .youtube i {
+    color: #ff0000;
+    transition: all .3s ease-in-out;
+}
+
+.home .icon-item .youtube:hover {
+    background-color: #ff0000;
+    transition: all .3s ease-in-out;
+}
+
+.home .icon-item .youtube:hover i {
+    color: #fff;
+}
+
+.home .icon-item .email {
+    border: 1px solid #333; /* Neutral for Email */
+    transition: all .3s ease-in-out;
+}
+
+.home .icon-item .email i {
+    color: #333;
+    transition: all .3s ease-in-out;
+}
+
+.home .icon-item .email:hover {
+    background-color: #333;
+    transition: all .3s ease-in-out;
+}
+
+.home .icon-item .email:hover i {
+    color: #fff;
+}
+
+.home .icon-item .github {
+    border: 1px solid #171515; /* GitHub Dark */
+    transition: all .3s ease-in-out;
+}
+
+.home .icon-item .github i {
+    color: #171515;
+    transition: all .3s ease-in-out;
+}
+
+.home .icon-item .github:hover {
+    background-color: #171515;
+    transition: all .3s ease-in-out;
+}
+
+.home .icon-item .github:hover i {
+    color: #fff;
+}
+
 .home .home-link {
     transition: all .5s ease-in-out
 }
