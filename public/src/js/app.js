@@ -37,9 +37,7 @@ window.addEventListener('scroll', (ev) => {
 })
 
 
-
-
-
+// STEP 3: Add this JavaScript to your main JS file
 // Light/Dark Mode Toggle Functionality
 document.addEventListener('DOMContentLoaded', function() {
     const modeToggle = document.getElementById('mode');
@@ -67,7 +65,7 @@ document.addEventListener('DOMContentLoaded', function() {
         console.log('Theme switched to:', newTheme);
     });
     
-    // PWA installation prompt handling from your existing code
+    // PWA installation prompt handling
     let deferredPrompt;
     
     window.addEventListener('beforeinstallprompt', function(event) {
@@ -102,7 +100,6 @@ document.addEventListener('DOMContentLoaded', function() {
         console.log("Logo link element not found");
     }
 });
-
 
 
 
