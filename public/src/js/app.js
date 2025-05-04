@@ -37,6 +37,36 @@ window.addEventListener('scroll', (ev) => {
 })
 
 
+// // STEP 3: Add this JavaScript to your main JS file
+// // Light/Dark Mode Toggle Functionality
+// document.addEventListener('DOMContentLoaded', function() {
+//     const modeToggle = document.getElementById('mode');
+    
+//     // Check for saved theme preference or use default
+//     const savedTheme = localStorage.getItem('theme');
+//     if (savedTheme) {
+//         document.body.setAttribute('data-layout-mode', savedTheme);
+//     } else {
+//         // Default to light mode if no preference saved
+//         document.body.setAttribute('data-layout-mode', 'light');
+//     }
+    
+//     // Handle theme toggle click
+//     modeToggle.addEventListener('click', function() {
+//         const currentTheme = document.body.getAttribute('data-layout-mode');
+//         const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+        
+//         // Update theme
+//         document.body.setAttribute('data-layout-mode', newTheme);
+        
+//         // Save preference
+//         localStorage.setItem('theme', newTheme);
+        
+//         console.log('Theme switched to:', newTheme);
+//     });
+    
+//     // Rest of your PWA code...
+// });
 // STEP 3: Add this JavaScript to your main JS file
 // Light/Dark Mode Toggle Functionality
 document.addEventListener('DOMContentLoaded', function() {
