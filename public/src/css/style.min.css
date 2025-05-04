@@ -172,7 +172,7 @@ body[data-layout-mode=light] .burger-icon span {
 .navbar .navbar-toggler {
     padding: 0px;
     border: none;
-    font-size: 24px
+    font-size: 18px
 }
 
 .navbar .navbar-toggler:focus {
