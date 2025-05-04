@@ -40,36 +40,68 @@ window.addEventListener('scroll', (ev) => {
 
 
 
-//
-/********************* light-dark js ************************/
-//
-document.addEventListener("DOMContentLoaded", function() {
-  const navbarToggler = document.querySelector(".navbar-toggler");
-  const navbarCollapse = document.getElementById("navbarCollapse");
-
-  navbarToggler.addEventListener("click", function() {
-      navbarToggler.classList.toggle("collapsed");
-  
-  });
-
-  const btn = document.getElementById("mode");
-  btn.addEventListener("click", () => {
-      let theme = localStorage.getItem("theme") || "light";
-
-      if (theme === "light") {
-          document.body.setAttribute("data-layout-mode", "dark");
-          localStorage.setItem("theme", "dark");
-      } else {
-          document.body.setAttribute("data-layout-mode", "light");
-          localStorage.setItem("theme", "light");
-      }
-  });
-
-  // Set the initial theme based on localStorage value
-  const theme = localStorage.getItem("theme") || "light";
-  document.body.setAttribute("data-layout-mode", theme);
+// Light/Dark Mode Toggle Functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const modeToggle = document.getElementById('mode');
+    
+    // Check for saved theme preference or use default
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme) {
+        document.body.setAttribute('data-layout-mode', savedTheme);
+    } else {
+        // Default to light mode if no preference saved
+        document.body.setAttribute('data-layout-mode', 'light');
+    }
+    
+    // Handle theme toggle click
+    modeToggle.addEventListener('click', function() {
+        const currentTheme = document.body.getAttribute('data-layout-mode');
+        const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+        
+        // Update theme
+        document.body.setAttribute('data-layout-mode', newTheme);
+        
+        // Save preference
+        localStorage.setItem('theme', newTheme);
+        
+        console.log('Theme switched to:', newTheme);
+    });
+    
+    // PWA installation prompt handling from your existing code
+    let deferredPrompt;
+    
+    window.addEventListener('beforeinstallprompt', function(event) {
+        event.preventDefault();
+        deferredPrompt = event;
+        console.log('beforeinstallprompt fired and saved');
+        return false;
+    });
+    
+    const logoLink = document.getElementById('logo-link');
+    if (logoLink) {
+        logoLink.addEventListener('click', function(event) {
+            console.log('Logo clicked');
+            event.preventDefault(); // Prevent default navigation
+            if (deferredPrompt) {
+                console.log('deferredPrompt exists at logo click', deferredPrompt);
+                deferredPrompt.prompt();
+                deferredPrompt.userChoice.then(function(choiceResult) {
+                    console.log(choiceResult.outcome);
+                    if (choiceResult.outcome === 'dismissed') {
+                        console.log("User cancelled installation");
+                    } else {
+                        console.log("User added to Home screen");
+                    }
+                    deferredPrompt = null;
+                });
+            } else {
+                console.log("deferredPrompt does not exist at logo click");
+            }
+        });
+    } else {
+        console.log("Logo link element not found");
+    }
 });
-
 
 
 
