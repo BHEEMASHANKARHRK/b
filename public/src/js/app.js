@@ -190,54 +190,30 @@ window.addEventListener('scroll', (ev) => {
 // });
 
 document.addEventListener('DOMContentLoaded', function () {
-    // Hide splash screen after a delay
-    setTimeout(function () {
-        const splashScreen = document.getElementById('splash-screen');
-        if (splashScreen) {
-            splashScreen.style.transition = 'opacity 0.5s ease';
-            splashScreen.style.opacity = '0';
-            setTimeout(() => {
-                splashScreen.style.display = 'none';
-            }, 500);
-        }
-    }, 1500);
+  // Theme toggle
+  const modeToggle = document.getElementById('mode');
+  const savedTheme = localStorage.getItem('theme');
+  if (savedTheme) {
+    document.body.setAttribute('data-layout-mode', savedTheme);
+  }
+  modeToggle.addEventListener('click', function () {
+    const current = document.body.getAttribute('data-layout-mode');
+    const newMode = current === 'light' ? 'dark' : 'light';
+    document.body.setAttribute('data-layout-mode', newMode);
+    localStorage.setItem('theme', newMode);
+  });
 
-    // Light/Dark Mode Toggle
-    const modeToggle = document.getElementById('mode');
-    const savedTheme = localStorage.getItem('theme');
-    if (savedTheme) {
-        document.body.setAttribute('data-layout-mode', savedTheme);
-    } else {
-        document.body.setAttribute('data-layout-mode', 'light');
-    }
-
-    modeToggle.addEventListener('click', function () {
-        const currentTheme = document.body.getAttribute('data-layout-mode');
-        const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-        document.body.setAttribute('data-layout-mode', newTheme);
-        localStorage.setItem('theme', newTheme);
-        console.log('Theme switched to:', newTheme);
+  // Close navbar on link click (for mobile)
+  const navLinks = document.querySelectorAll('.nav-link');
+  const navbarCollapse = document.getElementById('navbarCollapse');
+  navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      const bsCollapse = bootstrap.Collapse.getInstance(navbarCollapse);
+      if (bsCollapse) {
+        bsCollapse.hide();
+      }
     });
-
-    // Hamburger Menu Toggle
-    const navbarToggler = document.querySelector('.navbar-toggler');
-    const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
-    const navbarCollapse = document.querySelector('.navbar-collapse');
-
-    if (navbarToggler) {
-        navbarToggler.addEventListener('click', function () {
-            const expanded = this.getAttribute('aria-expanded') === 'true';
-            this.setAttribute('aria-expanded', !expanded);
-        });
-    }
-
-    navLinks.forEach(function (link) {
-        link.addEventListener('click', function () {
-            if (navbarCollapse && navbarCollapse.classList.contains('show')) {
-                navbarToggler.click();
-            }
-        });
-    });
+  });
 });
 
 
