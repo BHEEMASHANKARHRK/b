@@ -80,7 +80,7 @@
 
 
 
-    <!-- Navbar Start -->
+   <!-- Navbar Start -->
 <nav class="navbar navbar-expand-lg fixed-top sticky" id="navbar">
     <div class="container-fluid custom-container">
         <a class="navbar-brand logo text-uppercase" href="index.html" id="logo-link">
@@ -88,14 +88,20 @@
             <img src="src/images/logo-dark.png" class="logo-dark" alt="" height="34">
         </a>
 
-        <div class="d-flex align-items-center ms-auto order-lg-last">
-            <!-- Login Button -->
+        <div class="d-flex align-items-center ms-auto">
+            <!-- Light/Dark Mode Toggle - Always visible -->
+            <a href="javascript:void(0);" id="mode" class="mode-btn text-white me-3">
+                <i class="fa-duotone fa-light fa-sun-bright mode-dark mx-auto"></i>
+                <i class="fa-duotone fa-regular fa-moon-stars mode-light"></i>
+            </a>
+
+            <!-- Login Button - Desktop only -->
             <div class="d-none d-lg-block">
                 <a href="#" class="btn btn-dark rounded-pill" data-bs-toggle="modal" data-bs-target="#exampleModal">Login</a>
             </div>
             
-            <!-- Hamburger Menu Button -->
-            <button class="navbar-toggler ms-2" type="button" data-bs-toggle="collapse"
+            <!-- Hamburger Menu Button - Mobile only -->
+            <button class="navbar-toggler ms-3 d-lg-none" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-label="Toggle navigation"
                 aria-expanded="false">
                 <div class="burger-icon">
@@ -144,12 +150,6 @@
     <!-- End container -->
 </nav>
 <!-- Navbar End -->
-
-<!-- Light-Dark Mode Button (Fixed Position) -->
-<a href="javascript:void(0);" id="mode" class="mode-btn">
-    <i class="fa-duotone fa-light fa-sun-bright mode-dark mx-auto"></i>
-    <i class="fa-duotone fa-regular fa-moon-stars mode-light"></i>
-</a>
 
     <!-- Modal -->
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
