@@ -364,322 +364,481 @@
 
 
                         <!-- Home Slider Item -->
-<div class="item tns-item" id="home-slider-item0">
-    <div class="row align-items-center">
-        <div class="col-lg-6">
-            <div class="content-item">
-                <p class="text-warning fw-semibold mb-0">Hello! I AM</p>
-                <div class="home-title mb-0 fw-bold h1">
-                    <span class="typewrite" data-period="2000" data-type="[ &quot;Harold Anderson.&quot;,&quot;Freelance Designer.&quot;,&quot;Graduate based in NYC.&quot; ]">
-                        <span class="wrap">Android & Web Developer</span>
-                    </span>
-                </div>
-                <p class="mt-3 text-muted">
-                    I am a versatile Android & Web Developer with expertise in creating intuitive mobile apps and dynamic web applications using Java, Spring Boot, MySQL, and front-end technologies.
-                    I blend clean design with functional code to deliver high-performance, user-friendly digital solutions.
-                </p>
-
-                <div class="icon-item mt-4">
-                    <div class="d-flex">
-                        <a href="mailto:bheemashankarhk4@gmail.com" aria-label="Send an email to Bheema">
-                            <div class="social-icon email avatar-sm">
-                                <i class="mdi mdi-email"></i>
-                            </div>
-                        </a>
-                        <a href="https://www.youtube.com/@bheema_tunes" aria-label="Visit Bheema's YouTube channel">
-                            <div class="social-icon youtube avatar-sm">
-                                <i class="mdi mdi-youtube"></i>
-                            </div>
-                        </a>
-                        <a href="https://www.facebook.com/bheemashankar.kanadala" aria-label="Visit Bheema's Facebook profile">
-                            <div class="social-icon facebook avatar-sm">
-                                <i class="mdi mdi-facebook"></i>
-                            </div>
-                        </a>
-                        <a href="https://www.instagram.com/bheemashankarhk" aria-label="Visit Bheema's Instagram profile">
-                            <div class="social-icon instagram avatar-sm">
-                                <i class="mdi mdi-instagram"></i>
-                            </div>
-                        </a>
-                        <a href="https://www.linkedin.com/in/bheemashankar-h-k-7a420a1a4?_l=en_US" aria-label="Visit Bheema's LinkedIn profile">
-                            <div class="social-icon linkedin avatar-sm">
-                                <i class="mdi mdi-linkedin"></i>
-                            </div>
-                        </a>
-                        <a href="https://github.com/BHEEMASHANKARHRK" aria-label="Visit Bheema's GitHub profile">
-                            <div class="social-icon github avatar-sm">
-                                <i class="mdi mdi-github"></i>
-                            </div>
-                        </a>
+<!-- home section -->
+<section class="home" id="home" style="background-image: url(src/images/bg-home.png);">
+    <!-- start container -->
+    <div class="container position-relative">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="tns-outer" id="home-slider-ow">
+                    <!-- Carousel Navigation -->
+                    <div class="tns-controls" aria-label="Carousel Navigation" tabindex="0">
+                        <button type="button" data-controls="prev" tabindex="-1" aria-controls="home-slider">←</button>
+                        <button type="button" data-controls="next" tabindex="-1" aria-controls="home-slider">→</button>
                     </div>
-                </div>
+                    
+                    <!-- Live region for screen readers -->
+                    <div class="tns-liveregion tns-visually-hidden" aria-live="polite" aria-atomic="true">slide <span class="current">3</span> of 4</div>
+                    
+                    <div id="home-slider-mw" class="tns-ovh">
+                        <div class="tns-inner" id="home-slider-iw">
+                            <div class="home-slider tns-slider tns-carousel tns-subpixel tns-calc tns-horizontal" id="home-slider" style="transform: translate3d(-33.3333%, 0px, 0px);">
+                                
+                                <!-- Cloned slide (inactive) -->
+                                <div class="item tns-item tns-slide-cloned" aria-hidden="true">
+                                    <div class="row align-items-center">
+                                        <div class="col-lg-6">
+                                            <div class="content-item">
+                                                <p class="text-blue fw-semibold mb-0">Hello! I AM</p>
+                                                <h1 class="home-title mb-0 text-dark fw-bold">
+                                                    <span class="typewrite" data-period="2000" data-type="[ &quot;Ray Glam.&quot;,&quot;Web Enthusiast.&quot;,&quot;Graduate based in NYC.&quot; ]">
+                                                        <span class="wrap">Full Stack Developer</span>
+                                                    </span>
+                                                </h1>
+                                                <p class="mt-3 text-muted">I am a passionate Full Stack Developer skilled in building scalable Android applications and robust backend systems using Spring Boot, Hibernate, and MySQL. I combine strong technical knowledge with creative design expertise to deliver seamless, user-centric digital experiences.</p>
 
-                <div class="home-link d-inline-block mt-5">
-                    <div class="d-flex align-items-center">
-                        <div class="btn-link">
-                            <a href="https://redmindstech.com/metricmaster" class="text-dark h6">
-                                <div class="read-link btn-link-warning"><span>See my work</span></div>
-                            </a>
-                        </div>
-                        <div class="btn-link-icon">
-                            <img src="src/images/home/right-arrow.png" alt="See my work arrow" class="img-fluid ms-3">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+                                                <div class="icon-item mt-4">
+                                                    <div class="d-flex">
+                                                        <!-- All links in inactive slides have tabindex="-1" -->
+                                                        <span class="social-icon-wrapper">
+                                                            <a href="mailto:bheemashankarhk4@gmail.com" tabindex="-1" aria-label="Send an email to Bheema">
+                                                                <div class="social-icon email avatar-sm">
+                                                                    <i class="mdi mdi-email"></i>
+                                                                </div>
+                                                            </a>
+                                                        </span>
+                                                        <span class="social-icon-wrapper">
+                                                            <a href="https://www.youtube.com/@bheema_tunes" tabindex="-1" aria-label="Visit Bheema's YouTube channel">
+                                                                <div class="social-icon youtube avatar-sm">
+                                                                    <i class="mdi mdi-youtube"></i>
+                                                                </div>
+                                                            </a>
+                                                        </span>
+                                                        <span class="social-icon-wrapper">
+                                                            <a href="https://www.facebook.com/bheemashankar.kanadala" tabindex="-1" aria-label="Visit Bheema's Facebook profile">
+                                                                <div class="social-icon facebook avatar-sm">
+                                                                    <i class="mdi mdi-facebook"></i>
+                                                                </div>
+                                                            </a>
+                                                        </span>
+                                                        <span class="social-icon-wrapper">
+                                                            <a href="https://www.instagram.com/bheemashankarhk" tabindex="-1" aria-label="Visit Bheema's Instagram profile">
+                                                                <div class="social-icon instagram avatar-sm">
+                                                                    <i class="mdi mdi-instagram"></i>
+                                                                </div>
+                                                            </a>
+                                                        </span>
+                                                        <span class="social-icon-wrapper">
+                                                            <a href="https://www.linkedin.com/in/bheemashankar-h-k-7a420a1a4?_l=en_US" tabindex="-1" aria-label="Visit Bheema's LinkedIn profile">
+                                                                <div class="social-icon linkedin avatar-sm">
+                                                                    <i class="mdi mdi-linkedin"></i>
+                                                                </div>
+                                                            </a>
+                                                        </span>
+                                                        <span class="social-icon-wrapper">
+                                                            <a href="https://github.com/BHEEMASHANKARHRK" tabindex="-1" aria-label="Visit Bheema's GitHub profile">
+                                                                <div class="social-icon github avatar-sm">
+                                                                    <i class="mdi mdi-github"></i>
+                                                                </div>
+                                                            </a>
+                                                        </span>
+                                                    </div>
+                                                </div>
 
-        <div class="col-lg-6">
-            <div class="my-image">
-                <img src="src/images/home/home.png" alt="Bheema's portfolio image" class="img-fluid">
-            </div>
-        </div>
-    </div>
-</div>
-
-                        <div class="item tns-item tns-slide-active" id="home-slider-item1">
-                            <div class="row align-items-center">
-                                <div class="col-lg-6">
-                                    <div class="content-item">
-                                        <p class="text-primary fw-semibold mb-0">Hello! I AM</p>
-                                        <div class="home-title mb-0 text-dark fw-bold h1">
-                                            <span class="typewrite " data-period="2000" data-type="[ &quot;Marie Jons.&quot;,&quot;Devloper.&quot;,&quot;Graduate based in NYC.&quot; ]"><span class="wrap">Designer</span></span>
-                                        </div>
-                                        <p class="mt-3 text-muted">I am a creative Android & Web Developer and Designer, skilled in building responsive applications and crafting visually appealing designs using tools like Canva. I merge technical development with strong design principles to deliver engaging and user-focused digital experiences.</p>
-
-                                        <div class="icon-item mt-4">
-                                            <div class="d-flex">
-                                                <a href="mailto:bheemashankarhk4@gmail.com">
-                                                    <div class="social-icon email avatar-sm">
-                                                        <i class="mdi mdi-email"></i>
+                                                <div class="home-link d-flex align-items-center mt-5">
+                                                    <div class="btn-link">
+                                                        <a href="https://redmindstech.com/metricmaster" class="text-dark h6" tabindex="-1">
+                                                            <div class="read-link btn-link-blue"><span>See my work </span></div>
+                                                        </a>
                                                     </div>
-                                                </a>
-                                                <a href="https://www.youtube.com/@bheema_tunes">
-                                                    <div class="social-icon youtube avatar-sm">
-                                                        <i class="mdi mdi-youtube"></i>
+                                                    <div class="btn-link-icon">
+                                                        <img src="src/images/home/right-arrow.png" alt="" class="img-fluid ms-3">
                                                     </div>
-                                                </a>
-                                                <a href="https://www.facebook.com/bheemashankar.kanadala">
-                                                    <div class="social-icon facebook avatar-sm">
-                                                        <i class="mdi mdi-facebook"></i>
-                                                    </div>
-                                                </a>
-                                                <a href="https://www.instagram.com/bheemashankarhk">
-                                                    <div class="social-icon instagram avatar-sm">
-                                                        <i class="mdi mdi-instagram"></i>
-                                                    </div>
-                                                </a>
-                                                <a href="https://www.linkedin.com/in/bheemashankar-h-k-7a420a1a4?_l=en_US">
-                                                    <div class="social-icon linkedin avatar-sm">
-                                                        <i class="mdi mdi-linkedin"></i>
-                                                    </div>
-                                                </a>
-                                                <a href="https://github.com/BHEEMASHANKARHRK">
-                                                    <div class="social-icon github avatar-sm">
-                                                        <i class="mdi mdi-github"></i>
-                                                    </div>
-                                                </a>
+                                                </div>
                                             </div>
-
                                         </div>
 
-                                        <div class="home-link d-flex align-items-center mt-5">
-                                            <div class="btn-link">
-                                                <a href="https://redmindstech.com/metricmaster" class="text-dark h6">
-                                                    <div class="read-link"><span>See my work </span></div>
-                                                </a>
+                                        <div class="col-lg-6">
+                                            <div class="my-image">
+                                                <img src="src/images/home/home-4.png" alt="" class="img-fluid">
                                             </div>
-                                            <div class="btn-link-icon">
-                                                <img src="src/images/home/right-arrow.png" alt="" class="img-fluid ms-3">
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Home Slider Item (First item) -->
+                                <div class="item tns-item" id="home-slider-item0" aria-hidden="true">
+                                    <div class="row align-items-center">
+                                        <div class="col-lg-6">
+                                            <div class="content-item">
+                                                <p class="text-warning fw-semibold mb-0">Hello! I AM</p>
+                                                <div class="home-title mb-0 fw-bold h1">
+                                                    <span class="typewrite" data-period="2000" data-type="[ &quot;Harold Anderson.&quot;,&quot;Freelance Designer.&quot;,&quot;Graduate based in NYC.&quot; ]">
+                                                        <span class="wrap">Android & Web Developer</span>
+                                                    </span>
+                                                </div>
+                                                <p class="mt-3 text-muted">
+                                                    I am a versatile Android & Web Developer with expertise in creating intuitive mobile apps and dynamic web applications using Java, Spring Boot, MySQL, and front-end technologies.
+                                                    I blend clean design with functional code to deliver high-performance, user-friendly digital solutions.
+                                                </p>
+
+                                                <div class="icon-item mt-4">
+                                                    <div class="d-flex">
+                                                        <span class="social-icon-wrapper">
+                                                            <a href="mailto:bheemashankarhk4@gmail.com" tabindex="-1" aria-label="Send an email to Bheema">
+                                                                <div class="social-icon email avatar-sm">
+                                                                    <i class="mdi mdi-email"></i>
+                                                                </div>
+                                                            </a>
+                                                        </span>
+                                                        <span class="social-icon-wrapper">
+                                                            <a href="https://www.youtube.com/@bheema_tunes" tabindex="-1" aria-label="Visit Bheema's YouTube channel">
+                                                                <div class="social-icon youtube avatar-sm">
+                                                                    <i class="mdi mdi-youtube"></i>
+                                                                </div>
+                                                            </a>
+                                                        </span>
+                                                        <span class="social-icon-wrapper">
+                                                            <a href="https://www.facebook.com/bheemashankar.kanadala" tabindex="-1" aria-label="Visit Bheema's Facebook profile">
+                                                                <div class="social-icon facebook avatar-sm">
+                                                                    <i class="mdi mdi-facebook"></i>
+                                                                </div>
+                                                            </a>
+                                                        </span>
+                                                        <span class="social-icon-wrapper">
+                                                            <a href="https://www.instagram.com/bheemashankarhk" tabindex="-1" aria-label="Visit Bheema's Instagram profile">
+                                                                <div class="social-icon instagram avatar-sm">
+                                                                    <i class="mdi mdi-instagram"></i>
+                                                                </div>
+                                                            </a>
+                                                        </span>
+                                                        <span class="social-icon-wrapper">
+                                                            <a href="https://www.linkedin.com/in/bheemashankar-h-k-7a420a1a4?_l=en_US" tabindex="-1" aria-label="Visit Bheema's LinkedIn profile">
+                                                                <div class="social-icon linkedin avatar-sm">
+                                                                    <i class="mdi mdi-linkedin"></i>
+                                                                </div>
+                                                            </a>
+                                                        </span>
+                                                        <span class="social-icon-wrapper">
+                                                            <a href="https://github.com/BHEEMASHANKARHRK" tabindex="-1" aria-label="Visit Bheema's GitHub profile">
+                                                                <div class="social-icon github avatar-sm">
+                                                                    <i class="mdi mdi-github"></i>
+                                                                </div>
+                                                            </a>
+                                                        </span>
+                                                    </div>
+                                                </div>
+
+                                                <div class="home-link d-inline-block mt-5">
+                                                    <div class="d-flex align-items-center">
+                                                        <div class="btn-link">
+                                                            <a href="https://redmindstech.com/metricmaster" class="text-dark h6" tabindex="-1">
+                                                                <div class="read-link btn-link-warning"><span>See my work</span></div>
+                                                            </a>
+                                                        </div>
+                                                        <div class="btn-link-icon">
+                                                            <img src="src/images/home/right-arrow.png" alt="See my work arrow" class="img-fluid ms-3">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-lg-6">
+                                            <div class="my-image">
+                                                <img src="src/images/home/home.png" alt="Bheema's portfolio image" class="img-fluid">
                                             </div>
                                         </div>
                                     </div>
                                 </div>
 
-                                <div class="col-lg-6">
-                                    <div class="my-image">
-                                        <img src="src/images/home/home-2.png" alt="" class="img-fluid">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                                <!-- Active slide - No tabindex manipulation needed -->
+                                <div class="item tns-item tns-slide-active" id="home-slider-item1">
+                                    <div class="row align-items-center">
+                                        <div class="col-lg-6">
+                                            <div class="content-item">
+                                                <p class="text-primary fw-semibold mb-0">Hello! I AM</p>
+                                                <div class="home-title mb-0 text-dark fw-bold h1">
+                                                    <span class="typewrite" data-period="2000" data-type="[ &quot;Marie Jons.&quot;,&quot;Devloper.&quot;,&quot;Graduate based in NYC.&quot; ]">
+                                                        <span class="wrap">Designer</span>
+                                                    </span>
+                                                </div>
+                                                <p class="mt-3 text-muted">I am a creative Android & Web Developer and Designer, skilled in building responsive applications and crafting visually appealing designs using tools like Canva. I merge technical development with strong design principles to deliver engaging and user-focused digital experiences.</p>
 
-                        <!-- slider item -->
-                        <div class="item tns-item" id="home-slider-item2" aria-hidden="true" tabindex="-1">
-                            <div class="row align-items-center">
-                                <div class="col-lg-6">
-                                    <div class="content-item">
-                                        <p class="text-danger fw-semibold mb-0">Hello! I AM</p>
-                                        <div class="home-title mb-0 text-dark fw-bold h1">
-                                            <span class="typewrite " data-period="2000" data-type="[ &quot;Ray Glam.&quot;,&quot;Web Enthusiast.&quot;,&quot;Graduate based in NYC.&quot; ]"><span class="wrap">Web Enthusiast.</span></span>
-                                        </div>
-                                        <p class="mt-3 text-muted">Building simple and beautiful things for complex
-                                            interfaces is what I enjoy most about my work. I am also interested in
-                                            crafting beautiful minimal products and exploring new worlds.</p>
+                                                <div class="icon-item mt-4">
+                                                    <div class="d-flex">
+                                                        <span class="social-icon-wrapper">
+                                                            <a href="mailto:bheemashankarhk4@gmail.com" aria-label="Send an email to Bheema">
+                                                                <div class="social-icon email avatar-sm">
+                                                                    <i class="mdi mdi-email"></i>
+                                                                </div>
+                                                            </a>
+                                                        </span>
+                                                        <span class="social-icon-wrapper">
+                                                            <a href="https://www.youtube.com/@bheema_tunes" aria-label="Visit Bheema's YouTube channel">
+                                                                <div class="social-icon youtube avatar-sm">
+                                                                    <i class="mdi mdi-youtube"></i>
+                                                                </div>
+                                                            </a>
+                                                        </span>
+                                                        <span class="social-icon-wrapper">
+                                                            <a href="https://www.facebook.com/bheemashankar.kanadala" aria-label="Visit Bheema's Facebook profile">
+                                                                <div class="social-icon facebook avatar-sm">
+                                                                    <i class="mdi mdi-facebook"></i>
+                                                                </div>
+                                                            </a>
+                                                        </span>
+                                                        <span class="social-icon-wrapper">
+                                                            <a href="https://www.instagram.com/bheemashankarhk" aria-label="Visit Bheema's Instagram profile">
+                                                                <div class="social-icon instagram avatar-sm">
+                                                                    <i class="mdi mdi-instagram"></i>
+                                                                </div>
+                                                            </a>
+                                                        </span>
+                                                        <span class="social-icon-wrapper">
+                                                            <a href="https://www.linkedin.com/in/bheemashankar-h-k-7a420a1a4?_l=en_US" aria-label="Visit Bheema's LinkedIn profile">
+                                                                <div class="social-icon linkedin avatar-sm">
+                                                                    <i class="mdi mdi-linkedin"></i>
+                                                                </div>
+                                                            </a>
+                                                        </span>
+                                                        <span class="social-icon-wrapper">
+                                                            <a href="https://github.com/BHEEMASHANKARHRK" aria-label="Visit Bheema's GitHub profile">
+                                                                <div class="social-icon github avatar-sm">
+                                                                    <i class="mdi mdi-github"></i>
+                                                                </div>
+                                                            </a>
+                                                        </span>
+                                                    </div>
+                                                </div>
 
-                                        <div class="icon-item mt-4">
-                                            <div class="d-flex">
-                                                <a href="mailto:bheemashankarhk4@gmail.com">
-                                                    <div class="social-icon email avatar-sm">
-                                                        <i class="mdi mdi-email"></i>
+                                                <div class="home-link d-flex align-items-center mt-5">
+                                                    <div class="btn-link">
+                                                        <a href="https://redmindstech.com/metricmaster" class="text-dark h6">
+                                                            <div class="read-link"><span>See my work </span></div>
+                                                        </a>
                                                     </div>
-                                                </a>
-                                                <a href="https://www.youtube.com/@bheema_tunes">
-                                                    <div class="social-icon youtube avatar-sm">
-                                                        <i class="mdi mdi-youtube"></i>
+                                                    <div class="btn-link-icon">
+                                                        <img src="src/images/home/right-arrow.png" alt="Right arrow" class="img-fluid ms-3">
                                                     </div>
-                                                </a>
-                                                <a href="https://www.facebook.com/bheemashankar.kanadala">
-                                                    <div class="social-icon facebook avatar-sm">
-                                                        <i class="mdi mdi-facebook"></i>
-                                                    </div>
-                                                </a>
-                                                <a href="https://www.instagram.com/bheemashankarhk">
-                                                    <div class="social-icon instagram avatar-sm">
-                                                        <i class="mdi mdi-instagram"></i>
-                                                    </div>
-                                                </a>
-                                                <a href="https://www.linkedin.com/in/bheemashankar-h-k-7a420a1a4?_l=en_US">
-                                                    <div class="social-icon linkedin avatar-sm">
-                                                        <i class="mdi mdi-linkedin"></i>
-                                                    </div>
-                                                </a>
-                                                <a href="https://github.com/BHEEMASHANKARHRK">
-                                                    <div class="social-icon github avatar-sm">
-                                                        <i class="mdi mdi-github"></i>
-                                                    </div>
-                                                </a>
+                                                </div>
                                             </div>
-
-                                        </div>
-
-                                        <div class="home-link d-flex align-items-center mt-5">
-                                            <div class="btn-link">
-                                                <a href="https://redmindstech.com/metricmaster" class="text-dark h6">
-                                                    <div class="read-link btn-link-denger"><span>See my work </span>
-                                                    </div>
-                                                </a>
-                                            </div>
-                                            <div class="btn-link-icon">
-                                                <img src="src/images/home/right-arrow.png" alt="" class="img-fluid ms-3">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-lg-6">
-                                    <div class="my-image">
-                                        <img src="src/images/home/home-3.png" alt="" class="img-fluid">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- slider item -->
-                        <div class="item tns-item" id="home-slider-item3" aria-hidden="true" tabindex="-1">
-                            <div class="row align-items-center">
-                                <div class="col-lg-6">
-                                    <div class="content-item">
-                                        <p class="text-blue fw-semibold mb-0">Hello! I AM</p>
-                                        <h1 class="home-title mb-0 text-dark fw-bold">
-                                            <span class="typewrite " data-period="2000" data-type="[ &quot;Ray Glam.&quot;,&quot;Web Enthusiast.&quot;,&quot;Graduate based in NYC.&quot; ]"><span class="wrap">Graduate based in NYC.</span></span>
-                                        </h1>
-                                        <p class="mt-3 text-muted">Building simple and beautiful things for complex
-                                            interfaces is what I enjoy most about my work. I am also interested in
-                                            crafting beautiful minimal products and exploring new worlds.</p>
-
-                                        <div class="icon-item mt-4">
-                                            <div class="d-flex">
-                                                <a href="mailto:bheemashankarhk4@gmail.com">
-                                                    <div class="social-icon email avatar-sm">
-                                                        <i class="mdi mdi-email"></i>
-                                                    </div>
-                                                </a>
-                                                <a href="https://www.youtube.com/@bheema_tunes">
-                                                    <div class="social-icon youtube avatar-sm">
-                                                        <i class="mdi mdi-youtube"></i>
-                                                    </div>
-                                                </a>
-                                                <a href="https://www.facebook.com/bheemashankar.kanadala">
-                                                    <div class="social-icon facebook avatar-sm">
-                                                        <i class="mdi mdi-facebook"></i>
-                                                    </div>
-                                                </a>
-                                                <a href="https://www.instagram.com/bheemashankarhk">
-                                                    <div class="social-icon instagram avatar-sm">
-                                                        <i class="mdi mdi-instagram"></i>
-                                                    </div>
-                                                </a>
-                                                <a href="https://www.linkedin.com/in/bheemashankar-h-k-7a420a1a4?_l=en_US">
-                                                    <div class="social-icon linkedin avatar-sm">
-                                                        <i class="mdi mdi-linkedin"></i>
-                                                    </div>
-                                                </a>
-                                                <a href="https://github.com/BHEEMASHANKARHRK">
-                                                    <div class="social-icon github avatar-sm">
-                                                        <i class="mdi mdi-github"></i>
-                                                    </div>
-                                                </a>
-                                            </div>
-
                                         </div>
 
-                                        <div class="home-link d-flex align-items-center mt-5">
-                                            <div class="btn-link">
-                                                <a href="https://redmindstech.com/metricmaster" class="text-dark h6">
-                                                    <div class="read-link btn-link-blue"><span>See my work </span></div>
-                                                </a>
-                                            </div>
-                                            <div class="btn-link-icon">
-                                                <img src="src/images/home/right-arrow.png" alt="" class="img-fluid ms-3">
+                                        <div class="col-lg-6">
+                                            <div class="my-image">
+                                                <img src="src/images/home/home-2.png" alt="Bheema's designer profile image" class="img-fluid">
                                             </div>
                                         </div>
                                     </div>
                                 </div>
 
-                                <div class="col-lg-6">
-                                    <div class="my-image">
-                                        <img src="src/images/home/home-4.png" alt="" class="img-fluid">
+                                <!-- Inactive slide -->
+                                <div class="item tns-item" id="home-slider-item2" aria-hidden="true">
+                                    <div class="row align-items-center">
+                                        <div class="col-lg-6">
+                                            <div class="content-item">
+                                                <p class="text-danger fw-semibold mb-0">Hello! I AM</p>
+                                                <div class="home-title mb-0 text-dark fw-bold h1">
+                                                    <span class="typewrite" data-period="2000" data-type="[ &quot;Ray Glam.&quot;,&quot;Web Enthusiast.&quot;,&quot;Graduate based in NYC.&quot; ]">
+                                                        <span class="wrap">Web Enthusiast.</span>
+                                                    </span>
+                                                </div>
+                                                <p class="mt-3 text-muted">Building simple and beautiful things for complex interfaces is what I enjoy most about my work. I am also interested in crafting beautiful minimal products and exploring new worlds.</p>
+
+                                                <div class="icon-item mt-4">
+                                                    <div class="d-flex">
+                                                        <span class="social-icon-wrapper">
+                                                            <a href="mailto:bheemashankarhk4@gmail.com" tabindex="-1" aria-label="Send an email to Bheema">
+                                                                <div class="social-icon email avatar-sm">
+                                                                    <i class="mdi mdi-email"></i>
+                                                                </div>
+                                                            </a>
+                                                        </span>
+                                                        <span class="social-icon-wrapper">
+                                                            <a href="https://www.youtube.com/@bheema_tunes" tabindex="-1" aria-label="Visit Bheema's YouTube channel">
+                                                                <div class="social-icon youtube avatar-sm">
+                                                                    <i class="mdi mdi-youtube"></i>
+                                                                </div>
+                                                            </a>
+                                                        </span>
+                                                        <span class="social-icon-wrapper">
+                                                            <a href="https://www.facebook.com/bheemashankar.kanadala" tabindex="-1" aria-label="Visit Bheema's Facebook profile">
+                                                                <div class="social-icon facebook avatar-sm">
+                                                                    <i class="mdi mdi-facebook"></i>
+                                                                </div>
+                                                            </a>
+                                                        </span>
+                                                        <span class="social-icon-wrapper">
+                                                            <a href="https://www.instagram.com/bheemashankarhk" tabindex="-1" aria-label="Visit Bheema's Instagram profile">
+                                                                <div class="social-icon instagram avatar-sm">
+                                                                    <i class="mdi mdi-instagram"></i>
+                                                                </div>
+                                                            </a>
+                                                        </span>
+                                                        <span class="social-icon-wrapper">
+                                                            <a href="https://www.linkedin.com/in/bheemashankar-h-k-7a420a1a4?_l=en_US" tabindex="-1" aria-label="Visit Bheema's LinkedIn profile">
+                                                                <div class="social-icon linkedin avatar-sm">
+                                                                    <i class="mdi mdi-linkedin"></i>
+                                                                </div>
+                                                            </a>
+                                                        </span>
+                                                        <span class="social-icon-wrapper">
+                                                            <a href="https://github.com/BHEEMASHANKARHRK" tabindex="-1" aria-label="Visit Bheema's GitHub profile">
+                                                                <div class="social-icon github avatar-sm">
+                                                                    <i class="mdi mdi-github"></i>
+                                                                </div>
+                                                            </a>
+                                                        </span>
+                                                    </div>
+                                                </div>
+
+                                                <div class="home-link d-flex align-items-center mt-5">
+                                                    <div class="btn-link">
+                                                        <a href="https://redmindstech.com/metricmaster" class="text-dark h6" tabindex="-1">
+                                                            <div class="read-link btn-link-denger"><span>See my work </span></div>
+                                                        </a>
+                                                    </div>
+                                                    <div class="btn-link-icon">
+                                                        <img src="src/images/home/right-arrow.png" alt="Right arrow" class="img-fluid ms-3">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-lg-6">
+                                            <div class="my-image">
+                                                <img src="src/images/home/home-3.png" alt="Bheema as web enthusiast" class="img-fluid">
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
-                        <!-- slider item -->
-                    <div class="item tns-item tns-slide-cloned">
-                            <div class="row align-items-center">
-                                <div class="col-lg-6">
-                                    <div class="content-item">
-                                        <p class="text-warning fw-semibold mb-0">Hello! I AM</p>
-                                        <div class="home-title mb-0 fw-bold h1">
-                                            <span class="typewrite " data-period="2000" data-type="[ &quot;Harold Anderson.&quot;,&quot;Freelance Designer.&quot;,&quot;Graduate based in NYC.&quot; ]"><span class="wrap"></span></span>
-                                        </div>
-                                        <p class="mt-3 text-muted">Building simple and beautiful things for complex
-                                            interfaces is what I enjoy most about my work. I am also interested in
-                                            crafting beautiful minimal products and exploring new worlds.</p>
 
-                                        <div class="icon-item mt-4">
-                                            <div class="d-flex">
-                                                <a href="mailto:bheemashankarhk4@gmail.com">
-                                                    <div class="social-icon email avatar-sm">
-                                                        <i class="mdi mdi-email"></i>
+                                <!-- Inactive slide -->
+                                <div class="item tns-item" id="home-slider-item3" aria-hidden="true">
+                                    <div class="row align-items-center">
+                                        <div class="col-lg-6">
+                                            <div class="content-item">
+                                                <p class="text-blue fw-semibold mb-0">Hello! I AM</p>
+                                                <h1 class="home-title mb-0 text-dark fw-bold">
+                                                    <span class="typewrite" data-period="2000" data-type="[ &quot;Ray Glam.&quot;,&quot;Web Enthusiast.&quot;,&quot;Graduate based in NYC.&quot; ]">
+                                                        <span class="wrap">Graduate based in NYC.</span>
+                                                    </span>
+                                                </h1>
+                                                <p class="mt-3 text-muted">Building simple and beautiful things for complex interfaces is what I enjoy most about my work. I am also interested in crafting beautiful minimal products and exploring new worlds.</p>
+
+                                                <div class="icon-item mt-4">
+                                                    <div class="d-flex">
+                                                        <span class="social-icon-wrapper">
+                                                            <a href="mailto:bheemashankarhk4@gmail.com" tabindex="-1" aria-label="Send an email to Bheema">
+                                                                <div class="social-icon email avatar-sm">
+                                                                    <i class="mdi mdi-email"></i>
+                                                                </div>
+                                                            </a>
+                                                        </span>
+                                                        <span class="social-icon-wrapper">
+                                                            <a href="https://www.youtube.com/@bheema_tunes" tabindex="-1" aria-label="Visit Bheema's YouTube channel">
+                                                                <div class="social-icon youtube avatar-sm">
+                                                                    <i class="mdi mdi-youtube"></i>
+                                                                </div>
+                                                            </a>
+                                                        </span>
+                                                        <span class="social-icon-wrapper">
+                                                            <a href="https://www.facebook.com/bheemashankar.kanadala" tabindex="-1" aria-label="Visit Bheema's Facebook profile">
+                                                                <div class="social-icon facebook avatar-sm">
+                                                                    <i class="mdi mdi-facebook"></i>
+                                                                </div>
+                                                            </a>
+                                                        </span>
+                                                        <span class="social-icon-wrapper">
+                                                            <a href="https://www.instagram.com/bheemashankarhk" tabindex="-1" aria-label="Visit Bheema's Instagram profile">
+                                                                <div class="social-icon instagram avatar-sm">
+                                                                    <i class="mdi mdi-instagram"></i>
+                                                                </div>
+                                                            </a>
+                                                        </span>
+                                                        <span class="social-icon-wrapper">
+                                                            <a href="https://www.linkedin.com/in/bheemashankar-h-k-7a420a1a4?_l=en_US" tabindex="-1" aria-label="Visit Bheema's LinkedIn profile">
+                                                                <div class="social-icon linkedin avatar-sm">
+                                                                    <i class="mdi mdi-linkedin"></i>
+                                                                </div>
+                                                            </a>
+                                                        </span>
+                                                        <span class="social-icon-wrapper">
+                                                            <a href="https://github.com/BHEEMASHANKARHRK" tabindex="-1" aria-label="Visit Bheema's GitHub profile">
+                                                                <div class="social-icon github avatar-sm">
+                                                                    <i class="mdi mdi-github"></i>
+                                                                </div>
+                                                            </a>
+                                                        </span>
                                                     </div>
-                                                </a>
-                                                <a href="https://www.youtube.com/@bheema_tunes">
-                                                    <div class="social-icon youtube avatar-sm">
-                                                        <i class="mdi mdi-youtube"></i>
+                                                </div>
+
+                                                <div class="home-link d-flex align-items-center mt-5">
+                                                    <div class="btn-link">
+                                                        <a href="https://redmindstech.com/metricmaster" class="text-dark h6" tabindex="-1">
+                                                            <div class="read-link btn-link-blue"><span>See my work </span></div>
+                                                        </a>
                                                     </div>
-                                                </a>
-                                                <a href="https://www.facebook.com/bheemashankar.kanadala">
-                                                    <div class="social-icon facebook avatar-sm">
-                                                        <i class="mdi mdi-facebook"></i>
+                                                    <div class="btn-link-icon">
+                                                        <img src="src/images/home/right-arrow.png" alt="Right arrow" class="img-fluid ms-3">
                                                     </div>
-                                                </a>
-                                                <a href="https://www.instagram.com/bheemashankarhk">
-                                                    <div class="social-icon instagram avatar-sm">
-                                                        <i class="mdi mdi-instagram"></i>
-                                                    </div>
-                                                </a>
-                                                <a href="https://www.linkedin.com/in/bheemashankar-h-k-7a420a1a4?_l=en_US">
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-lg-6">
+                                            <div class="my-image">
+                                                <img src="src/images/home/home-4.png" alt="Bheema as graduate" class="img-fluid">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Cloned slide (inactive) -->
+                                <div class="item tns-item tns-slide-cloned" aria-hidden="true">
+                                    <div class="row align-items-center">
+                                        <div class="col-lg-6">
+                                            <div class="content-item">
+                                                <p class="text-warning fw-semibold mb-0">Hello! I AM</p>
+                                                <div class="home-title mb-0 fw-bold h1">
+                                                    <span class="typewrite" data-period="2000" data-type="[ &quot;Harold Anderson.&quot;,&quot;Freelance Designer.&quot;,&quot;Graduate based in NYC.&quot; ]">
+                                                        <span class="wrap"></span>
+                                                    </span>
+                                                </div>
+                                                <p class="mt-3 text-muted">Building simple and beautiful things for complex interfaces is what I enjoy most about my work. I am also interested in crafting beautiful minimal products and exploring new worlds.</p>
+
+                                                <div class="icon-item mt-4">
+                                                    <div class="d-flex">
+                                                        <span class="social-icon-wrapper">
+                                                            <a href="mailto:bheemashankarhk4@gmail.com" tabindex="-1" aria-label="Send an email to Bheema">
+                                                                <div class="social-icon email avatar-sm">
+                                                                    <i class="mdi mdi-email"></i>
+                                                                </div>
+                                                            </a>
+                                                        </span>
+                                                        <span class="social-icon-wrapper">
+                                                            <a href="https://www.youtube.com/@bheema_tunes" tabindex="-1" aria-label="Visit Bheema's YouTube channel">
+                                                                <div class="social-icon youtube avatar-sm">
+                                                                    <i class="mdi mdi-youtube"></i>
+                                                                </div>
+                                                            </a>
+                                                        </span>
+                                                        <span class="social-icon-wrapper">
+                                                            <a href="https://www.facebook.com/bheemashankar.kanadala" tabindex="-1" aria-label="Visit Bheema's Facebook profile">
+                                                                <div class="social-icon facebook avatar-sm">
+                                                                    <i class="mdi mdi-facebook"></i>
+                                                                </div>
+                                                            </a>
+                                                        </span>
+                                                        <span class="social-icon-wrapper">
+                                                            <a href="https://www.instagram.com/bheemashankarhk" tabindex="-1" aria-label="Visit Bheema's Instagram profile">
+                                                                <div class="social-icon instagram avatar-sm">
+                                                                    <i class="mdi mdi-instagram"></i>
+                                                                </div>
+                                                            </a>
+                                                        </span>
+                                                        <a href="https://www.linkedin.com/in/bheemashankar-h-k-7a420a1a4?_l=en_US">
                                                     <div class="social-icon linkedin avatar-sm">
                                                         <i class="mdi mdi-linkedin"></i>
                                                     </div>
@@ -715,13 +874,15 @@
                                     </div>
                                 </div>
                             </div>
-                        </div></div></div></div></div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-        <!-- end container -->
-    </section>
-    <!-- end home section -->
+    </div>
+    <!-- end container -->    
+</section>
+<!-- end home section -->
 
 
     <!-- about-me section -->
