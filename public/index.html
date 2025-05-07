@@ -762,13 +762,27 @@
 
                         <ul class="nav nav-pills mb-3 mt-4 pt-2" id="pills-tab" role="tablist">
                             <li class="nav-item">
-                                <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button">Skills</button>
+                                <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" 
+                                        data-bs-target="#pills-home" type="button" aria-selected="true" role="tab"
+                                        style="color: #ffffff; background-color: #007bff;"> <!-- Adjusted colors -->
+                                    Skills
+                                </button>
                             </li>
                             <li class="nav-item">
-                                <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button">Experience</button>
+                                <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" 
+                                        data-bs-target="#pills-profile" type="button" aria-selected="false" 
+                                        tabindex="-1" role="tab" aria-label="Experience"
+                                        style="color: #ffffff; background-color: #007bff;"> <!-- Adjusted colors -->
+                                    Experience
+                                </button>
                             </li>
                             <li class="nav-item">
-                                <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-contact" type="button">Education</button>
+                                <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill" 
+                                        data-bs-target="#pills-contact" type="button" aria-selected="false" 
+                                        tabindex="-1" role="tab" aria-label="Education"
+                                        style="color: #ffffff; background-color: #007bff;"> <!-- Adjusted colors -->
+                                    Education
+                                </button>
                             </li>
                         </ul>
 
@@ -874,7 +888,7 @@
             <div class="row justify-content-center">
                 <div class="col-lg-6">
                     <div class="text-center mb-5">
-                        <h6 class="mb-0 text-muted fs-15">WHAT WE OFFER</h6>
+                        <h3 class="mb-0 text-muted fs-15">WHAT WE OFFER</h3> <!-- Changed from h6 to h3 -->
                         <h2>Affordable Services</h2>
                         <p class="para-width text-muted mb-0 fs-15">A Private Limited is the most popular type of
                             partnership Malta. The limited liability is, in fact, the only type of company allowed by
@@ -981,7 +995,7 @@
             <div class="row justify-content-center">
                 <div class="col-lg-6">
                     <div class="text-center mb-4">
-                        <h6 class="mb-0 text-muted fs-15">Counter</h6>
+                        <h3 class="mb-0 text-muted fs-15">Counter</h3> <!-- Changed from h6 to h3 -->
                         <h2>Our Achievement</h2>
                         <p class="para-width text-muted mb-0 fs-15">A Private Limited is the most popular type of
                             partnership Malta. The limited liability is, in fact, the only type of company allowed by
@@ -1001,7 +1015,7 @@
                             <h2 class="counter_value fw-bold d-inline-block mb-0" data-bs-target="800">800</h2><span class="h2 fw-bold">K</span><span class="h2"> +</span>
                         </div>
                         <div class="text-center">
-                            <p class="text-muted fw-semibold fs-15">Happy Clients</p>
+                            <h3 class="fw-semibold" style="color: #333;">Happy Clients</h3> <!-- Changed from p to h3 -->
                         </div>
                     </div>
                 </div>
@@ -1650,7 +1664,7 @@
                         <hr>
                         <div class="user-info text-center">
                             <div class="user-info">
-                                <h5 class="text-black mb-0">Janice C. Campbe</h5>
+                                <h3 class="text-black mb-0">Janice C. Campbe</h3>
                                 <p class="mb-0 text-muted fs-14">Embedded analytics</p>
                             </div>
                         </div>
@@ -1981,7 +1995,7 @@
                         </div>
                         <div class="blog-content mt-5">
                             <!-- <p class="text-muted fw-semibold mb-2">May 25, 2021</p> -->
-                            <a href="#"><h5>We calculate clients demand for research.</h5></a>
+                            <a href="#"><h3>We calculate clients demand for research.</h3></a>
                             <p class="fs-15 text-muted">He nicked it tickety boo harry the cras bargy chap mush spiffing
                                 spend a penny.</p>
                             <a href="#" class="text-dark fw-semibold">Learn more <i class="mdi mdi-arrow-right fs-16"></i></a>
@@ -2064,7 +2078,7 @@
                         <div class="custom-form mt-4 ">
                             <form method="post" name="myForm" onsubmit="return validateForm()">
 
-                                <h6 class="mb-0 text-muted">Let's talk</h6>
+                                <h3 class="mb-0 text-muted">Let's talk</h3>
                                 <h3>Enter your project details</h3>
                                 <p class=" fs-15 text-muted">Content here, content here', making it look like
                                     readable English. Many desktop publishing packages.</p>
@@ -2132,34 +2146,34 @@
                             The limited liability is, in fact, the only type of company allowed by Companies.</p>
 
                         <div class="icon-item mt-4">
-                            <div class="d-flex">
-                                <a href="#">
-                                    <div class="social-icon facebook avatar-xs">
-                                        <i class="mdi mdi-facebook "></i>
-                                    </div>
-                                </a>
-                                <a href="#">
-                                    <div class="social-icon instagram avatar-xs">
-                                        <i class="mdi mdi-instagram "></i>
-                                    </div>
-                                </a>
-                                <a href="#">
-                                    <div class="social-icon twitter avatar-xs">
-                                        <i class="mdi mdi-twitter"></i>
-                                    </div>
-                                </a>
-                                <a href="#">
-                                    <div class="social-icon linkedin avatar-xs">
-                                        <i class="mdi mdi-linkedin"></i>
-                                    </div>
-                                </a>
-                                <a href="#">
-                                    <div class="social-icon pinterest avatar-xs">
-                                        <i class="mdi mdi-pinterest"></i>
-                                    </div>
-                                </a>
+                                <div class="d-flex">
+                                    <a href="#" aria-label="Facebook">
+                                        <div class="social-icon facebook avatar-xs">
+                                            <i class="mdi mdi-facebook"></i>
+                                        </div>
+                                    </a>
+                                    <a href="#" aria-label="Instagram">
+                                        <div class="social-icon instagram avatar-xs">
+                                            <i class="mdi mdi-instagram"></i>
+                                        </div>
+                                    </a>
+                                    <a href="#" aria-label="Twitter">
+                                        <div class="social-icon twitter avatar-xs">
+                                            <i class="mdi mdi-twitter"></i>
+                                        </div>
+                                    </a>
+                                    <a href="#" aria-label="LinkedIn">
+                                        <div class="social-icon linkedin avatar-xs">
+                                            <i class="mdi mdi-linkedin"></i>
+                                        </div>
+                                    </a>
+                                    <a href="#" aria-label="Pinterest">
+                                        <div class="social-icon pinterest avatar-xs">
+                                            <i class="mdi mdi-pinterest"></i>
+                                        </div>
+                                    </a>
+                                </div>
                             </div>
-
                         </div>
 
                     </div>
@@ -2180,7 +2194,7 @@
                 </div>
 
                 <div class="col-lg-3 mt-4">
-                    <h5 class="text-white">Linkedin</h5>
+                    <h3 class="text-white">Linkedin</h3>
                     <div class="row">
                         <div class="col-lg-10">
                             <div class="linkedin-box mt-4">
