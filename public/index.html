@@ -69,6 +69,33 @@
         #splash-screen img, #splash-screen video {
             width: 200px;
         }
+
+        .download-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 38px;
+        height: 38px;
+        border-radius: 50%;
+        border: 1px solid var(--bs-border-color);
+        color: var(--bs-body-color);
+        transition: all 0.3s ease;
+    }
+    
+    .download-btn:hover {
+        background-color: var(--bs-dark);
+        color: #fff;
+    }
+    
+    /* Dark mode styles will inherit from your existing theme */
+    [data-bs-theme="dark"] .download-btn {
+        color: #fff;
+        border-color: rgba(255, 255, 255, 0.1);
+    }
+    
+    [data-bs-theme="dark"] .download-btn:hover {
+        background-color: #fff;
+        color: #212529;
     
     </style>
 </head>
@@ -78,6 +105,11 @@
     <div id="splash-screen">
         <img src="/api/placeholder/200/200" alt="Loading..." id="splash-gif">
     </div>
+
+       <!-- Download Resume Button - Mobile View -->
+            <a href="#" id="download-resume-mobile" class="download-btn me-3 d-lg-none" download aria-label="Download Resume">
+                <i class="fa-solid fa-download" aria-hidden="true"></i>
+            </a>
 
     <!-- Navbar with Light/Dark Mode Toggle -->
     <nav class="navbar navbar-expand-lg fixed-top sticky" id="navbar">
