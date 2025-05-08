@@ -96,7 +96,34 @@
     [data-bs-theme="dark"] .download-btn:hover {
         background-color: #fff;
         color: #212529;
+    }
     
+    /* Responsive adjustments for 1024x600 and smaller */
+    @media (max-width: 1024px) {
+        #download-resume-mobile-left {
+            margin-right: 15px;
+        }
+        
+        .navbar-brand {
+            margin-right: 0;
+        }
+        
+        /* Ensure the button appears at specific breakpoints */
+        .d-none.d-md-block.d-lg-none {
+            display: block !important;
+        }
+    }
+    
+    /* For very small screens */
+    @media (max-width: 576px) {
+        .d-none.d-md-block.d-lg-none {
+            display: none !important;
+        }
+        
+        .d-md-none {
+            display: flex !important;
+        }
+    }
     </style>
 </head>
 
@@ -110,18 +137,24 @@
             <a href="#" id="download-resume-mobile" class="download-btn me-3 d-lg-none" download aria-label="Download Resume">
                 <i class="fa-solid fa-download" aria-hidden="true"></i>
             </a>
-
-    <!-- Navbar with Light/Dark Mode Toggle -->
-    <!-- Navbar with Light/Dark Mode Toggle and Download Resume Button -->
+ <!-- Navbar with Light/Dark Mode Toggle and Download Resume Button -->
 <nav class="navbar navbar-expand-lg fixed-top sticky" id="navbar">
     <div class="container-fluid custom-container">
+        <!-- Download Resume Button - Left Side for Mobile/Small Screens -->
+        <div class="d-none d-md-block d-lg-none">
+            <a href="#" id="download-resume-mobile-left" class="download-btn" download aria-label="Download Resume">
+                <i class="fa-solid fa-download" aria-hidden="true"></i>
+            </a>
+        </div>
+        
         <a class="navbar-brand logo text-uppercase" href="index.html" id="logo-link" aria-label="Home">
             <img src="src/images/logo-light.png" class="logo-light" alt="Company Logo" height="34">
             <img src="src/images/logo-dark.png" class="logo-dark" alt="Company Logo" height="34">
         </a>
+        
         <div class="d-flex align-items-center ms-auto">
-            <!-- Download Resume Button - Mobile View -->
-            <a href="#" id="download-resume-mobile" class="download-btn me-3 d-lg-none" download aria-label="Download Resume">
+            <!-- Download Resume Button - Extra Small Screens (appears on right) -->
+            <a href="#" id="download-resume-mobile-xs" class="download-btn me-3 d-md-none" download aria-label="Download Resume">
                 <i class="fa-solid fa-download" aria-hidden="true"></i>
             </a>
             
@@ -170,25 +203,37 @@
                     <a href="#contact" class="nav-link">Contact</a>
                 </li>
             </ul>
-            <!-- Mobile-only login button -->
-            <div class="d-lg-none text-center">
-                <a href="#" class="btn btn-dark rounded-pill my-3" data-bs-toggle="modal"
-                    data-bs-target="#exampleModal">Login</a>
+            <!-- Mobile-only buttons -->
+            <div class="d-lg-none d-flex justify-content-between align-items-center w-100 my-3">
+                <!-- Left side - Download Resume Button -->
+                <div>
+                    <a href="#" class="btn btn-outline-dark rounded-pill" download>
+                        <i class="fa-solid fa-download me-1"></i> Download Resume
+                    </a>
+                </div>
+                
+                <!-- Right side - Login Button -->
+                <div>
+                    <a href="#" class="btn btn-dark rounded-pill" data-bs-toggle="modal"
+                        data-bs-target="#exampleModal">Login</a>
+                </div>
             </div>
         </div>
-        <!-- Login Button - Desktop only -->
-        <div class="d-none d-lg-block">
-            <!-- Download Resume Button - Desktop View -->
-            <a href="#" id="download-resume-desktop" class="btn btn-outline-dark rounded-pill me-2" download>
-                <i class="fa-solid fa-download me-1"></i> Download Resume
-            </a>
+        <!-- Desktop controls -->
+        <div class="d-none d-lg-flex align-items-center">
+            <!-- Download Resume Button - Left side on Desktop -->
+            <div class="me-auto pe-3">
+                <a href="#" id="download-resume-desktop" class="btn btn-outline-dark rounded-pill" download>
+                    <i class="fa-solid fa-download me-1"></i> Download Resume
+                </a>
+            </div>
             
+            <!-- Login Button - Right side on Desktop -->
             <a href="#" class="btn btn-dark rounded-pill" data-bs-toggle="modal" data-bs-target="#exampleModal">Login</a>
         </div>
     </div>
     <!-- End container -->
 </nav>
-
 
     <!-- Modal -->
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
