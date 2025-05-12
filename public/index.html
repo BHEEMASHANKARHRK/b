@@ -55,6 +55,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/css/bootstrap.min.css">
 
     <style>
+        .logo-light, .logo-dark {
+            width: auto; /* Maintain natural width */
+            height: auto; /* Maintain natural height */
+            max-width: 100%; /* Ensure responsiveness */
+        }
         /* Splash screen styling */
         #splash-screen {
             position: fixed;
@@ -146,8 +151,8 @@
         </div>
         
         <a class="navbar-brand logo text-uppercase" href="index.html" id="logo-link" aria-label="Home">
-            <img src="src/images/logo-light.png" class="logo-light" alt="Company Logo" height="34">
-            <img src="src/images/logo-dark.png" class="logo-dark" alt="Company Logo" height="34">
+            <img src="src/images/logo-light.png" class="logo-light" alt="Company Logo" width="144" height="40">
+            <img src="src/images/logo-dark.png" class="logo-dark" alt="Company Logo" width="144" height="40">
         </a>
         
         <div class="d-flex align-items-center ms-auto">
@@ -378,7 +383,8 @@
                                                         </a>
                                                     </div>
                                                     <div class="btn-link-icon">
-                                                        <img src="src/images/home/right-arrow.png" alt="" class="img-fluid ms-3">
+<!--                                                         <img src="src/images/home/right-arrow.png" alt="" class="img-fluid ms-3"> -->
+                                                             <img src="home/right-arrow.png" srcset="home/right-arrow@2x.png 2x, home/right-arrow@3x.png 3x" width="30" height="30" class="img-fluid ms-3" alt="Right Arrow">    
                                                     </div>
                                                 </div>
                                             </div>
