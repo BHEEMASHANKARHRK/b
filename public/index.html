@@ -1,663 +1,2361 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Bheema - Portfolio</title>
+    <title>Bheema</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="BheemaAPP offers professional web and mobile app development services with custom solutions for businesses of all sizes.">
+    <meta name="description" content="BheemaAPP offers professional web and mobile app development services with custom solutions for businesses of all sizes. Get expert consultation, responsive design, and ongoing support.">
     <meta name="keywords" content="app development, web design, responsive websites, mobile apps, BheemaAPP, professional development">
-    <meta name="author" content="Bheemashankar">
+    <meta content="Themesdesign" name="author">
 
-    <!-- Font Awesome -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+    <link rel="shortcut icon" href="/b/public/src/images/favicon.png">
+
+    <!-- Bootstrap css -->
+    <link rel="stylesheet" href="src/css/bootstrap.min.css" type="text/css" id="bootstrap-style">
+
+    <!-- Material Icon Css -->
+    <link rel="stylesheet" href="src/css/materialdesignicons.min.css" type="text/css">
+
+    <!-- Unicon Css -->
+    <!-- <link rel="stylesheet" href="../../unicons.iconscout.com/release/v4.0.0/css/line.css" /> -->
+
+    <!-- Swiper Css -->
+    <link rel="stylesheet" href="src/css/tiny-slider.css" type="text/css">
+    <link rel="stylesheet" href="src/css/tiny-slider.css.html" type="text/css">
+    <link rel="stylesheet" href="src/css/swiper.min.css" type="text/css">
+
+    <!-- Custom Css -->
+    <link rel="stylesheet" href="src/css/style.min.css" type="text/css">
+
+    <link rel="manifest" href="/b/public/manifest.json">
+
+<!--     <link rel="manifest" href="/manifest.json"> -->
+  <meta name="apple-mobile-web-app-capble" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="PWAGram">
+  <link rel="apple-touch-icon" href="/b/public/src/images/icons/apple-icon-57x57.png" size="57x57">
+  
+  <link rel="apple-touch-icon" href="/b/public/src/images/icons/apple-icon-60x60.png" size="60x60">
+  <link rel="apple-touch-icon" href="/b/public/src/images/icons/apple-icon-72x72.png" size="72x72">
+  <link rel="apple-touch-icon" href="/b/public/src/images/icons/apple-icon-76x76.png" size="76x76">
+  <link rel="apple-touch-icon" href="/b/public/src/images/icons/apple-icon-114x114.png" size="114x114">
+  <link rel="apple-touch-icon" href="/b/public/src/images/icons/apple-icon-120x120.png" size="120x120">
+  <link rel="apple-touch-icon" href="/b/public/src/images/icons/apple-icon-144x144.png" size="144x144">
+  <link rel="apple-touch-icon" href="/b/public/src/images/icons/apple-icon-152x152.png" size="152x152">
+  <link rel="apple-touch-icon" href="/b/public/src/images/icons/apple-icon-180x180.png" size="180x180">
+
+  <meta name="msapplication-TileImage" content="/src/images/icons/apple-icon-144x144.png">
+  <meta name="msapplication-TileColor" content="#fff">
+  <meta name="theme-color" content="#3f51b5">
+
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+    <!-- Bootstrap CSS (CDN for this demo) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/css/bootstrap.min.css">
+
+    <style>
+        .logo-light, .logo-dark {
+            width: auto; /* Maintain natural width */
+            height: auto; /* Maintain natural height */
+            max-width: 200px; /* Ensure responsiveness */
+        }
+        /* Splash screen styling */
+        #splash-screen {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            background: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+        }
+        #splash-screen img, #splash-screen video {
+            width: 200px;
+        }
+
+        .download-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 38px;
+        height: 38px;
+        border-radius: 50%;
+        border: 1px solid var(--bs-border-color);
+        color: var(--bs-body-color);
+        transition: all 0.3s ease;
+    }
     
-    <!-- Bootstrap CSS -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    .download-btn:hover {
+        background-color: var(--bs-dark);
+        color: #fff;
+    }
     
-    <!-- Material Design Icons -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/7.2.96/css/materialdesignicons.min.css" rel="stylesheet">
+    /* Dark mode styles will inherit from your existing theme */
+    [data-bs-theme="dark"] .download-btn {
+        color: #fff;
+        border-color: rgba(255, 255, 255, 0.1);
+    }
     
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="style.css">
+    [data-bs-theme="dark"] .download-btn:hover {
+        background-color: #fff;
+        color: #212529;
+    }
     
-    <!-- Favicon -->
-    <link rel="shortcut icon" href="https://images.pexels.com/photos/6424223/pexels-photo-6424223.jpeg?auto=compress&cs=tinysrgb&w=32&h=32">
+    /* Responsive adjustments for 1024x600 and smaller */
+    @media (max-width: 1024px) {
+        #download-resume-mobile-left {
+            margin-right: 15px;
+        }
+        
+        .navbar-brand {
+            margin-right: 0;
+        }
+        
+        /* Ensure the button appears at specific breakpoints */
+        .d-none.d-md-block.d-lg-none {
+            display: block !important;
+        }
+    }
     
-    <!-- PWA Meta Tags -->
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="apple-mobile-web-app-title" content="BheemaAPP">
-    <meta name="theme-color" content="#2fb4ae">
+    /* For very small screens */
+    @media (max-width: 576px) {
+        .d-none.d-md-block.d-lg-none {
+            display: none !important;
+        }
+        
+        .d-md-none {
+            display: flex !important;
+        }
+    }
+    </style>
 </head>
 
-<body data-layout-mode="light">
+<body data-bs-spy="scroll" data-bs-target="#navbar" data-bs-offset="71" data-layout-mode="light">
     <!-- Splash Screen -->
     <div id="splash-screen">
-        <div class="splash-content">
-            <video width="200" height="200" autoplay muted loop>
-                <source src="https://assets.mixkit.co/videos/preview/mixkit-white-logo-animation-on-black-background-25161-large.mp4" type="video/mp4">
-                <img src="https://images.pexels.com/photos/6424223/pexels-photo-6424223.jpeg?auto=compress&cs=tinysrgb&w=200&h=200" alt="Loading..." class="fallback-image">
-            </video>
-            <h2 class="splash-title">BheemaAPP</h2>
-            <p class="splash-subtitle">Loading...</p>
-        </div>
+        <img src="/api/placeholder/200/200" alt="Loading..." id="splash-gif">
     </div>
 
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg fixed-top" id="navbar">
-        <div class="container">
-            <!-- Mobile Resume Button - Left -->
-            <a href="#" class="download-btn me-3 d-lg-none" download aria-label="Download Resume">
-                <i class="fa-solid fa-download"></i>
+       <!-- Download Resume Button - Mobile View -->
+            <a href="#" id="download-resume-mobile" class="download-btn me-3 d-lg-none" download aria-label="Download Resume">
+                <i class="fa-solid fa-download" aria-hidden="true"></i>
+            </a>
+ <!-- Navbar with Light/Dark Mode Toggle and Download Resume Button -->
+<nav class="navbar navbar-expand-lg fixed-top sticky" id="navbar">
+    <div class="container-fluid custom-container">
+        <!-- Download Resume Button - Left Side for Mobile/Small Screens -->
+        <div class="d-none d-md-block d-lg-none">
+            
+        </div>
+        
+        <a class="navbar-brand logo text-uppercase" href="index.html" id="logo-link" aria-label="Home">
+            <img src="src/images/logo-light.png" class="logo-light" alt="Company Logo" width="144" height="40">
+            <img src="src/images/logo-dark.png" class="logo-dark" alt="Company Logo" width="144" height="40">
+        </a>
+        
+        <div class="d-flex align-items-center ms-auto">
+            <!-- Download Resume Button - Extra Small Screens (appears on right) -->
+            <a href="#" id="download-resume-mobile-xs" class="download-btn me-3 d-md-none" download aria-label="Download Resume">
+                <i class="fa-solid fa-download" aria-hidden="true"></i>
             </a>
             
-            <!-- Logo -->
-            <a class="navbar-brand logo" href="#home">
-                <img src="https://images.pexels.com/photos/6424221/pexels-photo-6424221.jpeg?auto=compress&cs=tinysrgb&w=144&h=40" class="logo-light" alt="BheemaAPP Logo" width="144" height="40">
-                <img src="https://images.pexels.com/photos/6424223/pexels-photo-6424223.jpeg?auto=compress&cs=tinysrgb&w=144&h=40" class="logo-dark" alt="BheemaAPP Logo" width="144" height="40">
-            </a>
+            <!-- Light/Dark Mode Toggle -->
+            <button id="mode" class="mode-btn me-3" type="button" aria-label="Toggle dark or light mode" style="width:38px; height:38px;" >
+                <i class="fa-solid fa-sun" aria-hidden="true"></i>
+                <i class="fa-solid fa-moon" aria-hidden="true"></i>
+            </button>
             
-            <!-- Right Controls -->
-            <div class="d-flex align-items-center ms-auto">
-                <!-- Dark Mode Toggle -->
-                <button id="mode-toggle" class="mode-btn me-3" type="button" aria-label="Toggle dark mode">
-                    <i class="fa-solid fa-sun"></i>
-                    <i class="fa-solid fa-moon"></i>
-                </button>
-                
-                <!-- Mobile Menu Button -->
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                    <div class="burger-icon">
-                        <span class="burger-line"></span>
-                        <span class="burger-line"></span>
-                        <span class="burger-line"></span>
-                    </div>
-                </button>
-            </div>
+            <!-- Hamburger Menu Button -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <div class="burger-icon">
+                    <span class="burger-icon-top"></span>
+                    <span class="burger-icon-mid"></span>
+                    <span class="burger-icon-bottom"></span>
+                </div>
+            </button>
+        </div>
 
-            <!-- Navigation Menu -->
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav mx-auto">
-                    <li class="nav-item"><a href="#home" class="nav-link">Home</a></li>
-                    <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
-                    <li class="nav-item"><a href="#services" class="nav-link">Services</a></li>
-                    <li class="nav-item"><a href="#work" class="nav-link">Work</a></li>
-                    <li class="nav-item"><a href="#pricing" class="nav-link">Pricing</a></li>
-                    <li class="nav-item"><a href="#testimonials" class="nav-link">Testimonials</a></li>
-                    <li class="nav-item"><a href="#blog" class="nav-link">Blog</a></li>
-                    <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
-                </ul>
-                
-                <!-- Mobile Buttons -->
-                <div class="d-lg-none d-flex justify-content-between align-items-center w-100 my-3">
+        <div class="collapse navbar-collapse mt-4" id="navbarCollapse">
+            <ul class="navbar-nav mx-auto navbar-center">
+                <li class="nav-item active">
+                    <a href="#home" class="nav-link active">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#aboutme" class="nav-link">About Us</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#service" class="nav-link">Service</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#work" class="nav-link">Work</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#pricing" class="nav-link">Pricing</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#testi" class="nav-link">Testimonial</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#blog" class="nav-link">Blog</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#contact" class="nav-link">Contact</a>
+                </li>
+            </ul>
+            <!-- Mobile-only buttons -->
+            <div class="d-lg-none d-flex justify-content-between align-items-center w-150 my-3" style="margin-left: 3%; margin-right: 3%;">
+                <!-- Left side - Download Resume Button -->
+                <div>
                     <a href="#" class="btn btn-outline-dark rounded-pill" download>
                         <i class="fa-solid fa-download me-1"></i> Download Resume
                     </a>
-                    <a href="#" class="btn btn-dark rounded-pill" data-bs-toggle="modal" data-bs-target="#loginModal">
-                        Login
-                    </a>
                 </div>
                 
-                <!-- Desktop Buttons -->
-                <div class="d-none d-lg-flex align-items-center">
-                    <a href="#" class="btn btn-outline-dark rounded-pill me-3" download>
-                        <i class="fa-solid fa-download me-1"></i> Download Resume
-                    </a>
-                    <a href="#" class="btn btn-dark rounded-pill" data-bs-toggle="modal" data-bs-target="#loginModal">
-                        Login
-                    </a>
+                <!-- Right side - Login Button -->
+                <div>
+                    <a href="#" class="btn btn-dark rounded-pill" data-bs-toggle="modal"
+                        data-bs-target="#exampleModal">Login</a>
                 </div>
             </div>
         </div>
-    </nav>
-
-    <!-- Home Section -->
-    <section class="home" id="home">
-        <div class="container">
-            <div class="row align-items-center min-vh-100">
-                <div class="col-lg-6">
-                    <div class="home-content">
-                        <p class="text-primary fw-semibold mb-2">Hello! I AM</p>
-                        <h1 class="home-title mb-4">
-                            <span class="typewriter">Full Stack Developer</span>
-                        </h1>
-                        <p class="lead text-muted mb-4">
-                            I am a passionate Full Stack Developer skilled in building scalable Android applications and robust backend systems using Spring Boot, Hibernate, and MySQL.
-                        </p>
-                        
-                        <!-- Social Icons -->
-                        <div class="social-icons mb-4">
-                            <a href="mailto:bheemashankarhk4@gmail.com" class="social-icon email">
-                                <i class="mdi mdi-email"></i>
-                            </a>
-                            <a href="https://www.youtube.com/@bheema_tunes" class="social-icon youtube">
-                                <i class="mdi mdi-youtube"></i>
-                            </a>
-                            <a href="https://www.facebook.com/bheemashankar.kanadala" class="social-icon facebook">
-                                <i class="mdi mdi-facebook"></i>
-                            </a>
-                            <a href="https://www.instagram.com/bheemashankarhk" class="social-icon instagram">
-                                <i class="mdi mdi-instagram"></i>
-                            </a>
-                            <a href="https://www.linkedin.com/in/bheemashankar-h-k-7a420a1a4" class="social-icon linkedin">
-                                <i class="mdi mdi-linkedin"></i>
-                            </a>
-                            <a href="https://github.com/BHEEMASHANKARHRK" class="social-icon github">
-                                <i class="mdi mdi-github"></i>
-                            </a>
-                        </div>
-                        
-                        <!-- CTA Button -->
-                        <div class="home-cta">
-                            <a href="https://redmindstech.com/metricmaster" class="cta-link">
-                                <span class="cta-text">See my work</span>
-                                <i class="fas fa-arrow-right ms-2"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="home-image">
-                        <img src="https://images.pexels.com/photos/3184398/pexels-photo-3184398.jpeg?auto=compress&cs=tinysrgb&w=600&h=800" alt="Bheemashankar" class="img-fluid rounded-3 shadow-lg">
-                    </div>
-                </div>
+        <!-- Desktop controls -->
+        <div class="d-none d-lg-flex align-items-center">
+            <!-- Download Resume Button - Left side on Desktop -->
+            <div class="me-auto pe-3">
+                <a href="#" id="download-resume-desktop" class="btn btn-outline-dark rounded-pill" download>
+                    <i class="fa-solid fa-download me-1"></i> Download Resume
+                </a>
             </div>
+            
+            <!-- Login Button - Right side on Desktop -->
+            <a href="#" class="btn btn-dark rounded-pill" data-bs-toggle="modal" data-bs-target="#exampleModal">Login</a>
         </div>
-    </section>
+    </div>
+    <!-- End container -->
+</nav>
 
-    <!-- About Section -->
-    <section class="section about" id="about">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-6">
-                    <div class="about-image">
-                        <img src="https://images.pexels.com/photos/3184396/pexels-photo-3184396.jpeg?auto=compress&cs=tinysrgb&w=600&h=800" alt="About Me" class="img-fluid rounded-3 shadow-lg">
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="about-content">
-                        <h2 class="section-title mb-4">About Me</h2>
-                        <p class="text-muted mb-4">
-                            I am a passionate developer with expertise in building scalable applications and creating beautiful user experiences. My journey in technology spans across multiple domains including web development, mobile applications, and design.
-                        </p>
-                        
-                        <!-- Skills -->
-                        <div class="skills">
-                            <div class="skill-item mb-3">
-                                <div class="d-flex justify-content-between mb-1">
-                                    <span class="fw-semibold">Development</span>
-                                    <span class="fw-semibold">85%</span>
-                                </div>
-                                <div class="progress">
-                                    <div class="progress-bar bg-primary" style="width: 85%"></div>
-                                </div>
-                            </div>
-                            <div class="skill-item mb-3">
-                                <div class="d-flex justify-content-between mb-1">
-                                    <span class="fw-semibold">Design</span>
-                                    <span class="fw-semibold">95%</span>
-                                </div>
-                                <div class="progress">
-                                    <div class="progress-bar bg-warning" style="width: 95%"></div>
-                                </div>
-                            </div>
-                            <div class="skill-item mb-3">
-                                <div class="d-flex justify-content-between mb-1">
-                                    <span class="fw-semibold">Branding</span>
-                                    <span class="fw-semibold">80%</span>
-                                </div>
-                                <div class="progress">
-                                    <div class="progress-bar bg-success" style="width: 80%"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Services Section -->
-    <section class="section services bg-light" id="services">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-8 text-center">
-                    <h2 class="section-title mb-4">Professional Services</h2>
-                    <p class="text-muted mb-5">We provide comprehensive digital solutions tailored to meet your business needs with modern technologies and proven methodologies.</p>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="service-card h-100">
-                        <div class="service-icon mb-3">
-                            <i class="mdi mdi-code-tags text-primary"></i>
-                        </div>
-                        <h4 class="service-title mb-3">Web Development</h4>
-                        <p class="text-muted">Building responsive and modern web applications using cutting-edge technologies and best practices.</p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="service-card h-100">
-                        <div class="service-icon mb-3">
-                            <i class="mdi mdi-cellphone text-success"></i>
-                        </div>
-                        <h4 class="service-title mb-3">Mobile App Development</h4>
-                        <p class="text-muted">Creating intuitive mobile applications for Android platforms with seamless user experiences.</p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="service-card h-100">
-                        <div class="service-icon mb-3">
-                            <i class="mdi mdi-palette text-warning"></i>
-                        </div>
-                        <h4 class="service-title mb-3">UI/UX Design</h4>
-                        <p class="text-muted">Designing beautiful and functional user interfaces that enhance user engagement and satisfaction.</p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="service-card h-100">
-                        <div class="service-icon mb-3">
-                            <i class="mdi mdi-database text-info"></i>
-                        </div>
-                        <h4 class="service-title mb-3">Backend Development</h4>
-                        <p class="text-muted">Developing robust backend systems and APIs using Spring Boot, MySQL, and cloud technologies.</p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="service-card h-100">
-                        <div class="service-icon mb-3">
-                            <i class="mdi mdi-web text-danger"></i>
-                        </div>
-                        <h4 class="service-title mb-3">Full Stack Solutions</h4>
-                        <p class="text-muted">Providing end-to-end development solutions from concept to deployment and maintenance.</p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="service-card h-100">
-                        <div class="service-icon mb-3">
-                            <i class="mdi mdi-shield-check text-purple"></i>
-                        </div>
-                        <h4 class="service-title mb-3">Security & Testing</h4>
-                        <p class="text-muted">Implementing security best practices and comprehensive testing to ensure reliable applications.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Counter Section -->
-    <section class="section counter" id="counter">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-8 text-center">
-                    <h2 class="section-title mb-4">Our Achievements</h2>
-                    <p class="text-muted mb-5">Numbers that speak for our commitment to excellence and the trust our clients place in us.</p>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-3 col-md-6 mb-4">
-                    <div class="counter-card text-center">
-                        <div class="counter-icon mb-3">
-                            <i class="mdi mdi-heart text-danger"></i>
-                        </div>
-                        <div class="counter-number mb-2">
-                            <span class="counter-value" data-target="800">0</span>K+
-                        </div>
-                        <h5 class="counter-title">Happy Clients</h5>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 mb-4">
-                    <div class="counter-card text-center">
-                        <div class="counter-icon mb-3">
-                            <i class="mdi mdi-briefcase text-primary"></i>
-                        </div>
-                        <div class="counter-number mb-2">
-                            <span class="counter-value" data-target="400">0</span>
-                        </div>
-                        <h5 class="counter-title">Projects Done</h5>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 mb-4">
-                    <div class="counter-card text-center">
-                        <div class="counter-icon mb-3">
-                            <i class="mdi mdi-star text-warning"></i>
-                        </div>
-                        <div class="counter-number mb-2">
-                            <span class="counter-value" data-target="1000">0</span>K+
-                        </div>
-                        <h5 class="counter-title">Client Reviews</h5>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 mb-4">
-                    <div class="counter-card text-center">
-                        <div class="counter-icon mb-3">
-                            <i class="mdi mdi-lightbulb text-success"></i>
-                        </div>
-                        <div class="counter-number mb-2">
-                            <span class="counter-value" data-target="4">0</span>+
-                        </div>
-                        <h5 class="counter-title">Years Experience</h5>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Work Section -->
-    <section class="section work bg-light" id="work">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-8 text-center">
-                    <h2 class="section-title mb-4">My Latest Work</h2>
-                    <p class="text-muted mb-5">Perfect solution for digital experience</p>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="work-card">
-                        <div class="work-image">
-                            <img src="https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=400&h=300" alt="E-Commerce Platform" class="img-fluid">
-                            <div class="work-overlay">
-                                <a href="#" class="work-link">
-                                    <i class="fas fa-external-link-alt"></i>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="work-content">
-                            <h4 class="work-title">E-Commerce Platform</h4>
-                            <p class="work-category">Web Development</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="work-card">
-                        <div class="work-image">
-                            <img src="https://images.pexels.com/photos/3184298/pexels-photo-3184298.jpeg?auto=compress&cs=tinysrgb&w=400&h=300" alt="Mobile Banking App" class="img-fluid">
-                            <div class="work-overlay">
-                                <a href="#" class="work-link">
-                                    <i class="fas fa-external-link-alt"></i>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="work-content">
-                            <h4 class="work-title">Mobile Banking App</h4>
-                            <p class="work-category">Mobile App</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="work-card">
-                        <div class="work-image">
-                            <img src="https://images.pexels.com/photos/3184299/pexels-photo-3184299.jpeg?auto=compress&cs=tinysrgb&w=400&h=300" alt="Brand Identity" class="img-fluid">
-                            <div class="work-overlay">
-                                <a href="#" class="work-link">
-                                    <i class="fas fa-external-link-alt"></i>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="work-content">
-                            <h4 class="work-title">Brand Identity</h4>
-                            <p class="work-category">Design</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section class="section contact" id="contact">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-8 text-center">
-                    <h2 class="section-title mb-4">Let's Connect</h2>
-                    <p class="text-muted mb-5">Looking for help? Fill the form and start a new adventure.</p>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-8 mx-auto">
-                    <form class="contact-form">
-                        <div class="row">
-                            <div class="col-md-6 mb-3">
-                                <input type="text" class="form-control" placeholder="Your Name" required>
-                            </div>
-                            <div class="col-md-6 mb-3">
-                                <input type="email" class="form-control" placeholder="Your Email" required>
-                            </div>
-                        </div>
-                        <div class="mb-3">
-                            <input type="text" class="form-control" placeholder="Subject" required>
-                        </div>
-                        <div class="mb-3">
-                            <textarea class="form-control" rows="5" placeholder="Your Message" required></textarea>
-                        </div>
-                        <div class="text-center">
-                            <button type="submit" class="btn btn-primary btn-lg">Send Message</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer bg-dark text-white">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-4 mb-4">
-                    <img src="https://images.pexels.com/photos/6424223/pexels-photo-6424223.jpeg?auto=compress&cs=tinysrgb&w=144&h=40" alt="BheemaAPP" class="mb-3">
-                    <p class="text-muted">A passionate developer creating amazing digital experiences with modern technologies.</p>
-                    <div class="social-links">
-                        <a href="#" class="social-link"><i class="mdi mdi-facebook"></i></a>
-                        <a href="#" class="social-link"><i class="mdi mdi-twitter"></i></a>
-                        <a href="#" class="social-link"><i class="mdi mdi-linkedin"></i></a>
-                        <a href="#" class="social-link"><i class="mdi mdi-github"></i></a>
-                    </div>
-                </div>
-                <div class="col-lg-4 mb-4">
-                    <h5 class="mb-3">Quick Links</h5>
-                    <ul class="list-unstyled">
-                        <li><a href="#home" class="text-muted">Home</a></li>
-                        <li><a href="#about" class="text-muted">About</a></li>
-                        <li><a href="#services" class="text-muted">Services</a></li>
-                        <li><a href="#contact" class="text-muted">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="col-lg-4 mb-4">
-                    <h5 class="mb-3">Contact Info</h5>
-                    <p class="text-muted mb-2">
-                        <i class="mdi mdi-email me-2"></i>
-                        bheemashankarhk4@gmail.com
-                    </p>
-                    <p class="text-muted mb-2">
-                        <i class="mdi mdi-phone me-2"></i>
-                        +91 123 456 7890
-                    </p>
-                </div>
-            </div>
-            <hr class="my-4">
-            <div class="row align-items-center">
-                <div class="col-md-6">
-                    <p class="text-muted mb-0">© 2024 BheemaAPP. All rights reserved.</p>
-                </div>
-                <div class="col-md-6 text-md-end">
-                    <p class="text-muted mb-0">Developed with <i class="mdi mdi-heart text-danger"></i> by Bheemashankar</p>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <!-- Login Modal -->
-    <div class="modal fade" id="loginModal" tabindex="-1">
-        <div class="modal-dialog modal-dialog-centered">
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered ">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title">Login</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    <h3 class="modal-title" id="exampleModalLabel">Sign up</h3>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div class="modal-body">
-                    <form>
-                        <div class="mb-3">
-                            <label class="form-label">Email</label>
-                            <input type="email" class="form-control" required>
+                <div class="modal-body p-4">
+                    <form class="row g-3 needs-validation">
+                        <div class="col-md-6">
+                            <label for="validationCustom01" class="form-label">First name <span class="text-primary">*</span></label>
+                            <input type="text" class="form-control" id="validationCustom01" value="" required="">
+                            <div class="valid-feedback">
+                                Looks good!
+                            </div>
                         </div>
-                        <div class="mb-3">
-                            <label class="form-label">Password</label>
-                            <input type="password" class="form-control" required>
+                        <div class="col-md-6">
+                            <label for="validationCustom02" class="form-label">Email <span class="text-primary">*</span></label>
+                            <input type="email" class="form-control" id="validationCustom02" value="" required="">
+                            <div class="valid-feedback">
+                                Looks good!
+                            </div>
                         </div>
-                        <button type="submit" class="btn btn-primary w-100">Login</button>
+                        <div class="col-md-6">
+                            <label for="validationCustom03" class="form-label">Subject <span class="text-primary">*</span></label>
+                            <input type="text" class="form-control" id="validationCustom03" required="">
+                            <div class="invalid-feedback">
+                                Please provide a valid city.
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="validationCustom05" class="form-label">Password <span class="text-primary">*</span></label>
+                            <input type="password" class="form-control" id="validationCustom05" required="">
+                            <div class="invalid-feedback">
+                                Please provide a valid zip.
+                            </div>
+                        </div>
+                        <div class="col-lg-12">
+                            <label for="validationTextarea" class="form-label">Textarea<span class="text-primary">*</span></label>
+                            <textarea class="form-control" id="validationTextarea" required=""></textarea>
+                            <div class="invalid-feedback">
+                                You must agree before submitting.
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <button class="btn btn-primary" type="submit">Submit form</button>
+                        </div>
                     </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- end modal -->
+
+                        <!-- Home Slider Item -->
+<!-- home section -->
+<section class="home" id="home" style="background-image: url(src/images/bg-home.png);">
+    <!-- start container -->
+    <div class="container position-relative">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="tns-outer" id="home-slider-ow">
+                    <!-- Carousel Navigation -->
+                    <div class="tns-controls" aria-label="Carousel Navigation" tabindex="0">
+                        <button type="button" data-controls="prev" tabindex="-1" aria-controls="home-slider">←</button>
+                        <button type="button" data-controls="next" tabindex="-1" aria-controls="home-slider">→</button>
+                    </div>
+                    
+                    <!-- Live region for screen readers -->
+                    <div class="tns-liveregion tns-visually-hidden" aria-live="polite" aria-atomic="true">slide <span class="current">3</span> of 4</div>
+                    
+                    <div id="home-slider-mw" class="tns-ovh">
+                        <div class="tns-inner" id="home-slider-iw">
+                            <div class="home-slider tns-slider tns-carousel tns-subpixel tns-calc tns-horizontal" id="home-slider" style="transform: translate3d(-33.3333%, 0px, 0px);">
+                                
+                                <!-- Cloned slide (inactive) -->
+                                <div class="item tns-item tns-slide-cloned" aria-hidden="true">
+                                    <div class="row align-items-center">
+                                        <div class="col-lg-6">
+                                            <div class="content-item">
+                                                <p class="text-blue fw-semibold mb-0">Hello! I AM</p>
+                                                <h1 class="home-title mb-0 text-dark fw-bold">
+                                                    <span class="typewrite" data-period="2000" data-type="[ &quot;Ray Glam.&quot;,&quot;Web Enthusiast.&quot;,&quot;Graduate based in NYC.&quot; ]">
+                                                        <span class="wrap">Full Stack Developer</span>
+                                                    </span>
+                                                </h1>
+                                                <p class="mt-3 text-muted">I am a passionate Full Stack Developer skilled in building scalable Android applications and robust backend systems using Spring Boot, Hibernate, and MySQL. I combine strong technical knowledge with creative design expertise to deliver seamless, user-centric digital experiences.</p>
+
+                                                <div class="icon-item mt-4">
+                                                    <div class="d-flex">
+                                                        <!-- All links in inactive slides have tabindex="-1" -->
+                                                        <span class="social-icon-wrapper">
+                                                            <a href="mailto:bheemashankarhk4@gmail.com" tabindex="-1" aria-label="Send an email to Bheema">
+                                                                <div class="social-icon email avatar-sm">
+                                                                    <i class="mdi mdi-email"></i>
+                                                                </div>
+                                                            </a>
+                                                        </span>
+                                                        <span class="social-icon-wrapper">
+                                                            <a href="https://www.youtube.com/@bheema_tunes" tabindex="-1" aria-label="Visit Bheema's YouTube channel">
+                                                                <div class="social-icon youtube avatar-sm">
+                                                                    <i class="mdi mdi-youtube"></i>
+                                                                </div>
+                                                            </a>
+                                                        </span>
+                                                        <span class="social-icon-wrapper">
+                                                            <a href="https://www.facebook.com/bheemashankar.kanadala" tabindex="-1" aria-label="Visit Bheema's Facebook profile">
+                                                                <div class="social-icon facebook avatar-sm">
+                                                                    <i class="mdi mdi-facebook"></i>
+                                                                </div>
+                                                            </a>
+                                                        </span>
+                                                        <span class="social-icon-wrapper">
+                                                            <a href="https://www.instagram.com/bheemashankarhk" tabindex="-1" aria-label="Visit Bheema's Instagram profile">
+                                                                <div class="social-icon instagram avatar-sm">
+                                                                    <i class="mdi mdi-instagram"></i>
+                                                                </div>
+                                                            </a>
+                                                        </span>
+                                                        <span class="social-icon-wrapper">
+                                                            <a href="https://www.linkedin.com/in/bheemashankar-h-k-7a420a1a4?_l=en_US" tabindex="-1" aria-label="Visit Bheema's LinkedIn profile">
+                                                                <div class="social-icon linkedin avatar-sm">
+                                                                    <i class="mdi mdi-linkedin"></i>
+                                                                </div>
+                                                            </a>
+                                                        </span>
+                                                        <span class="social-icon-wrapper">
+                                                            <a href="https://github.com/BHEEMASHANKARHRK" tabindex="-1" aria-label="Visit Bheema's GitHub profile">
+                                                                <div class="social-icon github avatar-sm">
+                                                                    <i class="mdi mdi-github"></i>
+                                                                </div>
+                                                            </a>
+                                                        </span>
+                                                    </div>
+                                                </div>
+
+                                                <div class="home-link d-flex align-items-center mt-5">
+                                                    <div class="btn-link">
+                                                        <a href="https://redmindstech.com/metricmaster" class="text-dark h6" tabindex="-1">
+                                                            <div class="read-link btn-link-blue"><span>See my work </span></div>
+                                                        </a>
+                                                    </div>
+                                                    <div class="btn-link-icon">
+<!--                                                         <img src="src/images/home/right-arrow.png" alt="" class="img-fluid ms-3"> -->
+                                                             <img src="home/right-arrow.png" srcset="home/right-arrow@2x.png 2x, home/right-arrow@3x.png 3x" width="30" height="30" class="img-fluid ms-3" alt="Right Arrow">    
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-lg-6">
+                                            <div class="my-image">
+                                                <img src="src/images/home/home-4.png" alt="" class="img-fluid">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Home Slider Item (First item) -->
+                                <div class="item tns-item" id="home-slider-item0" aria-hidden="true">
+                                    <div class="row align-items-center">
+                                        <div class="col-lg-6">
+                                            <div class="content-item">
+                                                <p class="text-warning fw-semibold mb-0">Hello! I AM</p>
+                                                <div class="home-title mb-0 fw-bold h1">
+                                                    <span class="typewrite" data-period="2000" data-type="[ &quot;Harold Anderson.&quot;,&quot;Freelance Designer.&quot;,&quot;Graduate based in NYC.&quot; ]">
+                                                        <span class="wrap">Android & Web Developer</span>
+                                                    </span>
+                                                </div>
+                                                <p class="mt-3 text-muted">
+                                                    I am a versatile Android & Web Developer with expertise in creating intuitive mobile apps and dynamic web applications using Java, Spring Boot, MySQL, and front-end technologies.
+                                                    I blend clean design with functional code to deliver high-performance, user-friendly digital solutions.
+                                                </p>
+
+                                                <div class="icon-item mt-4">
+                                                    <div class="d-flex">
+                                                        <span class="social-icon-wrapper">
+                                                            <a href="mailto:bheemashankarhk4@gmail.com" tabindex="-1" aria-label="Send an email to Bheema">
+                                                                <div class="social-icon email avatar-sm">
+                                                                    <i class="mdi mdi-email"></i>
+                                                                </div>
+                                                            </a>
+                                                        </span>
+                                                        <span class="social-icon-wrapper">
+                                                            <a href="https://www.youtube.com/@bheema_tunes" tabindex="-1" aria-label="Visit Bheema's YouTube channel">
+                                                                <div class="social-icon youtube avatar-sm">
+                                                                    <i class="mdi mdi-youtube"></i>
+                                                                </div>
+                                                            </a>
+                                                        </span>
+                                                        <span class="social-icon-wrapper">
+                                                            <a href="https://www.facebook.com/bheemashankar.kanadala" tabindex="-1" aria-label="Visit Bheema's Facebook profile">
+                                                                <div class="social-icon facebook avatar-sm">
+                                                                    <i class="mdi mdi-facebook"></i>
+                                                                </div>
+                                                            </a>
+                                                        </span>
+                                                        <span class="social-icon-wrapper">
+                                                            <a href="https://www.instagram.com/bheemashankarhk" tabindex="-1" aria-label="Visit Bheema's Instagram profile">
+                                                                <div class="social-icon instagram avatar-sm">
+                                                                    <i class="mdi mdi-instagram"></i>
+                                                                </div>
+                                                            </a>
+                                                        </span>
+                                                        <span class="social-icon-wrapper">
+                                                            <a href="https://www.linkedin.com/in/bheemashankar-h-k-7a420a1a4?_l=en_US" tabindex="-1" aria-label="Visit Bheema's LinkedIn profile">
+                                                                <div class="social-icon linkedin avatar-sm">
+                                                                    <i class="mdi mdi-linkedin"></i>
+                                                                </div>
+                                                            </a>
+                                                        </span>
+                                                        <span class="social-icon-wrapper">
+                                                            <a href="https://github.com/BHEEMASHANKARHRK" tabindex="-1" aria-label="Visit Bheema's GitHub profile">
+                                                                <div class="social-icon github avatar-sm">
+                                                                    <i class="mdi mdi-github"></i>
+                                                                </div>
+                                                            </a>
+                                                        </span>
+                                                    </div>
+                                                </div>
+
+                                                <div class="home-link d-inline-block mt-5">
+                                                    <div class="d-flex align-items-center">
+                                                        <div class="btn-link">
+                                                            <a href="https://redmindstech.com/metricmaster" class="text-dark h6" tabindex="-1">
+                                                                <div class="read-link btn-link-warning"><span>See my work</span></div>
+                                                            </a>
+                                                        </div>
+                                                        <div class="btn-link-icon">
+                                                            <img src="src/images/home/right-arrow.png" alt="See my work arrow" class="img-fluid ms-3">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-lg-6">
+                                            <div class="my-image">
+                                                <img src="src/images/home/home.png" alt="Bheema's portfolio image" class="img-fluid">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Active slide - No tabindex manipulation needed -->
+                                <div class="item tns-item tns-slide-active" id="home-slider-item1">
+                                    <div class="row align-items-center">
+                                        <div class="col-lg-6">
+                                            <div class="content-item">
+                                                <p class="text-primary fw-semibold mb-0">Hello! I AM</p>
+                                                <div class="home-title mb-0 text-dark fw-bold h1">
+                                                    <span class="typewrite" data-period="2000" data-type="[ &quot;Marie Jons.&quot;,&quot;Devloper.&quot;,&quot;Graduate based in NYC.&quot; ]">
+                                                        <span class="wrap">Designer</span>
+                                                    </span>
+                                                </div>
+                                                <p class="mt-3 text-muted">I am a creative Android & Web Developer and Designer, skilled in building responsive applications and crafting visually appealing designs using tools like Canva. I merge technical development with strong design principles to deliver engaging and user-focused digital experiences.</p>
+
+                                                <div class="icon-item mt-4">
+                                                    <div class="d-flex">
+                                                        <span class="social-icon-wrapper">
+                                                            <a href="mailto:bheemashankarhk4@gmail.com" aria-label="Send an email to Bheema">
+                                                                <div class="social-icon email avatar-sm">
+                                                                    <i class="mdi mdi-email"></i>
+                                                                </div>
+                                                            </a>
+                                                        </span>
+                                                        <span class="social-icon-wrapper">
+                                                            <a href="https://www.youtube.com/@bheema_tunes" aria-label="Visit Bheema's YouTube channel">
+                                                                <div class="social-icon youtube avatar-sm">
+                                                                    <i class="mdi mdi-youtube"></i>
+                                                                </div>
+                                                            </a>
+                                                        </span>
+                                                        <span class="social-icon-wrapper">
+                                                            <a href="https://www.facebook.com/bheemashankar.kanadala" aria-label="Visit Bheema's Facebook profile">
+                                                                <div class="social-icon facebook avatar-sm">
+                                                                    <i class="mdi mdi-facebook"></i>
+                                                                </div>
+                                                            </a>
+                                                        </span>
+                                                        <span class="social-icon-wrapper">
+                                                            <a href="https://www.instagram.com/bheemashankarhk" aria-label="Visit Bheema's Instagram profile">
+                                                                <div class="social-icon instagram avatar-sm">
+                                                                    <i class="mdi mdi-instagram"></i>
+                                                                </div>
+                                                            </a>
+                                                        </span>
+                                                        <span class="social-icon-wrapper">
+                                                            <a href="https://www.linkedin.com/in/bheemashankar-h-k-7a420a1a4?_l=en_US" aria-label="Visit Bheema's LinkedIn profile">
+                                                                <div class="social-icon linkedin avatar-sm">
+                                                                    <i class="mdi mdi-linkedin"></i>
+                                                                </div>
+                                                            </a>
+                                                        </span>
+                                                        <span class="social-icon-wrapper">
+                                                            <a href="https://github.com/BHEEMASHANKARHRK" aria-label="Visit Bheema's GitHub profile">
+                                                                <div class="social-icon github avatar-sm">
+                                                                    <i class="mdi mdi-github"></i>
+                                                                </div>
+                                                            </a>
+                                                        </span>
+                                                    </div>
+                                                </div>
+
+                                                <div class="home-link d-flex align-items-center mt-5">
+                                                    <div class="btn-link">
+                                                        <a href="https://redmindstech.com/metricmaster" class="text-dark h6">
+                                                            <div class="read-link"><span>See my work </span></div>
+                                                        </a>
+                                                    </div>
+                                                    <div class="btn-link-icon">
+                                                        <img src="src/images/home/right-arrow.png" alt="Right arrow" class="img-fluid ms-3">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-lg-6">
+                                            <div class="my-image">
+                                                <img src="src/images/home/home-2.png" alt="Bheema's designer profile image" class="img-fluid">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Inactive slide -->
+                                <div class="item tns-item" id="home-slider-item2" aria-hidden="true">
+                                    <div class="row align-items-center">
+                                        <div class="col-lg-6">
+                                            <div class="content-item">
+                                                <p class="text-danger fw-semibold mb-0">Hello! I AM</p>
+                                                <div class="home-title mb-0 text-dark fw-bold h1">
+                                                    <span class="typewrite" data-period="2000" data-type="[ &quot;Ray Glam.&quot;,&quot;Web Enthusiast.&quot;,&quot;Graduate based in NYC.&quot; ]">
+                                                        <span class="wrap">Web Enthusiast.</span>
+                                                    </span>
+                                                </div>
+                                                <p class="mt-3 text-muted">Building simple and beautiful things for complex interfaces is what I enjoy most about my work. I am also interested in crafting beautiful minimal products and exploring new worlds.</p>
+
+                                                <div class="icon-item mt-4">
+                                                    <div class="d-flex">
+                                                        <span class="social-icon-wrapper">
+                                                            <a href="mailto:bheemashankarhk4@gmail.com" tabindex="-1" aria-label="Send an email to Bheema">
+                                                                <div class="social-icon email avatar-sm">
+                                                                    <i class="mdi mdi-email"></i>
+                                                                </div>
+                                                            </a>
+                                                        </span>
+                                                        <span class="social-icon-wrapper">
+                                                            <a href="https://www.youtube.com/@bheema_tunes" tabindex="-1" aria-label="Visit Bheema's YouTube channel">
+                                                                <div class="social-icon youtube avatar-sm">
+                                                                    <i class="mdi mdi-youtube"></i>
+                                                                </div>
+                                                            </a>
+                                                        </span>
+                                                        <span class="social-icon-wrapper">
+                                                            <a href="https://www.facebook.com/bheemashankar.kanadala" tabindex="-1" aria-label="Visit Bheema's Facebook profile">
+                                                                <div class="social-icon facebook avatar-sm">
+                                                                    <i class="mdi mdi-facebook"></i>
+                                                                </div>
+                                                            </a>
+                                                        </span>
+                                                        <span class="social-icon-wrapper">
+                                                            <a href="https://www.instagram.com/bheemashankarhk" tabindex="-1" aria-label="Visit Bheema's Instagram profile">
+                                                                <div class="social-icon instagram avatar-sm">
+                                                                    <i class="mdi mdi-instagram"></i>
+                                                                </div>
+                                                            </a>
+                                                        </span>
+                                                        <span class="social-icon-wrapper">
+                                                            <a href="https://www.linkedin.com/in/bheemashankar-h-k-7a420a1a4?_l=en_US" tabindex="-1" aria-label="Visit Bheema's LinkedIn profile">
+                                                                <div class="social-icon linkedin avatar-sm">
+                                                                    <i class="mdi mdi-linkedin"></i>
+                                                                </div>
+                                                            </a>
+                                                        </span>
+                                                        <span class="social-icon-wrapper">
+                                                            <a href="https://github.com/BHEEMASHANKARHRK" tabindex="-1" aria-label="Visit Bheema's GitHub profile">
+                                                                <div class="social-icon github avatar-sm">
+                                                                    <i class="mdi mdi-github"></i>
+                                                                </div>
+                                                            </a>
+                                                        </span>
+                                                    </div>
+                                                </div>
+
+                                                <div class="home-link d-flex align-items-center mt-5">
+                                                    <div class="btn-link">
+                                                        <a href="https://redmindstech.com/metricmaster" class="text-dark h6" tabindex="-1">
+                                                            <div class="read-link btn-link-denger"><span>See my work </span></div>
+                                                        </a>
+                                                    </div>
+                                                    <div class="btn-link-icon">
+                                                        <img src="src/images/home/right-arrow.png" alt="Right arrow" class="img-fluid ms-3">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-lg-6">
+                                            <div class="my-image">
+                                                <img src="src/images/home/home-3.png" alt="Bheema as web enthusiast" class="img-fluid">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Inactive slide -->
+                                <div class="item tns-item" id="home-slider-item3" aria-hidden="true">
+                                    <div class="row align-items-center">
+                                        <div class="col-lg-6">
+                                            <div class="content-item">
+                                                <p class="text-blue fw-semibold mb-0">Hello! I AM</p>
+                                                <h1 class="home-title mb-0 text-dark fw-bold">
+                                                    <span class="typewrite" data-period="2000" data-type="[ &quot;Ray Glam.&quot;,&quot;Web Enthusiast.&quot;,&quot;Graduate based in NYC.&quot; ]">
+                                                        <span class="wrap">Graduate based in NYC.</span>
+                                                    </span>
+                                                </h1>
+                                                <p class="mt-3 text-muted">Building simple and beautiful things for complex interfaces is what I enjoy most about my work. I am also interested in crafting beautiful minimal products and exploring new worlds.</p>
+
+                                                <div class="icon-item mt-4">
+                                                    <div class="d-flex">
+                                                        <span class="social-icon-wrapper">
+                                                            <a href="mailto:bheemashankarhk4@gmail.com" tabindex="-1" aria-label="Send an email to Bheema">
+                                                                <div class="social-icon email avatar-sm">
+                                                                    <i class="mdi mdi-email"></i>
+                                                                </div>
+                                                            </a>
+                                                        </span>
+                                                        <span class="social-icon-wrapper">
+                                                            <a href="https://www.youtube.com/@bheema_tunes" tabindex="-1" aria-label="Visit Bheema's YouTube channel">
+                                                                <div class="social-icon youtube avatar-sm">
+                                                                    <i class="mdi mdi-youtube"></i>
+                                                                </div>
+                                                            </a>
+                                                        </span>
+                                                        <span class="social-icon-wrapper">
+                                                            <a href="https://www.facebook.com/bheemashankar.kanadala" tabindex="-1" aria-label="Visit Bheema's Facebook profile">
+                                                                <div class="social-icon facebook avatar-sm">
+                                                                    <i class="mdi mdi-facebook"></i>
+                                                                </div>
+                                                            </a>
+                                                        </span>
+                                                        <span class="social-icon-wrapper">
+                                                            <a href="https://www.instagram.com/bheemashankarhk" tabindex="-1" aria-label="Visit Bheema's Instagram profile">
+                                                                <div class="social-icon instagram avatar-sm">
+                                                                    <i class="mdi mdi-instagram"></i>
+                                                                </div>
+                                                            </a>
+                                                        </span>
+                                                        <span class="social-icon-wrapper">
+                                                            <a href="https://www.linkedin.com/in/bheemashankar-h-k-7a420a1a4?_l=en_US" tabindex="-1" aria-label="Visit Bheema's LinkedIn profile">
+                                                                <div class="social-icon linkedin avatar-sm">
+                                                                    <i class="mdi mdi-linkedin"></i>
+                                                                </div>
+                                                            </a>
+                                                        </span>
+                                                        <span class="social-icon-wrapper">
+                                                            <a href="https://github.com/BHEEMASHANKARHRK" tabindex="-1" aria-label="Visit Bheema's GitHub profile">
+                                                                <div class="social-icon github avatar-sm">
+                                                                    <i class="mdi mdi-github"></i>
+                                                                </div>
+                                                            </a>
+                                                        </span>
+                                                    </div>
+                                                </div>
+
+                                                <div class="home-link d-flex align-items-center mt-5">
+                                                    <div class="btn-link">
+                                                        <a href="https://redmindstech.com/metricmaster" class="text-dark h6" tabindex="-1">
+                                                            <div class="read-link btn-link-blue"><span>See my work </span></div>
+                                                        </a>
+                                                    </div>
+                                                    <div class="btn-link-icon">
+                                                        <img src="src/images/home/right-arrow.png" alt="Right arrow" class="img-fluid ms-3">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-lg-6">
+                                            <div class="my-image">
+                                                <img src="src/images/home/home-4.png" alt="Bheema as graduate" class="img-fluid">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Cloned slide (inactive) -->
+                                <div class="item tns-item tns-slide-cloned" aria-hidden="true">
+                                    <div class="row align-items-center">
+                                        <div class="col-lg-6">
+                                            <div class="content-item">
+                                                <p class="text-warning fw-semibold mb-0">Hello! I AM</p>
+                                                <div class="home-title mb-0 fw-bold h1">
+                                                    <span class="typewrite" data-period="2000" data-type="[ &quot;Harold Anderson.&quot;,&quot;Freelance Designer.&quot;,&quot;Graduate based in NYC.&quot; ]">
+                                                        <span class="wrap"></span>
+                                                    </span>
+                                                </div>
+                                                <p class="mt-3 text-muted">Building simple and beautiful things for complex interfaces is what I enjoy most about my work. I am also interested in crafting beautiful minimal products and exploring new worlds.</p>
+
+                                                <div class="icon-item mt-4">
+                                                    <div class="d-flex">
+                                                        <span class="social-icon-wrapper">
+                                                            <a href="mailto:bheemashankarhk4@gmail.com" tabindex="-1" aria-label="Send an email to Bheema">
+                                                                <div class="social-icon email avatar-sm">
+                                                                    <i class="mdi mdi-email"></i>
+                                                                </div>
+                                                            </a>
+                                                        </span>
+                                                        <span class="social-icon-wrapper">
+                                                            <a href="https://www.youtube.com/@bheema_tunes" tabindex="-1" aria-label="Visit Bheema's YouTube channel">
+                                                                <div class="social-icon youtube avatar-sm">
+                                                                    <i class="mdi mdi-youtube"></i>
+                                                                </div>
+                                                            </a>
+                                                        </span>
+                                                        <span class="social-icon-wrapper">
+                                                            <a href="https://www.facebook.com/bheemashankar.kanadala" tabindex="-1" aria-label="Visit Bheema's Facebook profile">
+                                                                <div class="social-icon facebook avatar-sm">
+                                                                    <i class="mdi mdi-facebook"></i>
+                                                                </div>
+                                                            </a>
+                                                        </span>
+                                                        <span class="social-icon-wrapper">
+                                                            <a href="https://www.instagram.com/bheemashankarhk" tabindex="-1" aria-label="Visit Bheema's Instagram profile">
+                                                                <div class="social-icon instagram avatar-sm">
+                                                                    <i class="mdi mdi-instagram"></i>
+                                                                </div>
+                                                            </a>
+                                                        </span>
+                                                        <a href="https://www.linkedin.com/in/bheemashankar-h-k-7a420a1a4?_l=en_US">
+                                                    <div class="social-icon linkedin avatar-sm">
+                                                        <i class="mdi mdi-linkedin"></i>
+                                                    </div>
+                                                </a>
+                                                <a href="https://github.com/BHEEMASHANKARHRK">
+                                                    <div class="social-icon github avatar-sm">
+                                                        <i class="mdi mdi-github"></i>
+                                                    </div>
+                                                </a>
+                                            </div>
+
+                                        </div>
+
+                                        <div class="home-link d-inline-block mt-5">
+                                            <div class="d-flex align-items-center">
+                                                <div class="btn-link ">
+                                                    <a href="https://redmindstech.com/metricmaster/" class="text-dark h6">
+                                                        <div class="read-link btn-link-warning"><span>See my work
+                                                            </span></div>
+                                                    </a>
+                                                </div>
+                                                <div class="btn-link-icon">
+                                                    <img src="src/images/home/right-arrow.png" alt="" class="img-fluid ms-3">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-6">
+                                    <div class="my-image">
+                                        <img src="src/images/home/home.png" alt="" class="img-fluid">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+    <!-- end container -->    
+</section>
+<!-- end home section -->
 
-    <!-- Bootstrap JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
-    
-    <!-- Custom JS -->
-    <script>
-        // Splash Screen Logic
-        document.addEventListener("DOMContentLoaded", function() {
-            const splashScreen = document.getElementById('splash-screen');
-            const isFirstTime = !localStorage.getItem("pwa_installed");
-            
-            if (isFirstTime) {
-                // First time - show for 4 seconds
-                setTimeout(() => {
-                    splashScreen.style.display = 'none';
-                    localStorage.setItem("pwa_installed", "true");
-                }, 4000);
-            } else {
-                // Hide immediately
-                splashScreen.style.display = 'none';
-            }
-        });
 
-        // Dark Mode Toggle
-        const modeToggle = document.getElementById('mode-toggle');
-        const body = document.body;
+    <!-- about-me section -->
+<section class="section about-me" id="aboutme">
+    <div class="container">
+        <div class="about-box">
+            <div class="row">
+                <div class="col-lg-6 position-relative">
+                    <div class="image-round"></div>
+                    <div class="about-image p-4 pb-0">
+                        <img src="src/images/about.png" alt="About Me Image" class="img-fluid">
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="about-item p-5">
+                        <h2 class="display-5 fw-semibold">About Me</h2>
+                        <p class="text-muted fs-14">
+                            It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.
+                        </p>
+
+                        <ul class="nav nav-pills mb-3 mt-4 pt-2" id="pills-tab" role="tablist">
+<!--                             <li class="nav-item">
+                                <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" 
+                                        data-bs-target="#pills-home" type="button" aria-selected="true" role="tab"
+                                        style="color: #ffffff; background-color: #007bff;"> <!-- Adjusted colors -->
+<!--                                     Skills
+                                </button>
+                            </li>
+                            <li class="nav-item">
+                                <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" 
+                                        data-bs-target="#pills-profile" type="button" aria-selected="false" 
+                                        tabindex="-1" role="tab" aria-label="Experience"
+                                        style="color: #ffffff; background-color: #007bff;"> <!-- Adjusted colors -->
+<!--                                     Experience
+                                </button>
+                            </li>
+                            <li class="nav-item">
+                                <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill" 
+                                        data-bs-target="#pills-contact" type="button" aria-selected="false" 
+                                        tabindex="-1" role="tab" aria-label="Education"
+                                        style="color: #ffffff; background-color: #007bff;"> <!-- Adjusted colors -->
+<!--                                     Education
+                                </button>
+                            </li> --> 
+
+                            <li class="nav-item">
+                                <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" 
+                                        data-bs-target="#pills-home" type="button" aria-selected="true" role="tab"
+                                        style="color: #ffffff; background-color: #0056b3;"> <!-- Improved contrast -->
+                                    Skills
+                                </button>
+                            </li>
+                            <li class="nav-item">
+                                <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" 
+                                        data-bs-target="#pills-profile" type="button" aria-selected="false" 
+                                        tabindex="-1" role="tab" aria-label="Experience"
+                                        style="color: #ffffff; background-color: #0056b3;"> <!-- Improved contrast -->
+                                    Experience
+                                </button>
+                            </li>
+                            <li class="nav-item">
+                                <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill" 
+                                        data-bs-target="#pills-contact" type="button" aria-selected="false" 
+                                        tabindex="-1" role="tab" aria-label="Education"
+                                        style="color: #ffffff; background-color: #0056b3;"> <!-- Improved contrast -->
+                                    Education
+                                </button>
+                            </li>
+                        </ul>
+
+                        <div class="tab-content" id="pills-tabContent">
+                            <div class="tab-pane fade show active" id="pills-home">
+<!--                                 <div class="skill-item mt-4 pt-2">
+                                    <div class="d-flex justify-content-between">
+                                        <h6>Development</h6>
+                                        <h6>65%</h6>
+                                    </div>
+                                    <div class="progress" style="height: 5px;">
+                                        <div class="progress-bar" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100" style="width: 65%;" aria-label="Development skill level at 65%">
+                                            <span class="visually-hidden">Development skill level at 65%</span>
+                                        </div>
+                                    </div>
+                                </div> -->
+
+                                <div class="skill-item mt-4 pt-2">
+                                    <div class="d-flex justify-content-between">
+                                        <h3>Development</h3> <!-- Changed from h6 to h3 -->
+                                        <h4>65%</h4> <!-- Changed from h6 to h4 -->
+                                    </div>
+                                    <div class="progress" style="height: 5px;">
+                                        <div class="progress-bar" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100" style="width: 65%;" aria-label="Development skill level at 65%">
+                                            <span class="visually-hidden">Development skill level at 65%</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="skill-item mt-4 pt-2">
+                                    <div class="d-flex justify-content-between">
+                                        <h3>Design</h3>
+                                        <h4>95%</h4>
+                                    </div>
+                                    <div class="progress" style="height: 5px;">
+                                        <div class="progress-bar bg-warning" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100" style="width: 95%;" aria-label="Design skill level at 95%">
+                                            <span class="visually-hidden">Design skill level at 95%</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="skill-item mt-4 pt-2">
+                                    <div class="d-flex justify-content-between">
+                                        <h3>Branding</h3>
+                                        <h4>80%</h4>
+                                    </div>
+                                    <div class="progress" style="height: 5px;">
+                                        <div class="progress-bar bg-warning" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%;" aria-label="Branding skill level at 80%">
+                                            <span class="visually-hidden">Branding skill level at 80%</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="tab-pane fade" id="pills-profile">
+                                <div class="experience">
+                                    <div class="row">
+                                        <div class="col-10">
+                                            <div class="mt-4 pt-2">
+                                                <h3>Developer</h3>
+                                                <p class="text-muted fs-15">2000-2004 (4 years Experience)</p>
+                                                <p class="text-muted fs-15">Worked on various projects involving web development and API integrations.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="tab-pane fade" id="pills-contact">
+                                <div class="experience">
+                                    <div class="row">
+                                        <div class="col-10">
+                                            <div class="mt-4 pt-2">
+                                                <h3>Basic Computer Application</h3>
+                                                <p class="text-muted fs-15">1996-1998 (3 years)</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-10">
+                                            <div class="mt-4 pt-2">
+                                                <h3>Master Computer Application</h3>
+                                                <p class="text-muted fs-15">1999-2000 (2 years)</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- start service -->
+    <section class="section service" id="service">
+        <!-- start container -->
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-6">
+                    <div class="text-center mb-5">
+<!--                         <h3 class="mb-0 text-muted fs-15">WHAT WE OFFER</h3> <!-- Changed from h6 to h3 -->
+                        <h3 class="mb-0 text-dark fs-15">WHAT WE OFFER</h3> <!-- Improved contrast -->
+                        <h2>Affordable Services</h2> -->
+                        
+                        <p class="para-width text-dark mb-0 fs-15">
+                            A Private Limited is the most popular type of partnership in Malta. The limited liability is, in fact, the only type of company allowed by Companies.
+                        </p> <!-- Improved contrast -->
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="info-item box-shadow mt-4 pt-2">
+                        <div class="p-4">
+                            <div class="research avatar-sm bg-soft-purple text-center">
+                                <i class="mdi mdi-cached fs-24 text-purple"></i>
+                            </div>
+<!--                             <h6 class="mt-4">Research &amp; Analysis</h6>
+                            <p class="text-muted fs-15">We use a customized application specifically designed a testing
+                                gnose to keep away for people.</p> -->
+
+                            <h3 class="mt-4">Research &amp; Analysis</h3> <!-- Changed from h6 to h3 -->
+                            <p class="text-muted fs-15">
+                                We use a customized application specifically designed for testing 
+                                purposes to keep away unnecessary elements.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="info-item box-shadow mt-4 pt-2">
+                        <div class="p-4">
+                            <div class="research avatar-sm bg-soft-danger text-center">
+                                <i class="mdi mdi-comment-plus-outline fs-24 text-danger"></i>
+                            </div>
+                            <h3 class="mt-4">Web Development</h3>
+                            <p class="text-muted fs-15">We use a customized application specifically designed a testing
+                                gnose to keep away for people.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="info-item box-shadow mt-4 pt-2">
+                        <div class="p-4">
+                            <div class="research avatar-sm bg-soft-warning text-center">
+                                <i class="mdi mdi-layers fs-24 text-warning"></i>
+                            </div>
+                            <h3 class="mt-4">Network Management</h3>
+                            <p class="text-muted fs-15 ">We use a customized application specifically designed a testing
+                                gnose to keep away for people.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="info-item box-shadow mt-4 pt-2">
+                        <div class="p-4">
+                            <div class="research avatar-sm bg-soft-blue text-center">
+                                <i class="mdi mdi-inbox-arrow-up fs-24 text-blue"></i>
+                            </div>
+                            <h3 class="mt-4">UI/UX Development</h3>
+                            <p class="text-muted fs-15">We use a customized application specifically designed a testing
+                                gnose to keep away for people.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="info-item box-shadow mt-4 pt-2">
+                        <div class="p-4">
+                            <div class="research avatar-sm bg-soft-primary text-center">
+                                <i class="mdi mdi-chart-line fs-24 text-primary"></i>
+                            </div>
+                            <h3 class="mt-4">Mobile App Development</h3>
+                            <p class="text-muted fs-15">We use a customized application specifically designed a testing
+                                gnose to keep away for people.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="info-item box-shadow mt-4 pt-2">
+                        <div class="p-4">
+                            <div class="research avatar-sm bg-soft-pink text-center">
+                                <i class="mdi mdi-email-open fs-24 text-pink"></i>
+                            </div>
+                            <h3 class="mt-4">Network Management</h3>
+                            <p class="text-muted fs-15">We use a customized application specifically designed a testing
+                                gnose to keep away for people.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!-- end container -->
+    </section>
+    <!-- end service -->
+
+
+
+    <!-- start counter -->
+    <section class="section counter" id="counter">
+        <!-- start container -->
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-6">
+                    <div class="text-center mb-4">
+                        <h3 class="mb-0 text-muted fs-15">Counter</h3> <!-- Changed from h6 to h3 -->
+                        <h2>Our Achievement</h2>
+                        <p class="para-width text-muted mb-0 fs-15">A Private Limited is the most popular type of
+                            partnership Malta. The limited liability is, in fact, the only type of company allowed by
+                            Companies.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- end row -->
+
+            <div class="row">
+                <div class="col-lg-3 col-md-6 mt-4 pt-2">
+                    <div class="counter-item">
+                        <div class="counter-icon text-center">
+                            <img src="src/images/counter/heart.png" alt="" class="img-fluid">
+                        </div>
+                        <div class="counter-velue text-center mt-3">
+                            <h2 class="counter_value fw-bold d-inline-block mb-0" data-bs-target="800">800</h2><span class="h2 fw-bold">K</span><span class="h2"> +</span>
+                        </div>
+                        <div class="text-center">
+                            <h3 class="fw-semibold" style="color: #333;">Happy Clients</h3> <!-- Changed from p to h3 -->
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 mt-4 pt-2">
+                    <div class="counter-item">
+                        <div class="counter-icon text-center">
+                            <img src="src/images/counter/blueprint.png" alt="" class="img-fluid">
+                        </div>
+                        <div class="counter-velue text-center mt-3">
+                            <h2 class="counter_value fw-bold d-inline-block mb-0" data-bs-target="400">400</h2>
+                        </div>
+                       <div class="text-center">
+                            <p class="text-dark fw-semibold fs-15">Project Done</p> <!-- Improved contrast -->
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 mt-4 pt-2">
+                    <div class="counter-item">
+                        <div class="counter-icon text-center">
+                            <img src="src/images/counter/star.png" alt="" class="img-fluid">
+                        </div>
+                        <div class="counter-velue text-center mt-3">
+                            <h2 class="counter_value fw-bold d-inline-block mb-0" data-bs-target="1000">1000</h2><span class="h2 fw-bold">K</span><span class="h2"> +</span>
+                        </div>
+                        <div class="text-center">
+                            <p class="text-dark fw-semibold fs-15">Clients Review</p> <!-- Improved contrast -->
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 mt-4 pt-2">
+                    <div class="counter-item">
+                        <div class="counter-icon text-center">
+                            <img src="src/images/counter/idea.png" alt="" class="img-fluid">
+                        </div>
+                        <div class="counter-velue text-center mt-3">
+                            <h2 class="counter_value fw-bold d-inline-block mb-0" data-bs-target="20">20</h2><span class="h2"> +</span>
+                        </div>
+                       <div class="text-center">
+                            <p class="text-dark fw-semibold fs-15">Year Experience</p> <!-- Improved contrast -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- end container -->
+    </section>
+    <!-- end counter -->
+
+
+
+    <!-- start my-work -->
+    <section class="section my-work" id="work">
+        <!-- start container -->
+        <div class="container">
+            <div class="row">
+                <div class="d-flex align-items-center">
+                    <div class="left-text">
+                        <h2 class="mb-0 text-dark">My Latest Work</h2> <!-- Improved contrast -->
+                        <p class="fs-15 text-dark">Perfect solution for digital experience</p> <!-- Improved contrast -->
+                    </div>
+                    <div class="right-text ms-auto">
+                        <a href="#" class="text-dark border-2 border-dark border-bottom">
+                            More Work <img src="src/images/home/right-arrow-primary.png" alt="Right Arrow" class="img-fluid mb-1 ms-2">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!-- end row -->
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="tns-outer" id="work-slider-ow"><div class="tns-liveregion tns-visually-hidden" aria-live="polite" aria-atomic="true">slide <span class="current">9</span>  of 4</div><div id="work-slider-mw" class="tns-ovh"><div class="tns-inner" id="work-slider-iw"><div class="work-slider  tns-slider tns-carousel tns-subpixel tns-calc tns-horizontal" id="work-slider" style="transform: translate3d(-50%, 0px, 0px);">
+                        <div class="item tns-item tns-slide-cloned">
+                            <div class="work-image">
+                                <a href="#">
+                                    <img src="src/images/work/img-3.png" alt="" class="img-fluid">
+                                    <div class="image-title mt-5 ms-5 text-white">
+                                        <h3 class="mb-0">App Design</h3>
+                                        <p class="text-white-50">Mobile App </p>
+                                    </div>
+                                </a>
+                            </div>
+                        </div><div class="item tns-item tns-slide-cloned">
+                            <div class="work-image">
+                                <a href="#">
+                                    <img src="src/images/work/img-4.png" alt="" class="img-fluid">
+                                    <div class="image-title mt-5 ms-5 text-white">
+                                        <h3 class="mb-0">Web Design</h3>
+                                        <p class="text-white-50">E-Commerce</p>
+                                    </div>
+                                </a>
+                            </div>
+                        </div><div class="item tns-item tns-slide-cloned">
+                            <div class="work-image position-relative">
+                                <a href="#">
+                                    <img src="src/images/work/img-1.png" alt="" class="img-fluid">
+                                    <div class="image-title mt-5 ms-5">
+                                        <h3 class="mb-0">Web Design</h3>
+                                        <p>E-Commerce</p>
+                                    </div>
+                                </a>
+                            </div>
+                        </div><div class="item tns-item tns-slide-cloned">
+                            <div class="work-image">
+                                <a href="#">
+                                    <img src="src/images/work/img-2.png" alt="" class="img-fluid">
+                                    <div class="image-title mt-5 ms-5">
+                                        <h3 class="mb-0">NFT Web Design</h3>
+                                        <p>NFT Maerketplace</p>
+                                    </div>
+                                </a>
+                            </div>
+                        </div><div class="item tns-item tns-slide-cloned">
+                            <div class="work-image">
+                                <a href="#">
+                                    <img src="src/images/work/img-3.png" alt="" class="img-fluid">
+                                    <div class="image-title mt-5 ms-5 text-white">
+                                        <h3 class="mb-0">App Design</h3>
+                                        <p class="text-white-50">Mobile App </p>
+                                    </div>
+                                </a>
+                            </div>
+                        </div><div class="item tns-item tns-slide-cloned">
+                            <div class="work-image">
+                                <a href="#">
+                                    <img src="src/images/work/img-4.png" alt="" class="img-fluid">
+                                    <div class="image-title mt-5 ms-5 text-white">
+                                        <h3 class="mb-0">Web Design</h3>
+                                        <p class="text-white-50">E-Commerce</p>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="item tns-item" id="work-slider-item0" aria-hidden="true" tabindex="-1">
+                            <div class="work-image position-relative">
+                                <a href="#">
+                                    <img src="src/images/work/img-1.png" alt="" class="img-fluid">
+                                    <div class="image-title mt-5 ms-5">
+                                        <h3 class="mb-0">Web Design</h3>
+                                        <p>E-Commerce</p>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- slider item -->
+                        <div class="item tns-item" id="work-slider-item1" aria-hidden="true" tabindex="-1">
+                            <div class="work-image">
+                                <a href="#">
+                                    <img src="src/images/work/img-2.png" alt="" class="img-fluid">
+                                    <div class="image-title mt-5 ms-5">
+                                        <h3 class="mb-0">NFT Web Design</h3>
+                                        <p>NFT Maerketplace</p>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- slider item -->
+                        <div class="item tns-item tns-slide-active" id="work-slider-item2">
+                            <div class="work-image">
+                                <a href="#">
+                                    <img src="src/images/work/img-3.png" alt="" class="img-fluid">
+                                    <div class="image-title mt-5 ms-5 text-white">
+                                        <h3 class="mb-0">App Design</h3>
+                                        <p class="text-white-50">Mobile App </p>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- slider item -->
+                        <div class="item tns-item" id="work-slider-item3" aria-hidden="true" tabindex="-1">
+                            <div class="work-image">
+                                <a href="#">
+                                    <img src="src/images/work/img-4.png" alt="" class="img-fluid">
+                                    <div class="image-title mt-5 ms-5 text-white">
+                                        <h3 class="mb-0">Web Design</h3>
+                                        <p class="text-white-50">E-Commerce</p>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+
+                    <div class="item tns-item tns-slide-cloned">
+                            <div class="work-image position-relative">
+                                <a href="#">
+                                    <img src="src/images/work/img-1.png" alt="" class="img-fluid">
+                                    <div class="image-title mt-5 ms-5">
+                                        <h3 class="mb-0">Web Design</h3>
+                                        <p>E-Commerce</p>
+                                    </div>
+                                </a>
+                            </div>
+                        </div><div class="item tns-item tns-slide-cloned">
+                            <div class="work-image">
+                                <a href="#">
+                                    <img src="src/images/work/img-2.png" alt="" class="img-fluid">
+                                    <div class="image-title mt-5 ms-5">
+                                        <h3 class="mb-0">NFT Web Design</h3>
+                                        <p>NFT Maerketplace</p>
+                                    </div>
+                                </a>
+                            </div>
+                        </div><div class="item tns-item tns-slide-cloned">
+                            <div class="work-image">
+                                <a href="#">
+                                    <img src="src/images/work/img-3.png" alt="" class="img-fluid">
+                                    <div class="image-title mt-5 ms-5 text-white">
+                                        <h3 class="mb-0">App Design</h3>
+                                        <p class="text-white-50">Mobile App </p>
+                                    </div>
+                                </a>
+                            </div>
+                        </div><div class="item tns-item tns-slide-cloned">
+                            <div class="work-image">
+                                <a href="#">
+                                    <img src="src/images/work/img-4.png" alt="" class="img-fluid">
+                                    <div class="image-title mt-5 ms-5 text-white">
+                                        <h3 class="mb-0">Web Design</h3>
+                                        <p class="text-white-50">E-Commerce</p>
+                                    </div>
+                                </a>
+                            </div>
+                        </div><div class="item tns-item tns-slide-cloned">
+                            <div class="work-image position-relative">
+                                <a href="#">
+                                    <img src="src/images/work/img-1.png" alt="" class="img-fluid">
+                                    <div class="image-title mt-5 ms-5">
+                                        <h3 class="mb-0">Web Design</h3>
+                                        <p>E-Commerce</p>
+                                    </div>
+                                </a>
+                            </div>
+                        </div><div class="item tns-item tns-slide-cloned">
+                            <div class="work-image">
+                                <a href="#">
+                                    <img src="src/images/work/img-2.png" alt="" class="img-fluid">
+                                    <div class="image-title mt-5 ms-5">
+                                        <h3 class="mb-0">NFT Web Design</h3>
+                                        <p>NFT Maerketplace</p>
+                                    </div>
+                                </a>
+                            </div>
+                        </div></div></div></div></div>
+
+                </div>
+            </div>
+        </div>
+        <!-- end container -->
+    </section>
+    <!-- end my-work -->
+
+    <!-- start pricing -->
+    <section class="section pricing" id="pricing">
+
+        <!-- start container -->
+        <div class="container">
+
+            <div class="shape-1">
+                <img src="src/images/testi/shape.png" alt="" class="img-fluid">
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-6">
+                    <div class="text-center mb-4">
+<!--                         <h6 class="mb-0 text-muted fs-15">Pricing</h6> -->
+                        <h3 class="mb-0 text-muted fs-15">Pricing</h3> <!-- Changed from h6 to h3 -->
+                        <h2>Choose your Plan</h2>
+                        <p class="para-width text-muted mb-0 fs-15">A Private Limited is the most popular type of
+                            partnership Malta. The limited liability is, in fact, the only type of company allowed by
+                            Companies.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <ul class="nav nav-pills mb-3 justify-content-center align-items-end mt-4 pt-2" id="pills-tab1" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link active" id="pills-basic-tab" data-bs-toggle="pill" data-bs-target="#pills-basic" type="button" role="tab" aria-controls="pills-basic" aria-selected="true">
+                                <span class="nav-icon">
+                                    <i class="mdi mdi-account fs-24"></i>
+                                </span>
+                                <span class="fs-16 mb-0 fw-bold d-block">Individual</span>
+                                <span class="fs-14 text-dark mb-0">For Monthly Project</span> <!-- Improved contrast -->
+                            </button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="pills-professional-tab" data-bs-toggle="pill" data-bs-target="#pills-professional" type="button" role="tab" aria-controls="pills-professional" aria-selected="false" tabindex="-1">
+                                <span class="nav-icon">
+                                    <i class="mdi mdi-wallet-travel fs-24"></i>
+                                </span>
+                                <span class="fs-16 mb-0 fw-bold d-block">Professional</span>
+                                <span class="fs-14 text-muted mb-0">For Yearly Project</span>
+                            </button>
+                        </li>
+                    </ul>
+                    <div class="tab-content" id="pills-tabContent1">
+                        <div class="tab-pane fade show active" id="pills-basic" role="tabpanel" aria-labelledby="pills-basic-tab">
+                            <div class="row">
+                                <div class="col-lg-4">
+                                    <div class="pricing-item ">
+                                        <div class="top-bar p-4 pb-3">
+                                            <div class="d-flex align-items-center">
+                                                <div class="price-icon text-primary">
+                                                    <i class="mdi mdi-airballoon fs-32"></i>
+                                                </div>
+<!--                                                 <div class="price-title ms-3">
+                                                    <h6 class="mb-0">Basic Plan</h6>
+                                                </div> -->
+
+                                                <div class="price-title ms-3">
+                                                    <h3 class="mb-0">Basic Plan</h3> <!-- Changed from h6 to h3 -->
+                                                </div>
+                                            </div>
+
+                                            <div class="price-tag">
+                                                <h2 class="text-dark mb-0 fs-40"><sup class="fs-22 fw-semibold">$</sup>09<sup class="fs-16 fw-semibold"> /month</sup></h2>
+                                            </div>
+                                        </div>
+<!--                                         <div class="bottom-bar p-4 pt-3">
+                                            <ul class="list-unstyled ">
+                                                <li><i class="mdi mdi-check fs-20 align-middle me-2 text-primary"></i>2
+                                                    App and
+                                                    project</li>
+                                                <li class="mt-2"><i class="mdi mdi-check fs-20 align-middle me-2 text-primary"></i>400
+                                                    Gb/s
+                                                    storange</li>
+                                                <li class="mt-2"><i class="mdi mdi-check fs-20 align-middle me-2 text-primary"></i>Free
+                                                    coustom domain
+                                                </li>
+                                                <li class="mt-2"><i class="mdi mdi-check fs-20 align-middle me-2 text-primary"></i>Chat
+                                                    Support
+                                                </li>
+                                                <li class="mt-2"><i class="mdi mdi-check fs-20 align-middle me-2 text-primary"></i>No
+                                                    transaction fees
+                                                </li>
+                                                <li class="mt-2"><i class="mdi mdi-check fs-20 align-middle me-2 text-primary"></i>Unlimited
+                                                    Storage
+                                                </li>
+
+                                            </ul>
+
+                                            <div class="pricing-button">
+                                                <a href="#" class="btn btn-primary w-100 mt-3 box-shadow"><i class="mdi mdi-check-all me-2"></i>Choose
+                                                    plane</a>
+                                            </div>
+                                        </div>
+ -->
+                                        <div class="bottom-bar p-4 pt-3">
+                                            <ul class="list-unstyled">
+                                                <li><i class="mdi mdi-check fs-20 align-middle me-2 text-dark"></i> 2 Apps and Projects</li>
+                                                <li class="mt-2"><i class="mdi mdi-check fs-20 align-middle me-2 text-dark"></i> 400 Gb/s Storage</li>
+                                                <li class="mt-2"><i class="mdi mdi-check fs-20 align-middle me-2 text-dark"></i> Free Custom Domain</li>
+                                                <li class="mt-2"><i class="mdi mdi-check fs-20 align-middle me-2 text-dark"></i> Chat Support</li>
+                                                <li class="mt-2"><i class="mdi mdi-check fs-20 align-middle me-2 text-dark"></i> No Transaction Fees</li>
+                                                <li class="mt-2"><i class="mdi mdi-check fs-20 align-middle me-2 text-dark"></i> Unlimited Storage</li>
+                                            </ul>
+                                        
+                                            <div class="pricing-button">
+                                                <a href="#" class="btn btn-dark w-100 mt-3 box-shadow">
+                                                    <i class="mdi mdi-check-all me-2"></i> Choose Plan
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-4">
+                                    <div class="pricing-item active-border">
+                                        <div class="top-bar p-4 pb-3">
+                                            <div class="d-flex align-items-center">
+                                                <div class="price-icon text-primary">
+                                                    <i class="mdi mdi-airplane fs-32"></i>
+                                                </div>
+<!--                                                 <div class="price-title ms-3">
+                                                    <h6 class="mb-0">Startup Plan</h6>
+                                                </div> -->
+
+                                                <div class="price-title ms-3">
+                                                    <h3 class="mb-0">Startup Plan</h3> <!-- Changed from h6 to h3 -->
+                                                </div>
+                                            </div>
+
+                                            <div class="price-tag">
+                                                <h2 class="text-dark mb-0 fs-40"><sup class="fs-22 fw-semibold">$</sup>49<sup class="fs-16 fw-semibold"> /month</sup></h2>
+                                            </div>
+                                        </div>
+                                        <div class="bottom-bar p-4 pt-3">
+                                            <ul class="list-unstyled ">
+                                                <li><i class="mdi mdi-check fs-20 align-middle me-2 text-primary"></i>2
+                                                    App and
+                                                    project</li>
+                                                <li class="mt-2"><i class="mdi mdi-check fs-20 align-middle me-2 text-primary"></i>400
+                                                    Gb/s
+                                                    storange</li>
+                                                <li class="mt-2"><i class="mdi mdi-check fs-20 align-middle me-2 text-primary"></i>Free
+                                                    coustom domain
+                                                </li>
+                                                <li class="mt-2"><i class="mdi mdi-check fs-20 align-middle me-2 text-primary"></i>Chat
+                                                    Support
+                                                </li>
+                                                <li class="mt-2"><i class="mdi mdi-check fs-20 align-middle me-2 text-primary"></i>No
+                                                    transaction fees
+                                                </li>
+                                                <li class="mt-2"><i class="mdi mdi-check fs-20 align-middle me-2 text-primary"></i>Unlimited
+                                                    Storage
+                                                </li>
+                                            </ul>
+
+                                            <div class="pricing-button">
+                                                <a href="#" class="btn btn-dark w-100 mt-3 text-white"><i class="mdi mdi-check-all me-2"></i>Choose
+                                                    plane</a>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-4">
+                                    <div class="pricing-item ">
+                                        <div class="top-bar p-4 pb-3">
+                                            <div class="d-flex align-items-center">
+                                                <div class="price-icon text-primary">
+                                                    <i class="mdi mdi-rocket fs-32"></i>
+                                                </div>
+<!--                                                 <div class="price-title ms-3">
+                                                    <h6 class="mb-0">Enterprise Plan</h6>
+                                                </div> -->
+
+                                                <div class="price-title ms-3">
+                                                    <h3 class="mb-0">Enterprise Plan</h3> <!-- Changed from h6 to h3 -->
+                                                </div>
+                                            </div>
+
+                                            <div class="price-tag">
+                                                <h2 class="text-dark mb-0 fs-40"><sup class="fs-22 fw-semibold">$</sup>99<sup class="fs-16 fw-semibold"> /month</sup></h2>
+                                            </div>
+                                        </div>
+                                        <ul class="list-unstyled">
+                                            <li><i class="mdi mdi-check fs-20 align-middle me-2 text-dark"></i> 2 Apps and Projects</li>
+                                            <li class="mt-2"><i class="mdi mdi-check fs-20 align-middle me-2 text-dark"></i> 400 Gb/s Storage</li>
+                                            <li class="mt-2"><i class="mdi mdi-check fs-20 align-middle me-2 text-dark"></i> Free Custom Domain</li>
+                                            <li class="mt-2"><i class="mdi mdi-check fs-20 align-middle me-2 text-dark"></i> Chat Support</li>
+                                            <li class="mt-2"><i class="mdi mdi-check fs-20 align-middle me-2 text-dark"></i> No Transaction Fees</li>
+                                            <li class="mt-2"><i class="mdi mdi-check fs-20 align-middle me-2 text-dark"></i> Unlimited Storage</li>
+                                        </ul>
+                                        
+                                        <div class="pricing-button">
+                                            <a href="#" class="btn btn-dark w-100 mt-3 box-shadow">
+                                                <i class="mdi mdi-check-all me-2"></i> Choose Plan
+                                            </a>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="pills-professional" role="tabpanel" aria-labelledby="pills-professional-tab">
+                            <div class="row">
+                                <div class="col-lg-4">
+                                    <div class="pricing-item  active-border">
+                                        <div class="top-bar p-4 pb-3">
+                                            <div class="d-flex align-items-center">
+                                                <div class="price-icon text-primary">
+                                                    <i class="mdi mdi-airballoon fs-32"></i>
+                                                </div>
+                                                <div class="price-title ms-3">
+                                                    <h6 class="mb-0">Basic Plan</h6>
+                                                </div>
+                                            </div>
+
+                                            <div class="price-tag">
+                                                <h2 class="text-dark mb-0 fs-40"><sup class="fs-22 fw-semibold">$</sup>199<sup class="fs-16 fw-semibold"> /Year</sup></h2>
+                                            </div>
+                                        </div>
+                                        <div class="bottom-bar p-4 pt-3">
+                                            <ul class="list-unstyled">
+                                                <li><i class="mdi mdi-check fs-20 align-middle me-2 text-dark"></i> 2 Apps and Projects</li>
+                                                <li class="mt-2"><i class="mdi mdi-check fs-20 align-middle me-2 text-dark"></i> 400 Gb/s Storage</li>
+                                                <li class="mt-2"><i class="mdi mdi-check fs-20 align-middle me-2 text-dark"></i> Free Custom Domain</li>
+                                                <li class="mt-2"><i class="mdi mdi-check fs-20 align-middle me-2 text-dark"></i> Chat Support</li>
+                                                <li class="mt-2"><i class="mdi mdi-check fs-20 align-middle me-2 text-dark"></i> No Transaction Fees</li>
+                                                <li class="mt-2"><i class="mdi mdi-check fs-20 align-middle me-2 text-dark"></i> Unlimited Storage</li>
+                                            </ul>
+                                        
+                                            <div class="pricing-button">
+                                                <a href="#" class="btn btn-dark w-100 mt-3 box-shadow text-white">
+                                                    <i class="mdi mdi-check-all me-2"></i> Choose Plan
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-4">
+                                    <div class="pricing-item">
+                                        <div class="top-bar p-4 pb-3">
+                                            <div class="d-flex align-items-center">
+                                                <div class="price-icon text-primary">
+                                                    <i class="mdi mdi-airplane fs-32"></i>
+                                                </div>
+                                                <div class="price-title ms-3">
+                                                    <h6 class="mb-0">Basic Plan</h6>
+                                                </div>
+                                            </div>
+
+                                            <div class="price-tag">
+                                                <h2 class="text-dark mb-0 fs-40"><sup class="fs-22 fw-semibold">$</sup>249<sup class="fs-16 fw-semibold"> /year</sup></h2>
+                                            </div>
+                                        </div>
+                                        <div class="bottom-bar p-4 pt-3">
+                                            <ul class="list-unstyled">
+                                                <li><i class="mdi mdi-check fs-20 align-middle me-2 text-dark"></i> 2 Apps and Projects</li>
+                                                <li class="mt-2"><i class="mdi mdi-check fs-20 align-middle me-2 text-dark"></i> 400 Gb/s Storage</li>
+                                                <li class="mt-2"><i class="mdi mdi-check fs-20 align-middle me-2 text-dark"></i> Free Custom Domain</li>
+                                                <li class="mt-2"><i class="mdi mdi-check fs-20 align-middle me-2 text-dark"></i> Chat Support</li>
+                                                <li class="mt-2"><i class="mdi mdi-check fs-20 align-middle me-2 text-dark"></i> No Transaction Fees</li>
+                                                <li class="mt-2"><i class="mdi mdi-check fs-20 align-middle me-2 text-dark"></i> Unlimited Storage</li>
+                                            </ul>
+                                        
+                                            <div class="pricing-button">
+                                                <a href="#" class="btn btn-primary w-100 mt-3 text-white">
+                                                    <i class="mdi mdi-check-all me-2"></i> Choose Plan
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-4">
+                                    <div class="pricing-item ">
+                                        <div class="top-bar p-4 pb-3">
+                                            <div class="d-flex align-items-center">
+                                                <div class="price-icon text-primary">
+                                                    <i class="mdi mdi-rocket fs-32"></i>
+                                                </div>
+                                                <div class="price-title ms-3">
+                                                    <h6 class="mb-0">Basic Plan</h6>
+                                                </div>
+                                            </div>
+
+                                            <div class="price-tag">
+                                                <h2 class="text-dark mb-0 fs-40"><sup class="fs-22 fw-semibold">$</sup>299<sup class="fs-16 fw-semibold"> /year</sup></h2>
+                                            </div>
+                                        </div>
+                                        <div class="bottom-bar p-4 pt-3">
+                                            <ul class="list-unstyled">
+                                                <li><i class="mdi mdi-check fs-20 align-middle me-2 text-dark"></i> 2 Apps and Projects</li>
+                                                <li class="mt-2"><i class="mdi mdi-check fs-20 align-middle me-2 text-dark"></i> 400 Gb/s Storage</li>
+                                                <li class="mt-2"><i class="mdi mdi-check fs-20 align-middle me-2 text-dark"></i> Free Custom Domain</li>
+                                                <li class="mt-2"><i class="mdi mdi-check fs-20 align-middle me-2 text-dark"></i> Chat Support</li>
+                                                <li class="mt-2"><i class="mdi mdi-check fs-20 align-middle me-2 text-dark"></i> No Transaction Fees</li>
+                                                <li class="mt-2"><i class="mdi mdi-check fs-20 align-middle me-2 text-dark"></i> Unlimited Storage</li>
+                                            </ul>
+                                        
+                                            <div class="pricing-button">
+                                                <a href="#" class="btn btn-primary w-100 mt-3 box-shadow text-white">
+                                                    <i class="mdi mdi-check-all me-2"></i> Choose Plan
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <!-- end row -->
+        </div>
+        <!-- end container -->
+    </section>
+    <!-- end pricing -->
+
+
+    <!-- start testimonial -->
+    <section class="section testimonial" id="testi">
+        <div class="shape-1">
+            <img src="src/images/testi/shape.png" alt="" class="img-fluid">
+        </div>
+        <!-- start container -->
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-6">
+                    <div class="text-center mb-5">
+<!--                         <h6 class="mb-0 text-muted fs-15 text-uppercase">Testimonial</h6> -->
+                        <h3 class="mb-0 text-dark fs-15 text-uppercase">Testimonial</h3> <!-- Improved contrast -->
+                        <h2>People talk about us</h2>
+                        <p class="para-width text-dark mb-0 fs-15">
+                            A Private Limited is the most popular type of partnership in Malta. The limited liability is, in fact, the only type of company allowed by Companies.
+                        </p> <!-- Improved contrast -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slider main container -->
+            <div class="swiper-container py-5 swiper-container-horizontal">
+                <div class="swiper-wrapper pt-3" style="transform: translate3d(-1528px, 0px, 0px); transition-duration: 0ms;"><div class="swiper-slide border-radius position-relative swiper-slide-duplicate swiper-slide-duplicate-active" style="width: 352px; margin-right: 30px;" data-swiper-slide-index="0">
+                        <div class="user-image">
+                            <img src="src/images/team/img1.png" alt="" class="avatar-md rounded-circle">
+                        </div>
+                        <div class="text-center mt-4">
+                            <p class="f-16 text-muted fs-15">" We use a customized application specifically designed a
+                                testing gnose to keep away for people. "
+                            </p>
+                        </div>
+                        <hr>
+                        <div class="user-info text-center">
+                            <div class="user-info">
+                                <h3 class="text-black mb-0">Janice C. Campbe</h3>
+                                <p class="mb-0 text-muted fs-14">Embedded analytics</p>
+                            </div>
+                        </div>
+                    </div><div class="swiper-slide border-radius position-relative swiper-slide-duplicate swiper-slide-duplicate-next" style="width: 352px; margin-right: 30px;" data-swiper-slide-index="1">
+                        <div class="user-image">
+                            <img src="src/images/team/img2.png" alt="" class="avatar-md rounded-circle">
+                        </div>
+                        <div class="text-center mt-4">
+                            <p class="f-16 text-dark fs-15">
+                                "We use a customized application specifically designed for testing gnose to keep away from people."
+                            </p>
+                        </div>
+                        <hr>
+                        <div class="user-info text-center">
+                            <div class="user-info">
+                                <h3 class="text-black mb-0">Janice C. Campbe</h3>
+                                <p class="mb-0 text-dark fs-14">Embedded analytics</p> <!-- Improved contrast -->
+                            </div>
+                        </div>
+                    </div><div class="swiper-slide border-radius position-relative swiper-slide-duplicate" style="width: 352px; margin-right: 30px;" data-swiper-slide-index="2">
+                        <div class="user-image">
+                            <img src="src/images/team/img3.png" alt="" class="avatar-md rounded-circle">
+                        </div>
+                        <div class="text-center mt-4">
+                            <p class="f-16 text-muted fs-15">" We use a customized application specifically designed a
+                                testing gnose to keep away for people. "
+                            </p>
+                        </div>
+                        <hr>
+                        <div class="user-info text-center">
+                            <div class="user-info">
+                                <h3 class="text-black mb-0">Janice C. Campbe</h3>
+                                <p class="mb-0 text-dark fs-14">Embedded analytics</p> <!-- Improved contrast -->
+                            </div>
+                        </div>
+                    </div><div class="swiper-slide border-radius position-relative swiper-slide-duplicate" style="width: 352px; margin-right: 30px;" data-swiper-slide-index="3">
+                        <div class="user-image">
+                            <img src="src/images/team/img4.png" alt="" class="avatar-md rounded-circle">
+                        </div>
+                        <div class="text-center mt-4">
+                            <p class="f-16 text-muted fs-15">" We use a customized application specifically designed a
+                                testing gnose to keep away for people. "
+                            </p>
+                        </div>
+                        <hr>
+                        <div class="user-info text-center">
+                            <div class="user-info">
+                                <h3 class="text-black mb-0">Janice C. Campbe</h3>
+                               <p class="mb-0 text-dark fs-14">Embedded analytics</p> <!-- Improved contrast -->
+                            </div>
+                        </div>
+                    </div><div class="swiper-slide border-radius position-relative swiper-slide-duplicate swiper-slide-prev" style="width: 352px; margin-right: 30px;" data-swiper-slide-index="4">
+                        <div class="user-image">
+                            <img src="src/images/team/img5.png" alt="" class="avatar-md rounded-circle">
+                        </div>
+                        <div class="text-center mt-4">
+                            <p class="f-16 text-muted fs-15">" We use a customized application specifically designed a
+                                testing gnose to keep away for people. "
+                            </p>
+                        </div>
+                        <hr>
+                        <div class="user-info text-center">
+                            <div class="user-info">
+                                <h3 class="text-black mb-0">Janice C. Campbe</h3>
+                                <p class="mb-0 text-dark fs-14">Embedded analytics</p> <!-- Improved contrast -->
+                            </div>
+                        </div>
+                    </div>
+                    <!-- start slider -->
+                    <div class="swiper-slide border-radius position-relative swiper-slide-active" style="width: 352px; margin-right: 30px;" data-swiper-slide-index="0">
+                        <div class="user-image">
+                            <img src="src/images/team/img1.png" alt="" class="avatar-md rounded-circle">
+                        </div>
+                        <div class="text-center mt-4">
+                            <p class="f-16 text-muted fs-15">" We use a customized application specifically designed a
+                                testing gnose to keep away for people. "
+                            </p>
+                        </div>
+                        <hr>
+                        <div class="user-info text-center">
+                            <div class="user-info">
+                                <h3 class="text-black mb-0">Janice C. Campbe</h3>
+                                <p class="mb-0 text-dark fs-14">Embedded analytics</p> <!-- Improved contrast -->
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end slider -->
+
+                    <!-- start slider -->
+                    <div class="swiper-slide border-radius position-relative swiper-slide-next" style="width: 352px; margin-right: 30px;" data-swiper-slide-index="1">
+                        <div class="user-image">
+                            <img src="src/images/team/img2.png" alt="" class="avatar-md rounded-circle">
+                        </div>
+                        <div class="text-center mt-4">
+                            <p class="f-16 text-muted fs-15">" We use a customized application specifically designed a
+                                testing gnose to keep away for people. "
+                            </p>
+                        </div>
+                        <hr>
+                        <div class="user-info text-center">
+                            <div class="user-info">
+                                <h3 class="text-black mb-0">Janice C. Campbe</h3>
+                                <p class="mb-0 text-dark fs-14">Embedded analytics</p> <!-- Improved contrast -->
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end slider -->
+
+                    <!-- start slider -->
+                    <div class="swiper-slide border-radius position-relative" style="width: 352px; margin-right: 30px;" data-swiper-slide-index="2">
+                        <div class="user-image">
+                            <img src="src/images/team/img3.png" alt="" class="avatar-md rounded-circle">
+                        </div>
+                        <div class="text-center mt-4">
+                            <p class="f-16 text-muted fs-15">" We use a customized application specifically designed a
+                                testing gnose to keep away for people. "
+                            </p>
+                        </div>
+                        <hr>
+                        <div class="user-info text-center">
+                            <div class="user-info">
+                                <h3 class="text-black mb-0">Janice C. Campbe</h3>
+                                <p class="mb-0 text-dark fs-14">Embedded analytics</p> <!-- Improved contrast -->
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end slider -->
+
+                    <!-- start slider -->
+                    <div class="swiper-slide border-radius position-relative" style="width: 352px; margin-right: 30px;" data-swiper-slide-index="3">
+                        <div class="user-image">
+                            <img src="src/images/team/img4.png" alt="" class="avatar-md rounded-circle">
+                        </div>
+                        <div class="text-center mt-4">
+                            <p class="f-16 text-muted fs-15">" We use a customized application specifically designed a
+                                testing gnose to keep away for people. "
+                            </p>
+                        </div>
+                        <hr>
+                        <div class="user-info text-center">
+                            <div class="user-info">
+                                <h3 class="text-black mb-0">Janice C. Campbe</h3>
+                                <p class="mb-0 text-dark fs-14">Embedded analytics</p> <!-- Improved contrast -->
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end slider -->
+
+                    <!-- start slider -->
+                    <div class="swiper-slide border-radius position-relative swiper-slide-duplicate-prev" style="width: 352px; margin-right: 30px;" data-swiper-slide-index="4">
+                        <div class="user-image">
+                            <img src="src/images/team/img5.png" alt="" class="avatar-md rounded-circle">
+                        </div>
+                        <div class="text-center mt-4">
+                            <p class="f-16 text-muted fs-15">" We use a customized application specifically designed a
+                                testing gnose to keep away for people. "
+                            </p>
+                        </div>
+                        <hr>
+                        <div class="user-info text-center">
+                            <div class="user-info">
+                                <h3 class="text-black mb-0">Janice C. Campbe</h3>
+                                <p class="mb-0 text-dark fs-14">Embedded analytics</p> <!-- Improved contrast -->
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end slider -->
+                <div class="swiper-slide border-radius position-relative swiper-slide-duplicate swiper-slide-duplicate-active" style="width: 352px; margin-right: 30px;" data-swiper-slide-index="0">
+                        <div class="user-image">
+                            <img src="src/images/team/img1.png" alt="" class="avatar-md rounded-circle">
+                        </div>
+                        <div class="text-center mt-4">
+                            <p class="f-16 text-muted fs-15">" We use a customized application specifically designed a
+                                testing gnose to keep away for people. "
+                            </p>
+                        </div>
+                        <hr>
+                        <div class="user-info text-center">
+                            <div class="user-info">
+                                <h3 class="text-black mb-0">Janice C. Campbe</h3>
+                                <p class="mb-0 text-dark fs-14">Embedded analytics</p> <!-- Improved contrast -->
+                            </div>
+                        </div>
+                    </div><div class="swiper-slide border-radius position-relative swiper-slide-duplicate swiper-slide-duplicate-next" style="width: 352px; margin-right: 30px;" data-swiper-slide-index="1">
+                        <div class="user-image">
+                            <img src="src/images/team/img2.png" alt="" class="avatar-md rounded-circle">
+                        </div>
+                        <div class="text-center mt-4">
+                            <p class="f-16 text-muted fs-15">" We use a customized application specifically designed a
+                                testing gnose to keep away for people. "
+                            </p>
+                        </div>
+                        <hr>
+                        <div class="user-info text-center">
+                            <div class="user-info">
+                                <h3 class="text-black mb-0">Janice C. Campbe</h3>
+                                <p class="mb-0 text-dark fs-14">Embedded analytics</p> <!-- Improved contrast -->
+                            </div>
+                        </div>
+                    </div><div class="swiper-slide border-radius position-relative swiper-slide-duplicate" style="width: 352px; margin-right: 30px;" data-swiper-slide-index="2">
+                        <div class="user-image">
+                            <img src="src/images/team/img3.png" alt="" class="avatar-md rounded-circle">
+                        </div>
+                        <div class="text-center mt-4">
+                            <p class="f-16 text-muted fs-15">" We use a customized application specifically designed a
+                                testing gnose to keep away for people. "
+                            </p>
+                        </div>
+                        <hr>
+                        <div class="user-info text-center">
+                            <div class="user-info">
+                                <h3 class="text-black mb-0">Janice C. Campbe</h3>
+                                <p class="mb-0 text-dark fs-14">Embedded analytics</p> <!-- Improved contrast -->
+                            </div>
+                        </div>
+                    </div><div class="swiper-slide border-radius position-relative swiper-slide-duplicate" style="width: 352px; margin-right: 30px;" data-swiper-slide-index="3">
+                        <div class="user-image">
+                            <img src="src/images/team/img4.png" alt="" class="avatar-md rounded-circle">
+                        </div>
+                        <div class="text-center mt-4">
+                            <p class="f-16 text-muted fs-15">" We use a customized application specifically designed a
+                                testing gnose to keep away for people. "
+                            </p>
+                        </div>
+                        <hr>
+                        <div class="user-info text-center">
+                            <div class="user-info">
+                                <h3 class="text-black mb-0">Janice C. Campbe</h3>
+                                <p class="mb-0 text-dark fs-14">Embedded analytics</p> <!-- Improved contrast -->
+                            </div>
+                        </div>
+                    </div><div class="swiper-slide border-radius position-relative swiper-slide-duplicate" style="width: 352px; margin-right: 30px;" data-swiper-slide-index="4">
+                        <div class="user-image">
+                            <img src="src/images/team/img5.png" alt="" class="avatar-md rounded-circle">
+                        </div>
+                        <div class="text-center mt-4">
+                            <p class="f-16 text-muted fs-15">" We use a customized application specifically designed a
+                                testing gnose to keep away for people. "
+                            </p>
+                        </div>
+                        <hr>
+                        <div class="user-info text-center">
+                            <div class="user-info">
+                                <h3 class="text-black mb-0">Janice C. Campbe</h3>
+                                <p class="mb-0 text-dark fs-14">Embedded analytics</p> <!-- Improved contrast -->
+                            </div>
+                        </div>
+                    </div></div>
+
+                <!-- navigation buttons -->
+                <div class="swiper-pagination swiper-pagination-clickable swiper-pagination-bullets"><span class="swiper-pagination-bullet swiper-pagination-bullet-active"></span><span class="swiper-pagination-bullet"></span><span class="swiper-pagination-bullet"></span><span class="swiper-pagination-bullet"></span><span class="swiper-pagination-bullet"></span></div>
+            </div>
+        </div>
+        <!-- end container -->
+    </section>
+    <!-- end testimonial -->
+
+
+
+    <!-- start blog -->
+    <section class="section blog" id="blog">
+        <!-- start container -->
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-6">
+                    <div class="text-center mb-4">
+                        <h3 class="mb-0 text-muted fs-15">Blog</h3>
+                        <h2>Our Regular News</h2>
+                        <p class="para-width text-muted mb-0 fs-15">A Private Limited is the most popular type of
+                            partnership Malta. The limited liability is, in fact, the only type of company allowed by
+                            Companies.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- end row -->
+
+            <div class="row">
+                <div class="col-lg-4 mt-4 pt-2">
+                    <div class="blog-item p-4 box-shadow">
+                        <div class="blog-image">
+                            <img src="src/images/blog/img-1.png" alt="" class="img-fluid">
+                            <div class="blog-image-icon bg-blue">
+                                <i class="mdi mdi-lan fs-24"></i>
+                            </div>
+                        </div>
+                        <div class="blog-content mt-5">
+                            <!-- <p class="text-muted fw-semibold mb-2">May 25, 2021</p> -->
+                            <h3>We make UI/UX design very easy for you.</h3> 
+                            <a href="#" class="text-decoration-none">
+                                <span>Learn More</span> <!-- Use a span inside the anchor -->
+                            </a>
+                            <p class="fs-15 text-muted">He nicked it tickety boo harry the cras bargy chap mush spiffing
+                                spend a penny.</p>
+                            <a href="#" class="text-dark fw-semibold">Learn more <i class="mdi mdi-arrow-right fs-16"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 mt-4 pt-2">
+                    <div class="blog-item p-4 box-shadow">
+                        <div class="blog-image">
+                            <img src="src/images/blog/img-2.png" alt="" class="img-fluid">
+                            <div class="blog-image-icon bg-secondary">
+                                <i class="mdi mdi-responsive fs-24"></i>
+                            </div>
+                        </div>
+                        <div class="blog-content mt-5">
+                            <!-- <p class="text-muted fw-semibold mb-2">May 25, 2021</p> -->
+                           <h3>Current world design trends—know easily.</h3> 
+                                <a href="#" class="text-decoration-none">
+                                    <span>Learn More</span> <!-- Use a span inside the anchor -->
+                                </a>
+                            <p class="fs-15 text-muted">He nicked it tickety boo harry the cras bargy chap mush spiffing
+                                spend a penny.</p>
+                            <a href="#" class="text-dark fw-semibold">Learn more <i class="mdi mdi-arrow-right fs-16"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 mt-4 pt-2">
+                    <div class="blog-item p-4 box-shadow">
+                        <div class="blog-image">
+                            <img src="src/images/blog/img-3.png" alt="" class="img-fluid">
+                            <div class="blog-image-icon bg-primary">
+                                <i class="mdi mdi-vector-combine fs-24"></i>
+                            </div>
+                        </div>
+                        <div class="blog-content mt-5">
+                        <!-- <p class="text-muted fw-semibold mb-2">May 25, 2021</p> -->
+                        
+                        <h3>We calculate clients' demand for research.</h3> <!-- Heading outside the link -->
+                        <a href="#" aria-label="Read more about client research">Read more</a> <!-- Accessible link -->
+                        
+                        <p class="fs-15 text-muted">
+                            He nicked it tickety boo harry the cras bargy chap mush spiffing spend a penny.
+                        </p>
+                        
+                        <a href="#" class="text-dark fw-semibold">
+                            Learn more <i class="mdi mdi-arrow-right fs-16"></i>
+                        </a>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- end container -->
+    </section>
+    <!-- end blog -->
+
+
+
+    <!-- start contact -->
+    <section class="contact pt-5 pb-0" id="contact">
+        <!-- start container -->
+        <div class="container">
+
+            <div class="shape-1">
+                <img src="src/images/testi/shape.png" alt="" class="img-fluid">
+            </div>
+
+            <div class="contact-item">
+                <div class="row align-items-center">
+                    <div class="col-lg-5">
+                        <div class="contact-info">
+                            <div class="mb-4">
+                                <h3>Let's Connect</h3>
+                                <p class="text-dark mb-0">Looking for help? Fill the form and start a new adventure.</p> <!-- Improved contrast -->
+                                </p>
+                            </div>
+
+                            <hr>
+
+                            <div class="info-content mt-4">
+<!--                                 <h6>Address :</h6> -->
+                                <h3>Address:</h3> <!-- Changed from h6 to h3 -->
+                                <div class="d-flex">
+                                    <div class="icon">
+                                        <i class="mdi mdi-home-outline fs-24 text-primary"></i>
+                                    </div>
+                                    <div class="icon-content ms-3">
+                                        <p class="mb-0 fs-15">744 New York Ave, Brooklyn, Kings,<br>
+                                            New York 10224</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="info-content mt-4 pt-2">
+                                <h3>Phone :</h3>
+                                <div class="d-flex">
+                                    <div class="icon">
+                                        <i class="mdi mdi-phone-outline fs-24 text-primary"></i>
+                                    </div>
+                                    <div class="icon-content ms-3">
+                                        <p class="mb-0 fs-15">(+642) 245 356 432</p>
+                                        <p class="mb-0 fs-15">(+420) 336 476 328</p>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="info-content mt-4 pt-2">
+                                <h3>Support :</h3>
+                                <div class="d-flex">
+                                    <div class="icon">
+                                        <i class="mdi mdi-email-outline fs-24 text-primary"></i>
+                                    </div>
+                                    <div class="icon-content ms-3">
+                                        <p class="mb-0 fs-15">hellosuppot@gmail.com</p>
+                                        <p class="mb-0 fs-15">help@.com</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="col-lg-7 ">
+                        <div class="custom-form mt-4 ">
+                            <form method="post" name="myForm" onsubmit="return validateForm()">
+
+                                <h3 class="mb-0 text-muted">Let's talk</h3>
+                                <h3>Enter your project details</h3>
+                                <p class=" fs-15 text-muted">Content here, content here', making it look like
+                                    readable English. Many desktop publishing packages.</p>
+                                <p id="error-msg" style="opacity: 1;">
+                                    <!-- <div class="alert alert-warning">*Please enter a Name*</div> -->
+                                </p>
+
+
+                                <div id="simple-msg"></div>
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <div class="form-group">
+                                            <input name="name" id="name" type="text" class="form-control contact-form" placeholder="Your name">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="form-group">
+                                            <input name="email" id="email" type="email" class="form-control contact-form" placeholder="Your email">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <div class="form-group mt-2">
+                                            <input type="text" class="form-control contact-form" id="subject" placeholder="Your Subject..">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <div class="form-group mt-2">
+                                            <textarea name="comments" id="comments" rows="4" class="form-control contact-form h-auto" placeholder="Your message..."></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row my-2">
+                                    <div class="col-lg-12 d-grid">
+                                        <input type="submit" id="submit" name="send" class="submitBnt btn btn-rounded btn-dark text-white" value="Send Message" aria-label="Send Message">
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- end container -->
+    </section>
+    <!-- end contact -->
+
+
+    <!-- start footer -->
+    <section class=" footer">
+        <!-- start container -->
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3">
+                    <div class="mt-5">
+<!--                         <a class=" logo text-uppercase" href="index.html">
+                            <img src="src/images/logo-light.png" class="logo-light" alt="" height="32">
+                            <!-- <img src="images/logo-light.png" class="logo-dark" alt="" height="28"> -->
+<!--                         </a> -->
+
+                        <a class="logo text-uppercase" href="index.html">
+                            <img src="src/images/logo-light.png" class="logo-light" alt="Company Logo" height="32">
+                            <!-- <img src="images/logo-light.png" class="logo-dark" alt="Company Logo" height="28"> -->
+                            <span class="sr-only">Home</span> <!-- Accessible text for screen readers -->
+                        </a>
+                        <p class="fs-15 text-white-50 mt-4">A Private Limited is the most popular type of partnership -->
+                            Malta.
+                            The limited liability is, in fact, the only type of company allowed by Companies.</p>
+
+                        <div class="icon-item mt-4">
+                                <div class="d-flex">
+                                    <a href="#" aria-label="Facebook">
+                                        <div class="social-icon facebook avatar-xs">
+                                            <i class="mdi mdi-facebook"></i>
+                                        </div>
+                                    </a>
+                                    <a href="#" aria-label="Instagram">
+                                        <div class="social-icon instagram avatar-xs">
+                                            <i class="mdi mdi-instagram"></i>
+                                        </div>
+                                    </a>
+                                    <a href="#" aria-label="Twitter">
+                                        <div class="social-icon twitter avatar-xs">
+                                            <i class="mdi mdi-twitter"></i>
+                                        </div>
+                                    </a>
+                                    <a href="#" aria-label="LinkedIn">
+                                        <div class="social-icon linkedin avatar-xs">
+                                            <i class="mdi mdi-linkedin"></i>
+                                        </div>
+                                    </a>
+                                    <a href="#" aria-label="Pinterest">
+                                        <div class="social-icon pinterest avatar-xs">
+                                            <i class="mdi mdi-pinterest"></i>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-lg-2 mt-4">
+
+                    <h3 class="text-white">Company</h3> 
+
+                    <ul class="footer-text list-unstyled mt-4">
+                        <li><a href="#"><i class="mdi mdi-arrow-right me-2"></i>Security &amp; Provciy</a></li>
+                        <li><a href="#"><i class="mdi mdi-arrow-right me-2"></i>Support</a></li>
+                        <li><a href="#"><i class="mdi mdi-arrow-right me-2"></i>Term &amp; Condition</a></li>
+                        <li><a href="#"><i class="mdi mdi-arrow-right me-2"></i>Contact</a></li>
+                        <li><a href="#"><i class="mdi mdi-arrow-right me-2"></i>About Us</a></li>
+                    </ul>
+
+                </div>
+
+                <div class="col-lg-3 mt-4">
+                    <h3 class="text-white">Linkedin</h3>
+                    <div class="row">
+                        <div class="col-lg-10">
+                            <div class="linkedin-box mt-4">
+                                <p class="mb-0 text-white fs-15 mb-2">The full monty spiffing good time.</p> <!-- Improved contrast -->
+                                <a href="#" class="fs-15 text-white">@Harold.com</a> <!-- Ensuring link is readable -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="linkedin-content d-flex align-items-center">
+                        <div class="icon">
+                            <i class="mdi mdi-linkedin text-white fs-40"></i>
+                        </div>
+                        <div class="icon-content ms-2">
+                            <a href="#" class="text-white-50">Linkedin</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 mt-4">
+                    <h3 class="text-white">Sign up</h3>
+                    <p class="mb-0 text-white-50 mt-4">Follow our newsletter to stay updated about agency.</p>
+                    <div class="input-group my-3">
+                        <label for="subscribe" class="text-dark text-center">Subscribe to our newsletter</label>
+                        <input type="text" id="subscribe" class="form-control p-3 text-dark" placeholder="Enter your email" aria-label="Enter your email" aria-describedby="basic-addon2">
+                        <a href="#" class="input-group-text bg-primary text-white px-4" id="basic-addon2">Go</a>
+                    </div>
+                    <p></p>
+                </div>
+            </div>
+        </div>
         
-        modeToggle.addEventListener('click', () => {
-            const currentMode = body.getAttribute('data-layout-mode');
-            const newMode = currentMode === 'dark' ? 'light' : 'dark';
-            body.setAttribute('data-layout-mode', newMode);
-            localStorage.setItem('theme', newMode);
-        });
+        <!-- end container -->
+    </section>
 
-        // Load saved theme
-        const savedTheme = localStorage.getItem('theme') || 'light';
-        body.setAttribute('data-layout-mode', savedTheme);
+    <section class="bottom-footer py-4">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-6">
+                    <p class="mb-0 text-center text-dark">©
+                        <script>document.write(new Date().getFullYear())</script> Developed <i class="mdi mdi-heart text-danger"></i> by 
+                        <a href="https://themesdesign.in/" target="_blank" class="text-dark">Bheemashankar</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- end footer -->
 
-        // Smooth Scrolling
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-
-        // Counter Animation
-        function animateCounters() {
-            const counters = document.querySelectorAll('.counter-value');
-            const speed = 200;
-
-            counters.forEach(counter => {
-                const animate = () => {
-                    const value = +counter.getAttribute('data-target');
-                    const data = +counter.innerText;
-                    const time = value / speed;
-                    
-                    if (data < value) {
-                        counter.innerText = Math.ceil(data + time);
-                        setTimeout(animate, 1);
-                    } else {
-                        counter.innerText = value;
-                    }
-                };
-                animate();
-            });
-        }
-
-        // Trigger counter animation when section is visible
-        const counterSection = document.querySelector('#counter');
-        const observerOptions = {
-            threshold: 0.7
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    animateCounters();
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, observerOptions);
-
-        if (counterSection) {
-            observer.observe(counterSection);
-        }
-
-        // Navbar background on scroll
-        window.addEventListener('scroll', () => {
-            const navbar = document.getElementById('navbar');
-            if (window.scrollY > 50) {
-                navbar.classList.add('navbar-scrolled');
+     <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Check if the PWA is opening for the first time
+            if (!localStorage.getItem("pwa_installed")) {
+                // First time opening - show animation for 3 seconds
+                setTimeout(() => {
+                    document.getElementById('splash-screen').style.display = 'none';
+                    // Set flag to prevent animation next time
+                    localStorage.setItem("pwa_installed", "true");
+                }, 3000);
             } else {
-                navbar.classList.remove('navbar-scrolled');
+                // If not first time, hide splash screen immediately
+                document.getElementById('splash-screen').style.display = 'none';
             }
         });
-
-        // Typewriter Effect
-        function typeWriter() {
-            const typewriterElement = document.querySelector('.typewriter');
-            const texts = [
-                'Full Stack Developer',
-                'Android Developer', 
-                'Web Designer',
-                'UI/UX Designer'
-            ];
-            
-            let textIndex = 0;
-            let charIndex = 0;
-            let isDeleting = false;
-            
-            function type() {
-                const currentText = texts[textIndex];
-                
-                if (isDeleting) {
-                    typewriterElement.textContent = currentText.substring(0, charIndex - 1);
-                    charIndex--;
-                } else {
-                    typewriterElement.textContent = currentText.substring(0, charIndex + 1);
-                    charIndex++;
-                }
-                
-                let typeSpeed = isDeleting ? 50 : 100;
-                
-                if (!isDeleting && charIndex === currentText.length) {
-                    typeSpeed = 2000;
-                    isDeleting = true;
-                } else if (isDeleting && charIndex === 0) {
-                    isDeleting = false;
-                    textIndex = (textIndex + 1) % texts.length;
-                    typeSpeed = 500;
-                }
-                
-                setTimeout(type, typeSpeed);
-            }
-            
-            type();
-        }
-
-        // Start typewriter effect
-        typeWriter();
     </script>
-</body>
-</html>
+
+    <!--Bootstrap Js-->
+    <script src="src/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Slider Js -->
+    <script src="src/js/tiny-slider.js"></script>
+    <script src="src/js/swiper.min.js"></script>
+
+    <!-- conter -->
+    <script src="src/js/counter.init.js"></script>
+
+    <!-- App Js -->
+    <!-- <script src="src/js/app.js"></script>
+
+    <script src="src/js/feed.js"></script> -->
+
+    <script src="src/js/app.js"></script><style type="text/css">.typewrite > .wrap { border-right: 0.08em solid #ffffff}</style>
+    <script src="src/js/feed.js"></script>
+
+
+</body><!-- Mirrored from themesdesign.in/harold/layout/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 17 Dec 2024 15:56:25 GMT --></html>
