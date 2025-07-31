@@ -215,6 +215,14 @@ body[data-layout-mode=light] .burger-icon span {
     color: rgba(28, 47, 80, .6) !important
 }
 
+.navbar .container .container-fluid .container-lg  .container-md .container-sm .container-xl .container-xxl {
+    display: flex;
+    flex-wrap: inherit;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 100px;
+}
+
 .nav-sticky .nav-link:hover,
 .nav-sticky .nav-link.active,
 .nav-sticky .nav-link:active {
